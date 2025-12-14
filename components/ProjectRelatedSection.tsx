@@ -27,7 +27,7 @@ const ProjectRelatedSection: React.FC = () => {
       
       {/* Header da Seção */}
       <div className="flex justify-between items-center mb-10 border-t border-transparent">
-        <h2 className="text-h2 md:text-h1 font-medium text-[#08131A]">
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-[#08131A]">
           Related Projects
         </h2>
         
@@ -59,10 +59,10 @@ const ProjectRelatedSection: React.FC = () => {
             
             {/* Informações do Card */}
             <div className="flex justify-between items-center px-1">
-              <h3 className="text-h4 font-semibold text-[#08131A] group-hover:text-text-tertiary transition-colors">
+              <h3 className="text-lg font-medium text-[#08131A] group-hover:text-gray-600 transition-colors">
                 {project.title}
               </h3>
-              <span className="text-body-sm font-medium text-text-tertiary">
+              <span className="text-sm font-medium text-gray-500">
                 {project.date}
               </span>
             </div>

@@ -45,7 +45,7 @@ const FAQSection: React.FC = () => {
       
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
-        <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium text-[#08131A]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A]">
           Respostas que trazem clareza
         </h2>
         
@@ -53,7 +53,7 @@ const FAQSection: React.FC = () => {
            <div className="hidden lg:block">
               <Scan className="w-6 h-6 text-[#08131A] opacity-80 ml-auto" />
            </div>
-           <p className="text-text-tertiary text-body-sm md:text-body">
+           <p className="text-gray-600 text-sm md:text-base leading-snug">
              Respondemos as dúvidas mais comuns para te ajudar a dar o próximo passo.
            </p>
            {/* Mobile icon */}
@@ -79,7 +79,7 @@ const FAQSection: React.FC = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex justify-between items-center p-6 md:p-8 text-left focus:outline-none"
                 >
-                  <span className="text-h4 font-semibold text-gray-900 pr-4">
+                  <span className="text-lg font-medium text-gray-900 pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown 
@@ -90,7 +90,7 @@ const FAQSection: React.FC = () => {
                 <div 
                   className={`px-6 md:px-8 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 pb-8 opacity-100' : 'max-h-0 pb-0 opacity-0'}`}
                 >
-                  <p className="text-text-tertiary text-body-sm md:text-body">
+                  <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                     {faq.answer}
                   </p>
                 </div>
@@ -115,11 +115,11 @@ const FAQSection: React.FC = () => {
             <div className="bg-[#1A1A1A]/90 backdrop-blur-md rounded-full p-2 pl-6 flex justify-between items-center shadow-2xl border border-white/10">
               <div className="flex items-center gap-3">
                 <Scan className="w-4 h-4 text-white/60" />
-                <span className="text-white font-semibold text-body-sm md:text-body">
+                <span className="text-white font-medium text-sm md:text-base">
                   Ainda tem dúvidas?
                 </span>
               </div>
-              <button className="bg-white text-[#08131A] px-6 py-2.5 rounded-full text-body-sm font-semibold tracking-wide hover:bg-gray-200 transition-colors">
+              <button className="bg-white text-[#08131A] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
                 Fale Conosco
               </button>
             </div>

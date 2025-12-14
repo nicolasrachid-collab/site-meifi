@@ -29,7 +29,7 @@ const CoastalRetreatHero: React.FC<CoastalRetreatHeroProps> = ({ onBack }) => {
         {/* Logo Aestoria (clicável para voltar à home) */}
         <div 
           onClick={onBack}
-          className="text-h2 font-serif cursor-pointer hover:opacity-80 transition-opacity"
+          className="text-2xl font-serif tracking-wide cursor-pointer hover:opacity-80 transition-opacity"
         >
           Aestoria
         </div>
@@ -42,10 +42,10 @@ const CoastalRetreatHero: React.FC<CoastalRetreatHeroProps> = ({ onBack }) => {
 
       {/* Center Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full -mt-20 px-4 text-center">
-        <h1 className="text-display-lg md:text-display-xl lg:text-display-2xl font-normal mb-4 drop-shadow-lg">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-4 drop-shadow-lg">
           Coastal Retreat
         </h1>
-        <p className="text-body md:text-body-lg font-light tracking-[0.05em] opacity-90 drop-shadow-md">
+        <p className="text-base md:text-lg font-light tracking-wide opacity-90 drop-shadow-md">
           Breezy home with serene coastal tones
         </p>
       </div>

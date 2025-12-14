@@ -174,3 +174,4 @@ export interface WordPressPartner {
     'wp:featuredmedia'?: WordPressMedia[];
   };
 }
+

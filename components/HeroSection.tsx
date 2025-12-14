@@ -143,12 +143,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         <Navbar onOpenMenu={() => setIsMenuOpen(true)} />
 
         {/* Center: Main Headings */}
-        <div className="flex flex-col items-center justify-center text-center space-y-8 mt-4 md:mt-0 animate-fade-in-up">
-          <span className="text-caption md:text-body-sm font-medium tracking-[0.1em] uppercase opacity-90 drop-shadow-md">
+        <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
+          <span className="text-xs md:text-base font-medium tracking-wide uppercase opacity-90 drop-shadow-md">
             {currentData.subtitle}
           </span>
           
-          <h1 className="text-display-lg md:text-display-xl lg:text-display-2xl font-medium drop-shadow-lg max-w-5xl whitespace-pre-line">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
             {currentData.title.split('\n').map((line, i) => (
               <React.Fragment key={i}>
                 {line}
@@ -161,13 +161,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             <div className="relative group flex flex-col items-center">
               <button 
                 onClick={handleContactClick}
-                className="px-10 py-4 bg-white text-[#08131A] rounded-full font-semibold text-body-lg tracking-wide transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
+                className="px-8 py-3 bg-white text-[#08131A] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
               >
                 Solicite um Orçamento
               </button>
               
               {/* Tooltip Discreto */}
-              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-caption font-normal tracking-[0.05em] text-white/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-white/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
                 Clique para agendar sua consulta
               </div>
             </div>
@@ -190,8 +190,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 ))}
              </div>
              <div className="flex flex-col text-left drop-shadow-md">
-                <span className="text-body-sm md:text-body font-semibold">{currentData.statsText}</span>
-                <span className="text-caption md:text-body-sm opacity-90">{currentData.statsNumber}</span>
+                <span className="text-sm md:text-base font-medium">{currentData.statsText}</span>
+                <span className="text-xs md:text-base opacity-90">{currentData.statsNumber}</span>
              </div>
           </div>
 
@@ -211,13 +211,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
              </div>
              
              <div className="flex flex-col flex-grow min-w-0">
-                <span className="text-body-sm md:text-body font-semibold mb-1 truncate group-hover:text-white transition-colors">Veja nosso manifesto</span>
+                <span className="text-sm md:text-base font-medium mb-1 truncate group-hover:text-white transition-colors">Veja nosso manifesto</span>
                 <div className="flex items-center gap-2">
                     {/* Botão Play com Pulse Scale */}
                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#08131A] shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-white/20 animate-pulse-scale">
                       <Play size={14} fill="currentColor" className="ml-0.5" />
                     </div>
-                    <span className="text-caption text-white/70 group-hover:text-white transition-colors duration-500">Assista agora</span>
+                    <span className="text-xs text-white/70 group-hover:text-white transition-colors duration-500">Assista agora</span>
                 </div>
              </div>
           </div>

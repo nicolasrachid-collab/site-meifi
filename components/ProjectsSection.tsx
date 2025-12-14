@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { Layers, Hexagon, Radio, Box, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { WordPressProject } from '@/types/wordpress';
 
 interface ProjectItem {
@@ -95,12 +95,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         return fallbackProjects;
       })();
 
-  // Logos simuladas
-  const logos = [
-    { name: "Urbaniza", icon: Layers },
-    { name: "Construtora Alfa", icon: Hexagon },
-    { name: "Incorpora", icon: Radio },
-    { name: "Novo Espaço", icon: Box },
+  // Palavras do carrossel
+  const words = [
+    "Arquitetura",
+    "Forma",
+    "Propósito",
+    "Essência",
   ];
 
   // Lógica de Scroll Jacking
@@ -149,12 +149,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
-          <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium text-[#08131A] mb-6 md:mb-0">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
             Nossos Projetos
           </h2>
 
           <div className="flex flex-col items-end w-full md:w-1/2 lg:w-1/3">
-            <p className="text-body-sm md:text-body-lg text-text-tertiary text-left md:text-right mb-6 w-full">
+            <p className="text-sm md:text-base text-gray-600 text-left md:text-right mb-6 w-full">
               Cada projeto reafirma que a evolução na arquitetura passa pela<br className="hidden md:block"/>
               construção de caminhos com dedicação e atenção aos detalhes.
             </p>
@@ -163,21 +163,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {onNavigateToProjects && (
               <button 
                 onClick={onNavigateToProjects}
-                className="group flex items-center gap-2 text-body-sm font-semibold border-b border-[#08131A] pb-0.5 hover:text-text-tertiary hover:border-gray-400 transition-all self-start md:self-end mb-6 tracking-wide"
+                className="group flex items-center gap-2 text-sm font-medium border-b border-[#08131A] pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start md:self-end mb-6"
               >
                 Ver todos
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300"/>
               </button>
             )}
             
-            {/* Logo Carousel */}
+            {/* Carrossel de palavras */}
             <div className="w-full overflow-hidden relative">
               <div className="flex space-x-12 animate-scroll-right whitespace-nowrap items-center md:justify-end">
-                {[...logos, ...logos, ...logos].map((logo, idx) => (
-                   <div key={idx} className="flex items-center space-x-2 text-[#08131A] opacity-80 font-bold text-body-sm tracking-wide">
-                      <logo.icon size={18} strokeWidth={2.5} />
-                      <span>{logo.name}</span>
-                   </div>
+                {[...words, ...words, ...words].map((word, idx) => (
+                   <span key={idx} className="text-[#08131A] opacity-80 font-bold text-sm uppercase tracking-wider">
+                      {word}
+                   </span>
                 ))}
               </div>
               <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#FAFAFA] to-transparent"></div>
@@ -234,8 +233,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                      transition: isDesktop ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)' : 'none'
                   }}
                 >
-                  <span className="text-h4 md:text-h3 font-semibold group-hover/card:text-text-tertiary transition-colors">{project.title}</span>
-                  <span className="text-body-sm md:text-body text-text-tertiary">{project.date}</span>
+                  <span className="text-lg md:text-xl font-medium group-hover/card:text-gray-600 transition-colors">{project.title}</span>
+                  <span className="text-sm md:text-base text-gray-500">{project.date}</span>
                 </div>
               </div>
             ))}

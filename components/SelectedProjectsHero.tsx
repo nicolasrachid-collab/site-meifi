@@ -16,7 +16,7 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
         {/* Logo Aestoria */}
         <div 
           onClick={onBack}
-          className="text-h2 md:text-h1 font-serif cursor-pointer hover:opacity-70 transition-opacity text-[#08131A]"
+          className="text-3xl font-serif tracking-tight cursor-pointer hover:opacity-70 transition-opacity text-[#08131A]"
         >
           Aestoria
         </div>
@@ -41,11 +41,11 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
            </svg>
         </div>
 
-        <h1 className="text-display-lg md:text-display-xl lg:text-display-2xl font-medium text-[#08131A] mb-8">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-[#08131A] mb-8">
           Selected Projects
         </h1>
 
-        <p className="text-text-tertiary text-body md:text-body-lg max-w-xl">
+        <p className="text-gray-600 text-base md:text-lg max-w-xl leading-relaxed">
           With a seamless process and attention to detail, we turn ideas
           into beautiful, livable realities.
         </p>
@@ -55,7 +55,7 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
       <div className="w-full flex items-center justify-between mt-auto gap-4">
         
         {/* Counter */}
-        <span className="text-body-sm font-medium text-[#08131A] whitespace-nowrap">
+        <span className="text-sm font-medium text-[#08131A] whitespace-nowrap">
           (6)
         </span>
 
@@ -67,19 +67,19 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
            {/* Frequencii */}
            <div className="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300">
               <Radio size={16} strokeWidth={2.5} />
-              <span className="font-bold text-body-sm hidden md:block">Frequencii</span>
+              <span className="font-bold text-sm hidden md:block">Frequencii</span>
            </div>
 
            {/* LaunchSimple */}
            <div className="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300">
               <Box size={16} strokeWidth={2.5} />
-              <span className="font-bold text-body-sm hidden md:block">LaunchSimple</span>
+              <span className="font-bold text-sm hidden md:block">LaunchSimple</span>
            </div>
 
            {/* 45 Degrees */}
            <div className="flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300">
               <Triangle size={16} strokeWidth={2.5} className="rotate-45" />
-              <span className="font-bold text-body-sm hidden md:block">45 Degrees°</span>
+              <span className="font-bold text-sm hidden md:block">45 Degrees°</span>
            </div>
         </div>
 

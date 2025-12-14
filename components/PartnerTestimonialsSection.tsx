@@ -55,7 +55,7 @@ const PartnerTestimonialsSection: React.FC = () => {
       
       {/* Headline */}
       <div className="mb-16 max-w-3xl">
-        <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
           Não nos ouça apenas — veja <br />
           o que nossos parceiros dizem.
         </h2>
@@ -119,8 +119,8 @@ const PartnerTestimonialsSection: React.FC = () => {
                     className="w-10 h-10 rounded-full object-cover grayscale opacity-80"
                   />
                   <div className="flex flex-col">
-                    <span className="text-body-sm font-bold text-[#08131A]">{item.author}</span>
-                    <span className="text-caption text-text-tertiary">{item.role}</span>
+                    <span className="text-sm font-bold text-[#08131A] leading-tight">{item.author}</span>
+                    <span className="text-xs text-gray-500">{item.role}</span>
                   </div>
                 </div>
               </>
@@ -131,7 +131,7 @@ const PartnerTestimonialsSection: React.FC = () => {
 
       {/* Footer / Logos */}
       <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row items-center">
-        <span className="text-body-sm font-semibold text-gray-900 mb-6 md:mb-0 md:mr-12 whitespace-nowrap">
+        <span className="text-sm font-medium text-gray-900 mb-6 md:mb-0 md:mr-12 whitespace-nowrap">
           Parceiros:
         </span>
 
@@ -142,7 +142,7 @@ const PartnerTestimonialsSection: React.FC = () => {
             {[...logos, ...logos, ...logos].map((logo, idx) => (
                 <div key={idx} className="flex items-center space-x-2 text-gray-500 hover:text-[#08131A] transition-colors">
                     <logo.icon size={20} strokeWidth={2} />
-                    <span className="font-semibold text-body-lg">{logo.name}</span>
+                    <span className="font-semibold text-lg">{logo.name}</span>
                 </div>
             ))}
             </div>

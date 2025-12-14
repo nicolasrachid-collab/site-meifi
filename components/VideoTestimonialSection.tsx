@@ -49,21 +49,21 @@ const VideoTestimonialSection: React.FC = () => {
             
             {/* Top Content */}
             <div>
-              <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium mb-12 text-[#08131A]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-12 text-[#08131A]">
                 Arquitetura feita com calma, cuidado e propósito.
               </h2>
 
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-16 border-t border-transparent md:border-transparent pt-0">
-                <span className="text-body-sm font-medium text-text-tertiary min-w-[100px] hidden md:block">(Essência)</span>
+                <span className="text-sm font-medium text-gray-500 min-w-[100px] hidden md:block">(Essência)</span>
                 
                 <div className="flex-grow">
-                  <p className="text-text-secondary text-body-lg mb-8 max-w-md">
+                  <p className="text-gray-700 leading-relaxed mb-8 max-w-md">
                     A MEIFI trouxe um olhar contemporâneo e humano para o nosso projeto. Superando o convencional, eles aplicaram a tranquilidade e a atenção aos detalhes típicas de Minas, criando algo que realmente nos representa.
                   </p>
                 </div>
 
                 <div className="flex-shrink-0">
-                  <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-semibold text-body-sm tracking-wide transition-transform hover:scale-105 active:scale-95">
+                  <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
                     Fale Conosco
                   </button>
                 </div>
