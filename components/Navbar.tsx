@@ -18,10 +18,20 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
       {/* Menu Trigger */}
       <button 
         onClick={onOpenMenu}
-        className="p-2 hover:bg-white/10 rounded-full transition-all duration-500 ease-out focus:outline-none focus:ring-2 focus:ring-white/50 hover:rotate-90 hover:scale-110 active:scale-95 active:rotate-90 origin-center group"
+        className="p-2 hover:bg-white/20 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-white/50 group relative hover:scale-110 active:scale-95"
+        style={{
+          transformOrigin: 'center center',
+          willChange: 'transform',
+        }}
         aria-label="Abrir Menu"
       >
-        <Menu className="w-8 h-8 text-white drop-shadow-md transition-transform duration-500 group-hover:stroke-[2px]" strokeWidth={1.5} />
+        <Menu 
+          className="w-8 h-8 text-white drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
+          style={{
+            transformOrigin: 'center center',
+          }}
+          strokeWidth={1.5} 
+        />
       </button>
     </nav>
   );

@@ -12,7 +12,80 @@ interface ExpertiseItem {
   statLabel?: string;
   description?: string;
   image: string;
+  drawingType: 'residential' | 'commercial' | 'urban';
 }
+
+// Componente de desenho de traço arquitetônico
+const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban' }> = ({ type }) => {
+  const drawings = {
+    residential: (
+      <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Casa residencial minimalista */}
+        <rect x="120" y="150" width="160" height="100" stroke="white" opacity="0.9"/>
+        <polygon points="200,80 120,150 280,150" stroke="white" opacity="0.9"/>
+        <rect x="160" y="180" width="40" height="70" stroke="white" opacity="0.7"/>
+        <rect x="220" y="180" width="30" height="30" stroke="white" opacity="0.7"/>
+        <line x1="200" y1="150" x2="200" y2="250" stroke="white" opacity="0.5"/>
+        <circle cx="180" cy="195" r="3" fill="white" opacity="0.6"/>
+        <circle cx="240" cy="195" r="3" fill="white" opacity="0.6"/>
+        {/* Detalhes decorativos */}
+        <line x1="100" y1="200" x2="120" y2="200" stroke="white" opacity="0.4"/>
+        <line x1="280" y1="200" x2="300" y2="200" stroke="white" opacity="0.4"/>
+      </svg>
+    ),
+    commercial: (
+      <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Edifício comercial moderno */}
+        <rect x="100" y="100" width="200" height="150" stroke="white" opacity="0.9"/>
+        <line x1="150" y1="100" x2="150" y2="250" stroke="white" opacity="0.7"/>
+        <line x1="200" y1="100" x2="200" y2="250" stroke="white" opacity="0.7"/>
+        <line x1="250" y1="100" x2="250" y2="250" stroke="white" opacity="0.7"/>
+        <line x1="100" y1="150" x2="300" y2="150" stroke="white" opacity="0.7"/>
+        <line x1="100" y1="200" x2="300" y2="200" stroke="white" opacity="0.7"/>
+        <rect x="120" y="120" width="60" height="20" stroke="white" opacity="0.6"/>
+        <rect x="220" y="120" width="60" height="20" stroke="white" opacity="0.6"/>
+        <rect x="120" y="170" width="60" height="20" stroke="white" opacity="0.6"/>
+        <rect x="220" y="170" width="60" height="20" stroke="white" opacity="0.6"/>
+        {/* Detalhes estruturais */}
+        <line x1="80" y1="110" x2="100" y2="110" stroke="white" opacity="0.4"/>
+        <line x1="300" y1="110" x2="320" y2="110" stroke="white" opacity="0.4"/>
+      </svg>
+    ),
+    urban: (
+      <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        {/* Cidade/Urbanismo */}
+        <rect x="80" y="120" width="60" height="130" stroke="white" opacity="0.9"/>
+        <rect x="160" y="100" width="80" height="150" stroke="white" opacity="0.9"/>
+        <rect x="260" y="140" width="60" height="110" stroke="white" opacity="0.9"/>
+        {/* Linha do horizonte */}
+        <line x1="0" y1="250" x2="400" y2="250" stroke="white" opacity="0.6" strokeWidth="2"/>
+        {/* Janelas */}
+        <rect x="95" y="140" width="15" height="15" stroke="white" opacity="0.5"/>
+        <rect x="115" y="140" width="15" height="15" stroke="white" opacity="0.5"/>
+        <rect x="95" y="165" width="15" height="15" stroke="white" opacity="0.5"/>
+        <rect x="115" y="165" width="15" height="15" stroke="white" opacity="0.5"/>
+        <rect x="175" y="120" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="200" y="120" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="225" y="120" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="175" y="150" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="200" y="150" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="225" y="150" width="20" height="20" stroke="white" opacity="0.5"/>
+        <rect x="275" y="160" width="15" height="15" stroke="white" opacity="0.5"/>
+        <rect x="295" y="160" width="15" height="15" stroke="white" opacity="0.5"/>
+        {/* Elementos urbanos */}
+        <circle cx="110" cy="150" r="4" fill="white" opacity="0.4"/>
+        <circle cx="200" cy="130" r="4" fill="white" opacity="0.4"/>
+        <circle cx="290" cy="170" r="4" fill="white" opacity="0.4"/>
+      </svg>
+    )
+  };
+
+  return (
+    <div className="w-full h-full flex items-center justify-center rounded-lg p-8 text-white">
+      {drawings[type]}
+    </div>
+  );
+};
 
 const ExpertiseSection: React.FC = () => {
   const [activeId, setActiveId] = useState<number>(1);
@@ -26,7 +99,8 @@ const ExpertiseSection: React.FC = () => {
       statValue: '20+',
       statLabel: '/ Casas autênticas',
       description: 'Criamos refúgios funcionais que refletem sua personalidade. Unimos conforto e sofisticação com o cuidado mineiro em cada detalhe.',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1000&auto=format&fit=crop'
+      image: '',
+      drawingType: 'residential'
     },
     {
       id: 2,
@@ -36,7 +110,8 @@ const ExpertiseSection: React.FC = () => {
       statValue: '15+',
       statLabel: '/ Lojas e Escritórios',
       description: 'Projetamos espaços que traduzem a identidade da sua marca, otimizando a funcionalidade e criando experiências marcantes para seus clientes.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop'
+      image: '',
+      drawingType: 'commercial'
     },
     {
       id: 3,
@@ -46,7 +121,8 @@ const ExpertiseSection: React.FC = () => {
       statValue: '05+',
       statLabel: '/ Empreendimentos',
       description: 'Desenvolvemos soluções para loteamentos e edifícios, focando na sustentabilidade, impacto social e na humanização do espaço urbano.',
-      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1000&auto=format&fit=crop'
+      image: '',
+      drawingType: 'urban'
     }
   ];
 
@@ -56,7 +132,7 @@ const ExpertiseSection: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 relative">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight mb-6">
             Nossa Expertise
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
@@ -91,13 +167,9 @@ const ExpertiseSection: React.FC = () => {
                 {isActive ? (
                   // Expanded Content
                   <>
-                    {/* Large Image */}
+                    {/* Large Drawing */}
                     <div className="w-full md:w-1/3 lg:w-[400px] aspect-[4/3] rounded-lg overflow-hidden flex-shrink-0">
-                      <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                      />
+                      <LineDrawing type={item.drawingType} />
                     </div>
 
                     {/* Detailed Info */}
@@ -143,9 +215,9 @@ const ExpertiseSection: React.FC = () => {
                 ) : (
                   // Collapsed Content
                   <>
-                    {/* Thumbnail */}
-                    <div className="w-24 h-16 rounded overflow-hidden flex-shrink-0 hidden md:block">
-                         <img src={item.image} alt={item.title} className="w-full h-full object-cover opacity-60" />
+                    {/* Thumbnail Drawing */}
+                    <div className="w-24 h-16 rounded overflow-hidden flex-shrink-0 hidden md:block bg-white/5">
+                      <LineDrawing type={item.drawingType} />
                     </div>
 
                     {/* Title & Subtitle */}

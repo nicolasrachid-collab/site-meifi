@@ -123,16 +123,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       {/* Menu Overlay */}
       {isMenuOpen && <MenuOverlay onClose={() => setIsMenuOpen(false)} />}
 
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0 transition-transform duration-1000 ease-out hover:scale-105">
-        <Image
-          src={currentData.bgImage}
-          alt="Hero background"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero_video.mp4" type="video/mp4" />
+          {/* Fallback para imagem caso o vídeo não carregue */}
+          <Image
+            src={currentData.bgImage}
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/30 via-transparent to-[#08131A]/40"></div>
       </div>
 

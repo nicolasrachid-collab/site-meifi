@@ -45,7 +45,7 @@ const FAQSection: React.FC = () => {
       
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A]">
           Respostas que trazem clareza
         </h2>
         

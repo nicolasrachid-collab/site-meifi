@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Move, ArrowRight } from 'lucide-react';
+import { Star, Move } from 'lucide-react';
 
 const DesignSection: React.FC = () => {
   return (
@@ -17,13 +17,9 @@ const DesignSection: React.FC = () => {
         </div>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right max-w-sm gap-8">
-          <p className="text-gray-600 text-base font-light leading-relaxed">
+          <p className="text-gray-600 text-base font-medium leading-relaxed">
             Com um olhar sensível e colaborativo, transformamos projetos em experiências significativas, equilibrando estética e propósito.
           </p>
-          <button className="group flex items-center gap-2 text-[#08131A] font-medium border-b border-[#08131A] pb-1 hover:text-gray-600 hover:border-gray-400 transition-all text-sm tracking-wide">
-            INICIAR PROJETO
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300"/>
-          </button>
         </div>
       </div>
 
@@ -121,10 +117,10 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
-    <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-gray-200 border border-gray-100/50 cursor-default group/card min-h-[200px]">
-      <div className="flex justify-between items-start mb-4">
-        <span className="text-xs font-bold tracking-widest text-[#897E72] group-hover/card:text-[#08131A] transition-colors duration-500">{number}</span>
-        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#08131A] transition-colors duration-500">
+    <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[#DFDBCE] border border-gray-100/50 cursor-default group/card min-h-[200px]">
+      <div className="flex justify-between items-center mb-4">
+        <span className="text-xs font-bold tracking-widest text-[#897E72] transition-colors duration-500">{number}</span>
+        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#897E72] transition-colors duration-500 flex items-center justify-center">
              <Move className="w-3 h-3 text-gray-400 group-hover/card:text-white transition-colors duration-500" strokeWidth={2} />
         </div>
       </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import type { WordPressProject } from '@/types/wordpress';
 
 interface ProjectItem {
@@ -65,31 +65,27 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           // Fallback se não houver projetos do WordPress
           {
             id: 1,
-            title: 'Residência Horizonte',
+            title: 'Mariana Residence',
             date: 'Jul 9, 2024',
-            image:
-              'https://images.unsplash.com/photo-1599696881728-31842757271e?q=80&w=2070&auto=format&fit=crop',
+            image: '/projeto01.jpg',
           },
           {
             id: 2,
-            title: 'Edifício Veredas',
+            title: 'Gilberto Residence',
             date: 'Jun 13, 2024',
-            image:
-              'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop',
+            image: '/projeto02.jpg',
           },
           {
             id: 3,
-            title: 'Casa da Serra',
+            title: 'Escritório de Advocacia',
             date: 'Mai 20, 2024',
-            image:
-              'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
+            image: '/projeto03.jpg',
           },
           {
             id: 4,
-            title: 'Oásis Urbano',
+            title: 'Projeto Refúgio',
             date: 'Abr 15, 2024',
-            image:
-              'https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=2070&auto=format&fit=crop',
+            image: '/projeto04.jpg',
           },
         ];
         return fallbackProjects;
@@ -149,12 +145,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
             Nossos Projetos
           </h2>
 
-          <div className="flex flex-col items-end w-full md:w-1/2 lg:w-1/3">
-            <p className="text-sm md:text-base text-gray-600 text-left md:text-right mb-6 w-full">
+          <div className="flex flex-col items-start w-full md:w-1/2 lg:w-1/3">
+            <p className="text-sm md:text-base text-gray-600 text-left mb-6 w-full">
               Cada projeto reafirma que a evolução na arquitetura passa pela<br className="hidden md:block"/>
               construção de caminhos com dedicação e atenção aos detalhes.
             </p>
@@ -163,7 +159,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {onNavigateToProjects && (
               <button 
                 onClick={onNavigateToProjects}
-                className="group flex items-center gap-2 text-sm font-medium border-b border-[#08131A] pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start md:self-end mb-6"
+                className="group flex items-center gap-2 text-sm font-medium border-b border-[#08131A] pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start mb-6"
               >
                 Ver todos
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300"/>
@@ -172,7 +168,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             
             {/* Carrossel de palavras */}
             <div className="w-full overflow-hidden relative">
-              <div className="flex space-x-12 animate-scroll-right whitespace-nowrap items-center md:justify-end">
+              <div className="flex space-x-12 animate-scroll-right whitespace-nowrap items-center md:justify-start">
                 {[...words, ...words, ...words].map((word, idx) => (
                    <span key={idx} className="text-[#08131A] opacity-80 font-bold text-sm uppercase tracking-wider">
                       {word}
@@ -186,10 +182,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </div>
 
         {/* Content Area */}
-        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-16 overflow-hidden' : 'px-6 md:px-12'}`}>
+        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-6 lg:pl-16 overflow-hidden' : 'px-6 md:px-12'}`}>
           <div 
             ref={scrollContainerRef}
-            className={`flex ${isDesktop ? 'gap-6 will-change-transform' : 'flex-col gap-12 w-full'}`}
+            className={`flex ${isDesktop ? 'gap-4 lg:gap-6 will-change-transform' : 'flex-col gap-8 md:gap-12 w-full'}`}
             style={{ 
               transform: isDesktop ? `translateX(${translateX}%)` : 'none',
               transition: isDesktop ? 'transform 0.075s linear' : 'none'
@@ -199,14 +195,23 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               <div
                 key={project.id}
                 onClick={() => onProjectClick && onProjectClick(project.slug)}
-                className={`relative flex-shrink-0 flex flex-col ${isDesktop ? 'w-[45vw]' : 'w-full'} cursor-pointer group/card`}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onProjectClick && onProjectClick(project.slug);
+                  }
+                }}
+                aria-label={`Ver projeto ${project.title}`}
+                className={`relative flex-shrink-0 flex flex-col ${isDesktop ? 'w-[45vw]' : 'w-full'} cursor-pointer group/card transition-all duration-500 ease-out hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 focus:ring-offset-2 rounded-xl overflow-hidden bg-white/50 backdrop-blur-sm border border-transparent hover:border-gray-200/50 hover:bg-white/80`}
               >
                 {/* Image Card */}
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-200 shadow-sm mb-4 relative">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-sm group-hover/card:shadow-2xl transition-all duration-500 relative">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700 ease-out will-change-transform"
                     style={{
                       // Parallax e Scale aplicados conforme solicitado
                       transform: isDesktop
@@ -219,12 +224,20 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     }}
                     loading={project.id <= 2 ? 'eager' : 'lazy'}
                   />
-                  <div className="absolute inset-0 bg-[#08131A]/0 group-hover/card:bg-[#08131A]/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                  {/* Overlay com gradiente sutil */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 group-hover/card:via-[#08131A]/5 group-hover/card:to-[#08131A]/10 transition-all duration-500 z-10 pointer-events-none"></div>
+                  
+                  {/* Ícone de interação */}
+                  <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-opacity duration-500">
+                    <div className="bg-white/95 backdrop-blur-md rounded-full p-2 md:p-2.5 shadow-xl border border-white/50">
+                      <ExternalLink size={14} className="md:w-4 md:h-4 text-[#08131A]" strokeWidth={2.5} />
+                    </div>
+                  </div>
                 </div>
                 
                 {/* Metadata */}
                 <div 
-                  className="flex justify-between items-center text-[#08131A] border-t border-gray-200 pt-3"
+                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-white/50 group-hover/card:bg-white transition-colors duration-300"
                   style={{
                      // Movimento oposto ou diferenciado para profundidade
                      transform: isDesktop 
@@ -233,8 +246,21 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                      transition: isDesktop ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)' : 'none'
                   }}
                 >
-                  <span className="text-lg md:text-xl font-medium group-hover/card:text-gray-600 transition-colors">{project.title}</span>
-                  <span className="text-sm md:text-base text-gray-500">{project.date}</span>
+                  <div className="flex-1 min-w-0 sm:pr-4">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-gray-700 transition-colors duration-300 leading-tight break-words">
+                      {project.title}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-2 sm:gap-2 flex-shrink-0 sm:ml-auto">
+                    <span className="text-xs sm:text-sm md:text-base text-gray-500 font-medium whitespace-nowrap">
+                      {project.date}
+                    </span>
+                    <ArrowRight 
+                      size={14} 
+                      className="md:w-4 md:h-4 text-gray-400 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-300 flex-shrink-0" 
+                      strokeWidth={2.5}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

@@ -54,7 +54,7 @@ const CallToActionSection: React.FC = () => {
         
         {/* 1. Top Content: Headline */}
         <div className="max-w-4xl pt-10">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-white leading-[1.1] drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium tracking-tight text-white leading-[1.1] drop-shadow-lg">
             Vamos conversar sobre o seu espaço —<br className="hidden md:block"/>
             estamos prontos quando você estiver
           </h2>

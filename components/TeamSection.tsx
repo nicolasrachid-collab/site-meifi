@@ -25,7 +25,7 @@ const TeamSection: React.FC = () => {
         
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A] max-w-xl leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-gray-900 max-w-xl leading-[1.1]">
             Conheça quem faz a MEIFI acontecer
           </h2>
           

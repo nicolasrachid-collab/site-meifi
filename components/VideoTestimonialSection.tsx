@@ -49,7 +49,7 @@ const VideoTestimonialSection: React.FC = () => {
             
             {/* Top Content */}
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-12 text-[#08131A]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.1] mb-12 text-gray-900">
                 Arquitetura feita com calma, cuidado e propósito.
               </h2>
 

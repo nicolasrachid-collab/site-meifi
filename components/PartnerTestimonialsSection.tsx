@@ -55,7 +55,7 @@ const PartnerTestimonialsSection: React.FC = () => {
       
       {/* Headline */}
       <div className="mb-16 max-w-3xl">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.1] text-gray-900">
           Não nos ouça apenas — veja <br />
           o que nossos parceiros dizem.
         </h2>
