@@ -23,9 +23,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   onNavigateToProjects,
   onProjectClick,
 }) => {
-  // #region agent log
-  fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:21',message:'Component initialized',data:{hasWpProjects:!!wpProjects,wpProjectsLength:wpProjects?.length||0,wpProjectsType:typeof wpProjects,wpProjectsIsArray:Array.isArray(wpProjects)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
-  // #endregion
   const containerRef = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -35,11 +32,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   // Verifica se é desktop para ativar o efeito
   useEffect(() => {
     const checkIsDesktop = () => {
-      const isDesktopValue = window.innerWidth >= 1024; // lg breakpoint
-      // #region agent log
-      fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:35',message:'Desktop check',data:{windowWidth:window.innerWidth,isDesktop:isDesktopValue},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
-      setIsDesktop(isDesktopValue);
+      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint
     };
 
     checkIsDesktop();
@@ -48,7 +41,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   }, []);
 
   // Transforma projetos do WordPress em formato local
-  // #region agent log
   const projects: ProjectItem[] = (wpProjects && Array.isArray(wpProjects) && wpProjects.length > 0)
     ? wpProjects.slice(0, 4).map((project) => {
         const featuredMedia =
@@ -60,15 +52,13 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           year: 'numeric',
         });
 
-        const projectItem = {
+        return {
           id: project.id,
           title: project.title.rendered,
           date: formattedDate,
           image: featuredMedia || 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
           slug: project.slug,
         };
-        fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:55',message:'Project item created from WordPress',data:{id:projectItem.id,title:projectItem.title,imageUrl:projectItem.image,hasImage:!!projectItem.image},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
-        return projectItem;
       })
     : (() => {
         const fallbackProjects = [
@@ -102,13 +92,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               'https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=2070&auto=format&fit=crop',
           },
         ];
-        fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:93',message:'Using fallback projects',data:{projectsCount:fallbackProjects.length,wpProjectsReceived:!!wpProjects,firstImageUrl:fallbackProjects[0]?.image},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
         return fallbackProjects;
       })();
-  // #endregion
-  // #region agent log
-  fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:95',message:'Projects array after processing',data:{projectsLength:projects.length,projects:projects.map(p=>({id:p.id,title:p.title,imageUrl:p.image})),usingFallback:!(wpProjects && Array.isArray(wpProjects) && wpProjects.length > 0)},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'F'})}).catch(()=>{});
-  // #endregion
 
   // Logos simuladas
   const logos = [
@@ -148,35 +133,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   }, [isDesktop]);
 
   // Calcula a translação apenas se for desktop
-  const translateX = isDesktop ? -(scrollProgress * 60) : 0; 
-
-  // #region agent log
-  useEffect(() => {
-    if (containerRef.current && scrollContainerRef.current) {
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const scrollRect = scrollContainerRef.current.getBoundingClientRect();
-      const images = scrollContainerRef.current.querySelectorAll('img');
-      const imageData = Array.from(images).map((img, idx) => {
-        const computed = window.getComputedStyle(img);
-        return {
-          index: idx,
-          src: img.src,
-          width: img.width,
-          height: img.height,
-          naturalWidth: img.naturalWidth,
-          naturalHeight: img.naturalHeight,
-          display: computed.display,
-          visibility: computed.visibility,
-          opacity: computed.opacity,
-          zIndex: computed.zIndex,
-          position: computed.position,
-          transform: computed.transform,
-        };
-      });
-      fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:135',message:'Container and images dimensions',data:{containerWidth:containerRect.width,containerHeight:containerRect.height,scrollWidth:scrollRect.width,scrollHeight:scrollRect.height,translateX,isDesktop,projectsCount:projects.length,imagesCount:images.length,imageData},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-    }
-  }, [projects.length, translateX, isDesktop]);
-  // #endregion
+  const translateX = isDesktop ? -(scrollProgress * 60) : 0;
 
   return (
     <div 
@@ -239,19 +196,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               transition: isDesktop ? 'transform 0.075s linear' : 'none'
             }}
           >
-            {projects.map((project) => {
-              // #region agent log
-              const imageStyle = {
-                transform: isDesktop
-                  ? `scale(1.1) translateX(${scrollProgress * 15}px)`
-                  : 'scale(1)',
-                transition: isDesktop
-                  ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                  : 'transform 0.5s ease',
-              };
-              fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:196',message:'Rendering project card',data:{projectId:project.id,projectTitle:project.title,imageUrl:project.image,isDesktop,scrollProgress,imageTransform:imageStyle.transform},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-              // #endregion
-              return (
+            {projects.map((project) => (
               <div
                 key={project.id}
                 onClick={() => onProjectClick && onProjectClick(project.slug)}
@@ -263,18 +208,17 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     src={project.image}
                     alt={project.title}
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={imageStyle}
+                    style={{
+                      // Parallax e Scale aplicados conforme solicitado
+                      transform: isDesktop
+                        ? `scale(1.1) translateX(${scrollProgress * 15}px)`
+                        : 'scale(1)',
+                      // Transição mais suave e com peso (cubic-bezier) para sensação premium
+                      transition: isDesktop
+                        ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)'
+                        : 'transform 0.5s ease',
+                    }}
                     loading={project.id <= 2 ? 'eager' : 'lazy'}
-                    onLoad={() => {
-                      // #region agent log
-                      fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:218',message:'Image loaded successfully',data:{projectId:project.id,imageUrl:project.image},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-                      // #endregion
-                    }}
-                    onError={(e) => {
-                      // #region agent log
-                      fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'ProjectsSection.tsx:223',message:'Image failed to load',data:{projectId:project.id,imageUrl:project.image,error:e.toString()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-                      // #endregion
-                    }}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-500 z-10 pointer-events-none"></div>
                 </div>
@@ -294,8 +238,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   <span className="text-sm md:text-base text-gray-500">{project.date}</span>
                 </div>
               </div>
-            );
-            })}
+            ))}
             
             {/* Spacer apenas no Desktop */}
             {isDesktop && <div className="w-[10vw] flex-shrink-0"></div>}

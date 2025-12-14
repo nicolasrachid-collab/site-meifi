@@ -29,10 +29,6 @@ async function HeroSectionWithData() {
 
 async function ProjectsSectionWithData() {
   const projects = await wordpressService.getProjects({ perPage: 4 });
-  // #region agent log
-  const logData = {projectsLength:projects?.length||0,projectsIsArray:Array.isArray(projects),firstProject:projects?.[0]?{id:projects[0].id,title:projects[0].title.rendered}:null};
-  fetch('http://127.0.0.1:7245/ingest/00648cfc-e13d-4ada-a383-716de39dab0f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/page.tsx:30',message:'ProjectsSectionWithData - projects fetched',data:logData,timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
-  // #endregion
   return <ProjectsSection projects={projects} />;
 }
 
