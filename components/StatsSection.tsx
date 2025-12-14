@@ -14,10 +14,10 @@ const StatsSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-start">
-              <span className="text-5xl md:text-6xl font-medium tracking-tight mb-4 text-[#08131A]">
+              <span className="text-display-lg md:text-display-xl font-medium mb-4 text-[#08131A]">
                 {stat.value}
               </span>
-              <p className="text-sm md:text-base text-gray-900 font-medium leading-snug max-w-[200px]">
+              <p className="text-body-sm md:text-body-lg text-text-primary font-semibold max-w-[200px]">
                 {stat.label}
               </p>
             </div>

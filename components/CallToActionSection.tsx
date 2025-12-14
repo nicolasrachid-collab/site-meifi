@@ -82,19 +82,19 @@ const CallToActionSection: React.FC = () => {
                         className="w-12 h-12 rounded-lg object-cover"
                         />
                         <div className="flex flex-col">
-                        <span className="text-[#08131A] font-bold text-base leading-tight">Helena M.</span>
-                        <span className="text-gray-500 text-xs font-medium">Consultora MEIFI</span>
+                        <span className="text-[#08131A] font-bold text-body-lg">Helena M.</span>
+                        <span className="text-text-tertiary text-caption font-medium">Consultora MEIFI</span>
                         </div>
                     </div>
                     <Scan className="w-5 h-5 text-[#08131A]" strokeWidth={2} />
                     </div>
 
-                    <p className="text-[#08131A] font-medium text-lg leading-snug mb-8">
+                    <p className="text-[#08131A] font-semibold text-body-lg mb-8">
                     Com clareza, criatividade e precisão.
                     </p>
 
                     <div className="flex justify-end">
-                    <button className="bg-[#08131A] text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition-transform active:scale-95 shadow-lg w-full md:w-auto">
+                    <button className="bg-[#08131A] text-white px-10 py-4 rounded-full text-body-sm font-semibold tracking-wide hover:scale-105 transition-transform active:scale-95 shadow-lg w-full md:w-auto">
                         Solicite um Orçamento
                     </button>
                     </div>

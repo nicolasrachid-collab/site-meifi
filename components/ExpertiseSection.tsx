@@ -56,10 +56,10 @@ const ExpertiseSection: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 relative">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-6">
+          <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium mb-6">
             Nossa Expertise
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
+          <p className="text-gray-400 text-body-lg max-w-xl">
             Oferecemos um portfólio diversificado em projetos residenciais, corporativos e urbanísticos — sempre equilibrando estética, funcionalidade e propósito.
           </p>
         </div>
@@ -84,7 +84,7 @@ const ExpertiseSection: React.FC = () => {
               <div className="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-16">
                 
                 {/* Number */}
-                <span className="text-sm font-medium text-gray-400 w-8 pt-1 flex-shrink-0">
+                <span className="text-body-sm font-medium text-gray-400 w-8 pt-1 flex-shrink-0">
                   {item.number}
                 </span>
 
@@ -114,27 +114,27 @@ const ExpertiseSection: React.FC = () => {
                         </button>
 
                         <div>
-                            <h3 className="text-2xl md:text-3xl font-medium mb-2">{item.title}</h3>
-                            <p className="text-gray-500 mb-12">{item.subtitle}</p>
+                            <h3 className="text-h2 md:text-h1 font-medium mb-2">{item.title}</h3>
+                            <p className="text-text-tertiary mb-12 text-body-lg">{item.subtitle}</p>
 
                             {item.statValue && (
                                 <div className="mb-6">
-                                    <span className="text-4xl md:text-5xl font-medium block mb-1">
+                                    <span className="text-display-lg md:text-display-xl font-medium block mb-1">
                                         {item.statValue}
                                     </span>
-                                    <span className="text-sm text-gray-400">
+                                    <span className="text-body-sm text-gray-400">
                                         {item.statLabel}
                                     </span>
                                 </div>
                             )}
 
-                            <p className="text-gray-400 leading-relaxed max-w-md mb-8">
+                            <p className="text-gray-400 text-body-lg max-w-md mb-8">
                                 {item.description}
                             </p>
                         </div>
 
                         <div>
-                             <button className="px-6 py-3 bg-white text-[#08131A] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+                             <button className="px-8 py-3 bg-white text-[#08131A] rounded-full font-semibold text-body-sm tracking-wide transition-transform hover:scale-105 active:scale-95">
                                 Solicitar Proposta
                             </button>
                         </div>

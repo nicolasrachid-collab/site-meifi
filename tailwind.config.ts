@@ -12,11 +12,29 @@ const config: Config = {
         serif: ['"Cormorant Garamond"', 'serif'],
         sans: ['"Inter"', 'sans-serif'],
       },
+      fontSize: {
+        'display-2xl': ['5.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-xl': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-lg': ['3.5rem', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        'h1': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'h2': ['2.25rem', { lineHeight: '1.25', letterSpacing: '0' }],
+        'h3': ['1.875rem', { lineHeight: '1.3', letterSpacing: '0' }],
+        'h4': ['1.5rem', { lineHeight: '1.4', letterSpacing: '0' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.7', letterSpacing: '0' }],
+        'body': ['1rem', { lineHeight: '1.6', letterSpacing: '0' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.01em' }],
+        'caption': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0.05em' }],
+      },
       colors: {
         glass: 'rgba(255, 255, 255, 0.1)',
         glassDark: 'rgba(8, 19, 26, 0.4)',
         primary: '#08131A',
         black: '#08131A', // Substituindo black por #08131A
+        text: {
+          primary: '#08131A',
+          secondary: '#1a2d3a',
+          tertiary: '#4a5568',
+        },
       },
       animation: {
         'scroll-right': 'scrollRight 20s linear infinite',

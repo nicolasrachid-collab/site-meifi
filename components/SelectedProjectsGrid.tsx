@@ -67,10 +67,10 @@ const SelectedProjectsGrid: React.FC<SelectedProjectsGridProps> = ({ onProjectCl
             
             {/* Metadata */}
             <div className="flex justify-between items-baseline border-t border-transparent pt-1">
-              <h3 className="text-lg font-medium text-[#08131A] group-hover:text-gray-600 transition-colors">
+              <h3 className="text-h4 font-semibold text-[#08131A] group-hover:text-text-tertiary transition-colors">
                 {project.title}
               </h3>
-              <span className="text-sm text-gray-500 font-medium">
+              <span className="text-body-sm text-text-tertiary font-medium">
                 {project.date}
               </span>
             </div>

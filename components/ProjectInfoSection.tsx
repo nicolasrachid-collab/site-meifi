@@ -18,7 +18,7 @@ const ProjectInfoSection: React.FC = () => {
               <circle cx="5" cy="12" r="2" />
               <circle cx="19" cy="12" r="2" />
            </svg>
-           <span className="text-sm font-medium tracking-wide text-gray-800">Project info</span>
+           <span className="text-body-sm font-medium tracking-[0.05em] text-text-secondary">Project info</span>
         </div>
 
         {/* Coluna 2: Dados e Texto Descritivo */}
@@ -26,25 +26,25 @@ const ProjectInfoSection: React.FC = () => {
            {/* Grid de Informações */}
            <div className="grid grid-cols-2 gap-y-10 gap-x-8 mb-12">
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Date</h4>
-                  <p className="text-gray-600 text-sm">Jun 13, 2025</p>
+                  <h4 className="font-bold text-body-sm mb-2 text-[#08131A]">Date</h4>
+                  <p className="text-text-tertiary text-body-sm">Jun 13, 2025</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Category</h4>
-                  <p className="text-gray-600 text-sm">Home</p>
+                  <h4 className="font-bold text-body-sm mb-2 text-[#08131A]">Category</h4>
+                  <p className="text-text-tertiary text-body-sm">Home</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Space Plan</h4>
-                  <p className="text-gray-600 text-sm">3 Bedrooms, Open Kitchen</p>
+                  <h4 className="font-bold text-body-sm mb-2 text-[#08131A]">Space Plan</h4>
+                  <p className="text-text-tertiary text-body-sm">3 Bedrooms, Open Kitchen</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Timeline</h4>
-                  <p className="text-gray-600 text-sm">2 Weeks</p>
+                  <h4 className="font-bold text-body-sm mb-2 text-[#08131A]">Timeline</h4>
+                  <p className="text-text-tertiary text-body-sm">2 Weeks</p>
               </div>
            </div>
 
            {/* Texto Descritivo */}
-           <p className="text-base leading-relaxed text-gray-900 font-normal">
+           <p className="text-body-lg text-text-primary font-normal">
               A calming coastal-inspired home designed with soft blues, natural textures, and breezy open spaces. Every detail was curated to create a light-filled, serene environment perfect for relaxed living.
            </p>
         </div>

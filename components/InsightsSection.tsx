@@ -42,15 +42,15 @@ const InsightsSection: React.FC = () => {
       
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A] max-w-2xl">
+        <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium text-[#08131A] max-w-2xl">
           Insights que moldam espaços
         </h2>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right">
-          <p className="text-gray-600 text-sm md:text-base leading-snug max-w-xs mb-6">
+          <p className="text-text-tertiary text-body-sm md:text-body max-w-xs mb-6">
             Explore ideias, tendências e histórias dos bastidores do nosso escritório.
           </p>
-          <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+          <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-semibold text-body-sm tracking-wide transition-transform hover:scale-105 active:scale-95">
             Ver tudo
           </button>
         </div>
@@ -71,13 +71,13 @@ const InsightsSection: React.FC = () => {
           
           {/* Content Overlay */}
           <div className="absolute top-6 left-6">
-            <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-semibold text-[#08131A] tracking-wide uppercase">
+            <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-caption font-semibold text-[#08131A] tracking-[0.05em] uppercase">
               {featuredPost.date}
             </span>
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-            <h3 className="text-2xl md:text-3xl text-white font-medium max-w-sm drop-shadow-md">
+            <h3 className="text-h2 md:text-h1 text-white font-medium max-w-sm drop-shadow-md">
               {featuredPost.title}
             </h3>
             
@@ -105,10 +105,10 @@ const InsightsSection: React.FC = () => {
                     <ScanLine className="w-5 h-5 text-gray-400 rotate-90" strokeWidth={1.5} />
                     
                     <div>
-                      <span className="text-xs font-medium text-gray-500 uppercase tracking-wide block mb-1">
+                      <span className="text-caption font-medium text-text-tertiary uppercase tracking-[0.05em] block mb-1">
                         {item.date}
                       </span>
-                      <h3 className="text-xl md:text-2xl font-medium text-[#08131A]">
+                      <h3 className="text-h4 md:text-h3 font-semibold text-[#08131A]">
                         {item.title}
                       </h3>
                     </div>
@@ -124,10 +124,10 @@ const InsightsSection: React.FC = () => {
                   className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] mt-6 pt-6 border-t border-gray-100' : 'grid-rows-[0fr]'}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-gray-600 leading-relaxed text-base">
+                    <p className="text-text-tertiary text-body">
                       {item.content}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-bold text-[#08131A] group hover:underline">
+                    <div className="mt-4 flex items-center gap-2 text-body-sm font-bold text-[#08131A] group hover:underline">
                         Ler artigo completo <ArrowRight size={14} />
                     </div>
                   </div>

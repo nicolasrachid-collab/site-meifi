@@ -33,15 +33,15 @@ const ProjectProcessSection: React.FC = () => {
               <circle cx="5" cy="12" r="2" />
               <circle cx="19" cy="12" r="2" />
            </svg>
-           <span className="text-sm font-medium tracking-wide text-gray-800">The process</span>
+           <span className="text-body-sm font-medium tracking-[0.05em] text-text-secondary">The process</span>
         </div>
 
         {/* Coluna 2: Lista de Etapas */}
         <div className="w-full lg:w-[35%] flex flex-col gap-10">
            {steps.map((step, index) => (
              <div key={index} className="flex flex-col gap-3">
-               <h3 className="text-base font-bold text-[#08131A]">{step.title}</h3>
-               <p className="text-base leading-relaxed text-gray-800 font-normal">
+               <h3 className="text-body-lg font-bold text-[#08131A]">{step.title}</h3>
+               <p className="text-body-lg text-text-secondary font-normal">
                  {step.description}
                </p>
              </div>

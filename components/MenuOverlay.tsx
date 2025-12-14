@@ -28,10 +28,10 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
            <div className="mb-4">
              <Scan className="w-6 h-6 opacity-80" />
            </div>
-           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-3">
+           <h2 className="text-h2 md:text-h1 font-medium mb-3">
              Arquitetura autoral,<br/> vida contemporânea.
            </h2>
-           <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium border border-white/10">
+           <span className="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-body-sm font-semibold border border-white/10 tracking-wide">
              Inspirador
            </span>
         </div>
@@ -42,7 +42,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
         
         {/* Header: Logo & Close Button */}
         <div className="flex items-center justify-between mb-16">
-          <span className="text-2xl md:text-3xl font-serif tracking-wide uppercase">MEIFI</span>
+          <span className="text-h2 md:text-h1 font-serif uppercase">MEIFI</span>
           <button 
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors group"
@@ -53,20 +53,20 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
 
         {/* Main Content */}
         <div className="flex-grow flex flex-col justify-center max-w-lg">
-          <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-4 text-[#08131A] uppercase">
+          <h1 className="text-h1 md:text-display-lg font-normal mb-4 text-[#08131A] uppercase">
             Entre em Contato
           </h1>
-          <a href="mailto:contato@meifi.com.br" className="text-xl md:text-2xl border-b border-[#08131A] pb-1 inline-block self-start hover:opacity-70 transition-opacity mb-16">
+          <a href="mailto:contato@meifi.com.br" className="text-body-lg md:text-h4 border-b border-[#08131A] pb-1 inline-block self-start hover:opacity-70 transition-opacity mb-16">
             contato@meifi.com.br
           </a>
 
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-900">
+            <h3 className="text-body-sm font-bold uppercase tracking-[0.05em] text-gray-900">
               Navegação:
             </h3>
-            <ul className="flex flex-wrap gap-8 text-lg md:text-xl text-gray-800">
+            <ul className="flex flex-wrap gap-8 text-body-lg md:text-h4 text-gray-800">
               {['Sobre Nós', 'Projetos', 'Notícias', 'Contato'].map((item) => (
-                <li key={item} className="cursor-pointer hover:text-gray-500 transition-colors">
+                <li key={item} className="cursor-pointer hover:text-text-tertiary transition-colors">
                   {item}
                 </li>
               ))}
@@ -76,7 +76,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
 
         {/* Footer */}
         <div className="flex items-end justify-between mt-auto pt-8 border-t border-transparent">
-          <span className="text-sm font-medium text-gray-500">
+          <span className="text-body-sm font-medium text-text-tertiary">
             © 2025. Todos os direitos reservados.
           </span>
           <Grip className="w-5 h-5 text-[#08131A] cursor-pointer hover:rotate-90 transition-transform" />

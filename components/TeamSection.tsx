@@ -1,20 +1,19 @@
 import React from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
 
 const TeamSection: React.FC = () => {
   
   const teamMembers = [
     {
       name: "David Luis Lemos",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" // Homem sorrindo, camisa clara/terno
+      image: "/david.png"
     },
     {
       name: "Eduardo Barbosa Mancini",
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" // Homem profissional, gravata ou smart casual
+      image: "/eduardo.png"
     },
     {
       name: "Rodrigo Augusto Alves",
-      image: "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?q=80&w=800&auto=format&fit=crop" // Homem jovem/sério ou óculos
+      image: "/rodrigo.png"
     }
   ];
 
@@ -26,12 +25,12 @@ const TeamSection: React.FC = () => {
         
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#08131A] max-w-xl leading-[1.1]">
+          <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-medium text-[#08131A] max-w-xl">
             Conheça quem faz a MEIFI acontecer
           </h2>
           
           <div className="lg:max-w-md text-left lg:text-left">
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-text-tertiary text-body-sm md:text-body-lg">
               Design excepcional é um esforço coletivo. Somos um time de amigos que acredita no poder das boas ideias e no trabalho feito com calma, cuidado e propósito.
             </p>
           </div>
@@ -56,12 +55,17 @@ const TeamSection: React.FC = () => {
               
               {/* Top Right Icon */}
               <div className="absolute top-4 right-4 text-white/70">
-                <Sparkles size={20} strokeWidth={1.5} />
+                <img 
+                  src="/icon.svg" 
+                  alt="" 
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Name at Bottom Left */}
               <div className="absolute bottom-6 left-6 pr-4">
-                <h3 className="text-white text-lg font-medium tracking-wide">
+                <h3 className="text-white text-body-lg font-semibold">
                   {member.name}
                 </h3>
               </div>
@@ -72,15 +76,15 @@ const TeamSection: React.FC = () => {
         {/* Footer CTA Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-gray-100 pt-12 gap-8">
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-[#08131A] mb-2">
+            <h3 className="text-h4 md:text-h3 font-bold text-[#08131A] mb-2">
               Junte-se a nós na criação de espaços melhores
             </h3>
-            <p className="text-gray-600 text-sm md:text-base max-w-md">
+            <p className="text-text-tertiary text-body-sm md:text-body max-w-md">
               Pronto para construir algo significativo? Vamos conversar e transformar ideias em arquitetura de impacto.
             </p>
           </div>
           
-          <button className="bg-[#08131A] text-white px-8 py-3 rounded-full font-medium text-sm flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 shadow-lg">
+          <button className="bg-[#08131A] text-white px-10 py-4 rounded-full font-semibold text-body-sm tracking-wide flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 shadow-lg">
             Vamos conversar
           </button>
         </div>

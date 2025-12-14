@@ -9,18 +9,18 @@ const DesignSection: React.FC = () => {
       <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-8">
         <div className="max-w-3xl relative">
           <div className="absolute -left-6 top-1 w-1 h-12 bg-[#08131A]/10 hidden lg:block"></div>
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 mb-6 block ml-1">Nossa Filosofia</span>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight leading-[1.05] text-gray-900">
+          <span className="text-caption font-bold tracking-[0.1em] uppercase text-text-tertiary mb-6 block ml-1">Nossa Filosofia</span>
+          <h2 className="text-h1 md:text-display-lg lg:text-display-xl font-serif font-medium text-gray-900">
             Do meio fio à cidade — <br/>
-            arquitetura que <span className="italic font-serif text-gray-500">conecta mundos</span>
+            arquitetura que <span className="italic font-serif text-text-tertiary">conecta mundos</span>
           </h2>
         </div>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right max-w-sm gap-8">
-          <p className="text-gray-600 text-base font-light leading-relaxed">
+          <p className="text-text-tertiary text-body-lg font-normal">
             Com um olhar sensível e colaborativo, transformamos projetos em experiências significativas, equilibrando estética e propósito.
           </p>
-          <button className="group flex items-center gap-2 text-[#08131A] font-medium border-b border-[#08131A] pb-1 hover:text-gray-600 hover:border-gray-400 transition-all text-sm tracking-wide">
+          <button className="group flex items-center gap-2 text-[#08131A] font-semibold border-b border-[#08131A] pb-1 hover:text-text-tertiary hover:border-gray-400 transition-all text-body-sm tracking-[0.05em]">
             INICIAR PROJETO
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300"/>
           </button>
@@ -50,7 +50,7 @@ const DesignSection: React.FC = () => {
               className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-white shadow-sm"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-bold text-[#08131A] uppercase tracking-wide">Mariana S.</span>
+              <span className="text-body-sm font-bold text-[#08131A] uppercase tracking-[0.05em]">Mariana S.</span>
               <span className="text-xs text-gray-500">Projeto Residencial</span>
             </div>
           </div>
@@ -123,15 +123,15 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
     <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-gray-200 border border-gray-100/50 cursor-default group/card min-h-[200px]">
       <div className="flex justify-between items-start mb-4">
-        <span className="text-xs font-bold tracking-widest text-gray-300 group-hover/card:text-[#08131A] transition-colors duration-500">{number}</span>
+        <span className="text-caption font-bold tracking-[0.1em] text-gray-300 group-hover/card:text-[#08131A] transition-colors duration-500">{number}</span>
         <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#08131A] transition-colors duration-500">
-             <Move className="w-3 h-3 text-gray-400 group-hover/card:text-white transition-colors duration-500" strokeWidth={2} />
+              <Move className="w-3 h-3 text-gray-400 group-hover/card:text-white transition-colors duration-500" strokeWidth={2} />
         </div>
       </div>
       
       <div>
-        <h3 className="text-xl font-serif font-medium text-[#08131A] mb-3 group-hover/card:translate-x-1 transition-transform duration-500">{title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed group-hover/card:text-gray-800 transition-colors duration-500">
+        <h3 className="text-h4 font-serif font-medium text-[#08131A] mb-3 group-hover/card:translate-x-1 transition-transform duration-500">{title}</h3>
+        <p className="text-body-sm text-text-tertiary group-hover/card:text-text-secondary transition-colors duration-500">
           {description}
         </p>
       </div>

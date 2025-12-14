@@ -11,7 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
   return (
     <nav className="w-full flex items-center justify-between">
       {/* Logo */}
-      <div className="text-2xl md:text-3xl font-serif tracking-wide cursor-pointer hover:opacity-80 transition-opacity drop-shadow-md uppercase">
+      <div className="text-h2 md:text-h1 font-serif cursor-pointer hover:opacity-80 transition-opacity drop-shadow-md uppercase">
         MEIFI
       </div>
 
