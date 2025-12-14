@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
 import Navbar from './Navbar';
 import MenuOverlay from './MenuOverlay';
 import { Play } from 'lucide-react';
 import ScrollAnimationWrapper from './ScrollAnimationWrapper';
+import { ShaderBackground } from './ShaderBackground';
+import { HoverButton } from './HoverButton';
+import AvatarGroup from './ui/avatar';
 import type { WordPressPage } from '@/types/wordpress';
 
 interface HeroSectionProps {
@@ -124,56 +126,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       {/* Menu Overlay */}
       {isMenuOpen && <MenuOverlay onClose={() => setIsMenuOpen(false)} />}
 
-      {/* Background Video with Enhanced Effects */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-110 animate-zoom-slow will-change-transform"
-        >
-          <source src="/hero_video.mp4" type="video/mp4" />
-          {/* Fallback para imagem caso o vídeo não carregue */}
-          <Image
-            src={currentData.bgImage}
-            alt="Hero background"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-          />
-        </video>
-        
-        {/* Multi-layer Gradients for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/20 via-transparent to-[#08131A]/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/30 via-transparent to-[#08131A]/30"></div>
-        
-        {/* Animated Glow Effect */}
-        <div 
-          className="absolute inset-0 animate-pulse-slow"
-          style={{
-            background: 'radial-gradient(circle at center, transparent 0%, rgba(39, 91, 122, 0.05) 50%, transparent 100%)'
-          }}
-        ></div>
-        
-        {/* Vignette Effect */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.4) 100%)'
-          }}
-        ></div>
-        
-        {/* Subtle Noise Texture */}
-        <div 
-          className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            backgroundSize: '200px 200px'
-          }}
-        ></div>
-      </div>
+      {/* Shader Background */}
+      <ShaderBackground />
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col justify-between h-full px-6 py-6 md:px-12 md:py-8">
@@ -183,7 +137,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
         {/* Center: Main Headings */}
         <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
-          <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 px-4 py-2 bg-white/20 backdrop-blur-xl rounded-full border border-white/30 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
+          <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
             {currentData.subtitle}
           </span>
           
@@ -198,56 +152,58 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
           <ScrollAnimationWrapper className="mt-8">
             <div className="relative group flex flex-col items-center">
-              <button 
+              <HoverButton 
                 onClick={handleContactClick}
-                className="px-8 py-3 bg-white text-[#08131A] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
+                className="relative z-10"
               >
                 Solicite um Orçamento
-              </button>
+              </HoverButton>
             </div>
           </ScrollAnimationWrapper>
         </div>
 
-        {/* Bottom: Social Proof & Video Widget */}
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between w-full space-y-6 md:space-y-0 pb-safe">
+        {/* Bottom: Avatares e Video Widget */}
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between w-full pb-safe">
           
-          {/* Bottom Left: Trusted Users */}
-          <div className="flex items-center space-x-4 mb-4 md:mb-0">
-             <div className="flex -space-x-3">
-                {[
-                  'https://i.pravatar.cc/100?img=47',
-                  'https://i.pravatar.cc/100?img=45',
-                  'https://i.pravatar.cc/100?img=44'
-                ].map((img, i) => (
-                  <img 
-                    key={i}
-                    src={img} 
-                    alt={`Client ${i + 1}`}
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover shadow-sm"
-                  />
-                ))}
-             </div>
-             <div className="flex flex-col text-left drop-shadow-md">
-                <span className="text-sm md:text-base font-medium">{currentData.statsText}</span>
-                <span className="text-xs md:text-base opacity-90">{currentData.statsNumber}</span>
-             </div>
-          </div>
+          {/* Left: Avatares */}
+          <AvatarGroup
+            avatars={[
+              {
+                id: 1,
+                name: 'Cliente 1',
+                image: 'https://i.pravatar.cc/100?img=47',
+                alt: 'Cliente 1'
+              },
+              {
+                id: 2,
+                name: 'Cliente 2',
+                image: 'https://i.pravatar.cc/100?img=45',
+                alt: 'Cliente 2'
+              },
+              {
+                id: 3,
+                name: 'Cliente 3',
+                image: 'https://i.pravatar.cc/100?img=44',
+                alt: 'Cliente 3'
+              }
+            ]}
+            additionalCount={3}
+            size="md"
+            className="mb-4 md:mb-0"
+          />
 
-          {/* Bottom Right: Video Card */}
-          <div className="bg-white/10 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl flex items-center gap-3 md:gap-4 max-w-[90%] md:max-w-sm border border-white/20 shadow-2xl transition-all duration-500 ease-out hover:bg-white/15 hover:border-white/40 hover:-translate-y-1.5 hover:shadow-3xl cursor-pointer group">
+          {/* Right: Video Card */}
+          <div className="bg-white/10 backdrop-blur-xl p-2 md:p-3 rounded-xl md:rounded-2xl flex items-center gap-2 md:gap-3 max-w-[90%] md:max-w-sm border border-white/20 shadow-2xl transition-all duration-500 ease-out hover:bg-white/15 hover:border-white/40 hover:-translate-y-1.5 hover:shadow-3xl cursor-pointer group">
              {/* Thumbnail Container - Ilustração Vetorial */}
-             <div className="relative w-16 h-24 md:w-20 md:h-28 flex-shrink-0 transition-all duration-700 ease-out group-hover:scale-110 flex items-center justify-center">
+             <div className="relative w-8 h-12 md:w-10 md:h-14 flex-shrink-0 transition-all duration-700 ease-out group-hover:scale-110 flex items-center justify-center">
                 <svg 
                   viewBox="0 0 300 400" 
-                  className="w-full h-full animate-pulse-glow" 
+                  className="w-full h-full" 
                   fill="none" 
                   stroke="white" 
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
-                  style={{ 
-                    filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.3))',
-                  }}
                 >
                   {/* Estrutura arquitetônica moderna e minimalista */}
                   {/* Edifício principal - perspectiva */}
@@ -449,11 +405,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 </svg>
              </div>
              
-             <div className="flex flex-col flex-grow min-w-0 gap-1">
-                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Projetar é transformar</span>
-                <div className="flex items-center gap-2">
-                    <span className="text-xs md:text-sm text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Agendar reunião</span>
-                    <div className="w-1 h-1 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>
+             <div className="flex flex-col flex-grow min-w-0 gap-0.5">
+                <span className="text-xs md:text-sm font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Projetar é transformar</span>
+                <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] md:text-xs text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Agendar reunião</span>
+                    <div className="w-0.5 h-0.5 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>
                 </div>
              </div>
           </div>

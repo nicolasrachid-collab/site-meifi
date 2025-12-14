@@ -12,7 +12,7 @@ interface Stat {
 
 const StatsSection: React.FC = () => {
   const stats: Stat[] = [
-    { value: 7, label: "Anos construindo histórias", isNumber: true },
+    { value: 7, label: "Anos construindo espaços e histórias", isNumber: true },
     { value: 40, label: "Projetos que unem técnica e sensibilidade", suffix: "+", isNumber: true },
     { value: 100, label: "Cuidado, dedicação e propósito", suffix: "%", isNumber: true },
     { value: 150, label: "Vidas transformadas por meio da arquitetura", isNumber: true },

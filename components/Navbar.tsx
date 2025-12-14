@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Menu } from 'lucide-react';
 
 interface NavbarProps {
   onOpenMenu: () => void;
@@ -29,13 +28,22 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
         }}
         aria-label="Abrir Menu"
       >
-        <Menu 
+        <svg 
           className="w-8 h-8 text-[#FEFBF1] drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
           style={{
             transformOrigin: 'center center',
           }}
-          strokeWidth={1.5} 
-        />
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="1.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
       </button>
     </nav>
   );

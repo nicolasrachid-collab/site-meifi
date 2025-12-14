@@ -114,3 +114,47 @@ nextjs-portal {
   animation: architecturalGlow 4s ease-in-out infinite, architecturalFloat 6s ease-in-out infinite;
 }
 
+/* Animação para imagens SVG - float suave e infinito */
+@keyframes svgFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes svgFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-svg-float {
+  animation: svgFloat 8s ease-in-out infinite;
+}
+
+.animate-svg-fade-in {
+  animation: svgFadeIn 1.2s ease-out forwards;
+}
+
+/* FlyonUI Mask Styles */
+.mask-decagon {
+  clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+}
+
+.mask-hexagon-2 {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+}
+
+.mask-heart {
+  clip-path: polygon(50% 0%, 100% 35%, 85% 60%, 50% 100%, 15% 60%, 0% 35%);
+}
+
