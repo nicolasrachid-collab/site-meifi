@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   const defaultData = {
     subtitle: 'Arquitetura Autoral & Colaborativa',
     title: 'Transformando ideias\nem espaços que acolhem',
-    bgImage: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
+    bgImage: '/banner_meifi.png',
     videoThumbnail: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
     statsText: 'Parcerias de confiança',
     statsNumber: '+50 projetos entregues',
