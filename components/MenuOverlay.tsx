@@ -59,6 +59,9 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
               src="/Logotipo.svg" 
               alt="MEIFI" 
               className="h-8 md:h-10 w-auto"
+              style={{
+                filter: 'brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2000%) hue-rotate(195deg) brightness(0.85) contrast(1.2)',
+              }}
             />
           </div>
           <button 

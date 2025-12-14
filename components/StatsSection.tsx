@@ -106,7 +106,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="w-full bg-[#FAFAFA] text-[#08131A] px-6 md:px-12 lg:px-16">
-      <div className="w-full py-20 border-b border-gray-200">
+      <div className="w-full pt-12 pb-20 border-b border-gray-200">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {stats.map((stat, index) => (
             <div 

@@ -76,18 +76,20 @@ const PartnerTestimonialsSection: React.FC = () => {
             {item.type === 'video' ? (
               // Video Card
               <div 
-                className="relative w-full h-full cursor-pointer group/video"
+                className="relative w-full h-full cursor-pointer group/video overflow-hidden"
                 onClick={() => {
-                  setPlayingVideo(item.videoUrl);
-                  setIsVideoOpen(true);
+                  if (item.videoUrl) {
+                    setPlayingVideo(item.videoUrl);
+                    setIsVideoOpen(true);
+                  }
                 }}
               >
-                {/* Video Thumbnail Background */}
+                {/* Image Background */}
                 <div className="absolute inset-0">
                   <img 
                     src={item.videoThumbnail || item.image} 
                     alt={item.author} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover/video:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/90 via-[#08131A]/60 to-[#08131A]/40"></div>
                 </div>
@@ -119,9 +121,9 @@ const PartnerTestimonialsSection: React.FC = () => {
               // Text Card
               <>
                 <div>
-                  <div className="flex space-x-1 mb-6">
+                  <div className="flex space-x-1.5 mb-6">
                     {[...Array(item.stars)].map((_, i) => (
-                      <Star key={i} size={14} className="text-[#D99A55] fill-[#D99A55]" />
+                      <Star key={i} size={18} className="text-[#D99A55] fill-[#D99A55]" />
                     ))}
                   </div>
                   <p className="text-base leading-relaxed font-normal text-gray-800">
@@ -129,15 +131,15 @@ const PartnerTestimonialsSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 mt-6">
+                <div className="flex items-center gap-4 mt-6">
                   <img 
                     src={item.image} 
                     alt={item.author} 
-                    className="w-10 h-10 rounded-full object-cover grayscale opacity-80"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover grayscale opacity-80"
                   />
                   <div className="flex flex-col">
-                    <span className="text-sm font-bold text-[#08131A] leading-tight">{item.author}</span>
-                    <span className="text-xs text-gray-500">{item.role}</span>
+                    <span className="text-base md:text-lg font-bold text-[#08131A] leading-tight">{item.author}</span>
+                    <span className="text-sm text-gray-500">{item.role}</span>
                   </div>
                 </div>
               </>

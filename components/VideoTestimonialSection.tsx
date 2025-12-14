@@ -19,7 +19,7 @@ const VideoTestimonialSection: React.FC = () => {
   return (
     <>
       <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-16">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24 items-start lg:items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24 items-start lg:items-end">
           
           {/* Left Side - Large Image with Video Trigger */}
           <div className="w-full lg:w-[35%] xl:w-[30%] relative group cursor-pointer flex-shrink-0" onClick={() => setIsVideoOpen(true)}>
@@ -44,7 +44,7 @@ const VideoTestimonialSection: React.FC = () => {
           </div>
 
           {/* Right Side - Content */}
-          <div className="w-full lg:flex-1 flex flex-col gap-8 lg:gap-12">
+          <div className="w-full lg:flex-1 flex flex-col gap-8 lg:gap-12 justify-end">
             
             {/* Top Content */}
             <div className="flex flex-col gap-8">
@@ -53,73 +53,67 @@ const VideoTestimonialSection: React.FC = () => {
                 cuidado e <span className="italic text-[#6B7280]">propósito.</span>
               </h2>
 
-              <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
+              <div className="flex flex-col">
                 <div className="flex-1 max-w-2xl">
                   <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                     A MEIFI trouxe um olhar contemporâneo e humano para o nosso projeto. Superando o convencional, eles aplicaram a tranquilidade e a atenção aos detalhes típicas de Minas, criando algo que realmente nos representa.
                   </p>
                 </div>
-
-                <div className="flex-shrink-0 md:self-start">
-                  <button className="px-8 py-3 bg-[#08131A] text-[#FEFBF1] rounded-full font-medium text-sm transition-all hover:bg-[#275B7A] hover:scale-105 active:scale-95 shadow-md hover:shadow-lg whitespace-nowrap">
-                    Fale Conosco
-                  </button>
-                </div>
               </div>
             </div>
 
             {/* Bottom Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-end">
               
               {/* Card 1 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[200px] overflow-hidden">
+              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
                       <img src={cardImages[0]} alt="Team" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12">
+                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
                       <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
                     </div>
                   </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors">
+                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
                     Uma equipe colaborativa que traz clareza a cada detalhe
                   </p>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[200px] overflow-hidden">
+              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
                       <img src={cardImages[1]} alt="Experts" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12">
+                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
                       <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
                     </div>
                   </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors">
+                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
                     Olhar contemporâneo que traduz visão em espaço
                   </p>
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between min-h-[200px] overflow-hidden">
+              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
                       <img src={cardImages[2]} alt="Communication" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12">
+                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
                       <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
                     </div>
                   </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors">
+                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
                     Comunicação autêntica e processos leves
                   </p>
                 </div>

@@ -27,6 +27,8 @@ const config: Config = {
         'zoom-slow': 'zoomSlow 20s ease-in-out infinite alternate',
         'pulse-slow': 'pulseSlow 4s ease-in-out infinite',
         'shimmer': 'shimmer 2s ease-in-out infinite',
+        'shimmer-text': 'shimmerText 4s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 5s ease-in-out infinite',
       },
       keyframes: {
         scrollRight: {
@@ -60,6 +62,14 @@ const config: Config = {
         shimmer: {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
+        },
+        shimmerText: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        pulseGlow: {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(0.95)' },
+          '50%': { opacity: '0.4', transform: 'scale(1.05)' },
         },
       },
       backgroundImage: {

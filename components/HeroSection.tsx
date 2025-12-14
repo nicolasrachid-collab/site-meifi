@@ -23,6 +23,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
     statsText: string;
     statsNumber: string;
   } | null>(null);
+  const [visibleWords, setVisibleWords] = useState<boolean[]>([]);
   const animationRef = useRef<number | null>(null);
 
   // Valores padrão (fallback)
@@ -56,6 +57,27 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       setHeroData(defaultData);
     }
   }, [data]);
+
+  // Animação de palavras aparecendo sequencialmente
+  useEffect(() => {
+    if (!heroData) return;
+    
+    const title = heroData.title;
+    const words = title.split(/\s+/);
+    const initialVisibility = words.map(() => false);
+    setVisibleWords(initialVisibility);
+
+    // Anima cada palavra com delay escalonado
+    words.forEach((_, index) => {
+      setTimeout(() => {
+        setVisibleWords(prev => {
+          const newVisibility = [...prev];
+          newVisibility[index] = true;
+          return newVisibility;
+        });
+      }, index * 150 + 300); // Delay de 300ms inicial + 150ms por palavra
+    });
+  }, [heroData]);
 
   const currentData = heroData || defaultData;
 
@@ -125,42 +147,77 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
       {/* Background Video with Enhanced Effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-110 animate-zoom-slow will-change-transform"
-        >
-          <source src="/hero_video.mp4" type="video/mp4" />
-          {/* Fallback para imagem caso o vídeo não carregue */}
-          <Image
-            src={currentData.bgImage}
-            alt="Hero background"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-          />
-        </video>
+        {/* Video Container with Parallax Effect */}
+        <div className="absolute inset-0 scale-110 animate-zoom-slow will-change-transform">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              filter: 'brightness(0.95) contrast(1.1) saturate(1.15)',
+            }}
+          >
+            <source src="/hero_video.mp4" type="video/mp4" />
+            {/* Fallback para imagem caso o vídeo não carregue */}
+            <Image
+              src={currentData.bgImage}
+              alt="Hero background"
+              fill
+              className="object-cover"
+              priority
+              quality={90}
+            />
+          </video>
+        </div>
         
-        {/* Multi-layer Gradients for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/20 via-transparent to-[#08131A]/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/30 via-transparent to-[#08131A]/30"></div>
-        
-        {/* Animated Glow Effect */}
+        {/* Animated Glow Ring Effect - Destaque ao vídeo */}
         <div 
-          className="absolute inset-0 animate-pulse-slow"
+          className="absolute inset-0 animate-pulse-slow pointer-events-none"
           style={{
-            background: 'radial-gradient(circle at center, transparent 0%, rgba(39, 91, 122, 0.05) 50%, transparent 100%)'
+            background: 'radial-gradient(ellipse 80% 60% at center, rgba(39, 91, 122, 0.15) 0%, rgba(39, 91, 122, 0.08) 40%, transparent 70%)',
+            animation: 'pulse-slow 4s ease-in-out infinite',
           }}
         ></div>
         
-        {/* Vignette Effect */}
+        {/* Brilho central animado - Foco no vídeo */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%)',
+            animation: 'pulse-slow 3s ease-in-out infinite',
+            mixBlendMode: 'overlay',
+          }}
+        ></div>
+        
+        {/* Multi-layer Gradients for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/15 via-transparent to-[#08131A]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/25 via-transparent to-[#08131A]/25"></div>
+        
+        {/* Borda de luz sutil ao redor - Destaque visual */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            boxShadow: 'inset 0 0 100px rgba(39, 91, 122, 0.1), inset 0 0 200px rgba(255, 255, 255, 0.05)',
+          }}
+        ></div>
+        
+        {/* Vignette Effect - Mais suave para destacar o centro */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.4) 100%)'
+            background: 'radial-gradient(ellipse 90% 70% at center, transparent 0%, rgba(8, 19, 26, 0.3) 100%)'
+          }}
+        ></div>
+        
+        {/* Efeito de brilho pulsante no centro */}
+        <div 
+          className="absolute inset-0 animate-pulse-slow pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at center, rgba(39, 91, 122, 0.12) 0%, transparent 60%)',
+            animation: 'pulse-slow 5s ease-in-out infinite',
+            mixBlendMode: 'screen',
           }}
         ></div>
         
@@ -170,6 +227,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
             backgroundSize: '200px 200px'
+          }}
+        ></div>
+        
+        {/* Overlay de profundidade com gradiente radial */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 30%, rgba(8, 19, 26, 0.2) 100%)',
           }}
         ></div>
       </div>
@@ -182,32 +247,72 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
         {/* Center: Main Headings */}
         <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
-          <span className="text-xs md:text-base font-medium tracking-wide uppercase opacity-90 drop-shadow-md">
+          <span className="text-xs md:text-base font-medium tracking-[0.2em] uppercase text-[#FEFBF1]/85 drop-shadow-lg inline-flex items-center gap-4 before:content-[''] before:w-12 before:h-px before:bg-gradient-to-r before:from-transparent before:to-[#FEFBF1]/40 after:content-[''] after:w-12 after:h-px after:bg-gradient-to-l after:from-transparent after:to-[#FEFBF1]/40 transition-all duration-500 hover:text-[#FEFBF1] hover:opacity-100">
             {currentData.subtitle}
           </span>
           
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
-            {currentData.title.split('\n').map((line, i) => (
-              <React.Fragment key={i}>
-                {line}
-                {i < currentData.title.split('\n').length - 1 && <br className="hidden md:block" />}
-              </React.Fragment>
-            ))}
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl">
+            {currentData.title.split('\n').map((line, lineIndex) => {
+              const words = line.split(/\s+/);
+              const lineStartIndex = currentData.title.split('\n').slice(0, lineIndex).join(' ').split(/\s+/).length;
+              
+              return (
+                <React.Fragment key={lineIndex}>
+                  <span className="inline-block">
+                    {words.map((word, wordIndex) => {
+                      const globalIndex = lineStartIndex + wordIndex;
+                      const isVisible = visibleWords[globalIndex] ?? false;
+                      
+                      return (
+                        <span
+                          key={wordIndex}
+                          className="inline-block mr-2 md:mr-3"
+                          style={{
+                            opacity: isVisible ? 1 : 0,
+                            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+                            transitionDelay: `${globalIndex * 0.05}s`,
+                          }}
+                        >
+                          {word}
+                        </span>
+                      );
+                    })}
+                  </span>
+                  {lineIndex < currentData.title.split('\n').length - 1 && (
+                    <br className="hidden md:block" />
+                  )}
+                </React.Fragment>
+              );
+            })}
           </h1>
 
           <ScrollAnimationWrapper className="mt-8">
             <div className="relative group flex flex-col items-center">
               <button 
                 onClick={handleContactClick}
-                className="px-8 py-3 bg-white text-[#08131A] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
+                className="relative px-10 py-4 bg-white text-[#08131A] rounded-full font-medium text-base md:text-lg transition-all duration-500 ease-out hover:bg-[#FEFBF1] hover:shadow-2xl hover:shadow-[#275B7A]/20 hover:-translate-y-1 active:translate-y-0 active:scale-95 shadow-xl overflow-hidden group/btn"
               >
-                Solicite um Orçamento
+                {/* Efeito de brilho animado */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+                
+                {/* Texto do botão */}
+                <span className="relative z-10 flex items-center gap-2">
+                  Solicite um Orçamento
+                  <svg 
+                    className="w-5 h-5 transition-transform duration-500 group-hover/btn:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                
+                {/* Borda animada */}
+                <div className="absolute inset-0 rounded-full border-2 border-white/0 group-hover/btn:border-[#275B7A]/30 transition-all duration-500"></div>
               </button>
               
-              {/* Tooltip Discreto */}
-              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-[#FEFBF1]/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-[#FEFBF1]/10">
-                Clique para agendar sua consulta
-              </div>
             </div>
           </ScrollAnimationWrapper>
         </div>

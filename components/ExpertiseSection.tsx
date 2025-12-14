@@ -208,7 +208,7 @@ const ExpertiseSection: React.FC = () => {
                         </div>
 
                         <div>
-                             <button className="px-6 py-3 bg-white text-[#08131A] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+                             <button className="px-6 py-3 bg-[#FEFBF1] text-[#08131A] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
                                 Solicitar Proposta
                             </button>
                         </div>

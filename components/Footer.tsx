@@ -76,11 +76,15 @@ const Footer: React.FC = () => {
 
       {/* Middle Section: Logo */}
       <div className="w-full border-t border-white/10 pt-16 mb-12 flex justify-center items-center">
-        <img 
-          src="/Logotipo.svg" 
-          alt="MEIFI" 
-          className="h-16 md:h-20 lg:h-24 w-auto opacity-90"
-        />
+        <h2 
+          className="font-serif font-medium tracking-tight text-[#FEFBF1]"
+          style={{
+            fontSize: 'clamp(4rem, 20vw, 24rem)',
+            lineHeight: '1',
+          }}
+        >
+          MEIFI
+        </h2>
       </div>
 
       {/* Bottom Section: Copyright & Legal */}

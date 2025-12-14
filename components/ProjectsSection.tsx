@@ -208,32 +208,43 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               >
                 {/* Image Card */}
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-sm group-hover/card:shadow-2xl transition-all duration-500 relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700 ease-out will-change-transform"
-                    style={{
-                      // Parallax e Scale aplicados conforme solicitado
-                      transform: isDesktop
-                        ? `scale(1.1) translateX(${scrollProgress * 15}px)`
-                        : 'scale(1)',
-                      // Transição mais suave e com peso (cubic-bezier) para sensação premium
-                      transition: isDesktop
-                        ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                        : 'transform 0.5s ease',
-                    }}
-                    loading={project.id <= 2 ? 'eager' : 'lazy'}
-                  />
-                  {/* Overlay com gradiente sutil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 group-hover/card:via-[#08131A]/5 group-hover/card:to-[#08131A]/10 transition-all duration-500 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700 ease-out will-change-transform"
+                      style={{
+                        // Parallax e Scale aplicados conforme solicitado
+                        transform: isDesktop
+                          ? `scale(1.1) translateX(${scrollProgress * 15}px)`
+                          : 'scale(1)',
+                        // Transição mais suave e com peso (cubic-bezier) para sensação premium
+                        transition: isDesktop
+                          ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)'
+                          : 'transform 0.5s ease',
+                      }}
+                      loading={project.id <= 2 ? 'eager' : 'lazy'}
+                    />
+                    
+                    {/* Efeito de brilho sutil no hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover/card:from-white/10 group-hover/card:via-transparent group-hover/card:to-transparent transition-all duration-700 pointer-events-none z-10"></div>
+                    
+                    {/* Overlay com gradiente sutil */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 group-hover/card:via-[#08131A]/5 group-hover/card:to-[#08131A]/10 transition-all duration-500 z-10 pointer-events-none"></div>
+                    
+                    {/* Vignette effect sutil */}
+                    <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-[#08131A]/0 group-hover/card:to-[#08131A]/5 transition-all duration-500 pointer-events-none z-10" style={{
+                      background: 'radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(8, 19, 26, 0.05) 100%)'
+                    }}></div>
+                  </div>
                   
                   {/* Ícone de interação com efeito de vidro */}
                   <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white/20 backdrop-blur-xl rounded-full p-2.5 md:p-3 shadow-2xl border border-white/30 ring-1 ring-white/20">
+                    <div className="bg-white/20 backdrop-blur-xl rounded-lg p-2.5 md:p-3 shadow-2xl border border-white/30 ring-1 ring-white/20">
                       <img 
                         src="/icon.svg" 
                         alt="" 
-                        className="w-4 h-4 md:w-5 md:h-5 brightness-0 invert"
+                        className="w-6 h-6 md:w-7 md:h-7 brightness-0 invert"
                         aria-hidden="true"
                       />
                     </div>
@@ -242,13 +253,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 
                 {/* Metadata */}
                 <div 
-                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-gradient-to-br from-white/60 via-white/50 to-white/40 group-hover/card:from-white group-hover/card:via-white group-hover/card:to-white/95 backdrop-blur-sm transition-all duration-500 relative overflow-hidden"
+                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-gradient-to-br from-white/70 via-white/60 to-white/50 group-hover/card:from-white/95 group-hover/card:via-white/90 group-hover/card:to-white/85 backdrop-blur-md transition-all duration-500 relative overflow-hidden border border-white/20 group-hover/card:border-white/40"
                 >
+                  {/* Efeito de vidro com overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-transparent opacity-50 group-hover/card:opacity-70 transition-opacity duration-500 pointer-events-none"></div>
+                  
                   {/* Efeito de brilho sutil no hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none"></div>
                   
                   {/* Linha decorativa sutil */}
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200/30 to-transparent group-hover/card:via-gray-300/50 transition-all duration-500"></div>
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover/card:via-white/60 transition-all duration-500"></div>
                   
                   <div className="flex-1 min-w-0 sm:pr-4 relative z-10">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-[#08131A] transition-all duration-500 leading-tight break-words tracking-tight">
@@ -263,14 +277,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     <span className="text-xs sm:text-sm md:text-base text-gray-500/80 group-hover/card:text-gray-600 font-normal tracking-wide whitespace-nowrap transition-colors duration-500">
                       {project.date}
                     </span>
-                    <div className="relative">
+                    <div className="relative w-6 h-6 md:w-7 md:h-7 flex items-center justify-center">
                       <ArrowRight 
                         size={14} 
-                        className="md:w-4 md:h-4 text-gray-400/60 group-hover/card:text-[#08131A] opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-500 ease-out flex-shrink-0" 
+                        className="md:w-4 md:h-4 text-gray-400/60 group-hover/card:text-[#08131A] opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-500 ease-out flex-shrink-0 relative z-10" 
                         strokeWidth={2}
                       />
                       {/* Círculo decorativo no hover */}
-                      <div className="absolute inset-0 rounded-full bg-[#08131A]/5 scale-0 group-hover/card:scale-150 opacity-0 group-hover/card:opacity-100 transition-all duration-500 -z-10"></div>
+                      <div className="absolute inset-0 rounded-full bg-[#08131A]/10 scale-0 group-hover/card:scale-100 opacity-0 group-hover/card:opacity-100 transition-all duration-500 ease-out"></div>
                     </div>
                   </div>
                 </div>
