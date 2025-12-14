@@ -117,7 +117,7 @@ interface InfoCardProps {
 
 const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
-    <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[#DFDBCE] border border-gray-100/50 cursor-default group/card min-h-[200px]">
+    <div className="bg-white p-6 rounded-[2rem] h-[290px] flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[#DFDBCE] border border-gray-100/50 cursor-default group/card min-h-[160px]">
       <div className="flex justify-between items-center mb-4">
         <span className="text-xs font-bold tracking-widest text-[#897E72] transition-colors duration-500">{number}</span>
         <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#275B7A] transition-colors duration-500 flex items-center justify-center">

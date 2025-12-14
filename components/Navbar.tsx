@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
         <img 
           src="/Logotipo.svg" 
           alt="MEIFI" 
-          className="h-8 md:h-10 w-auto brightness-0 invert"
+          className="h-6 md:h-8 w-auto brightness-0 invert"
         />
       </div>
 

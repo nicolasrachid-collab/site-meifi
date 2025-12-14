@@ -26,3 +26,91 @@ nextjs-portal {
   display: none !important;
 }
 
+/* Animações para o SVG arquitetônico */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+  }
+}
+
+@keyframes architecturalDraw {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes architecturalGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+    opacity: 0.8;
+  }
+  25% {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+    opacity: 0.9;
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+    opacity: 1;
+  }
+  75% {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+    opacity: 0.9;
+  }
+}
+
+@keyframes architecturalFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: architecturalDraw 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: architecturalGlow 4s ease-in-out infinite, architecturalFloat 6s ease-in-out infinite;
+}
+

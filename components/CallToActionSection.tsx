@@ -6,7 +6,7 @@ import { Scan, Move } from 'lucide-react';
 const CallToActionSection: React.FC = () => {
   // Imagem escura, moderna, escada de concreto/madeira com iluminação quente
   const bgImage = "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=2000&auto=format&fit=crop";
-  const profileImage = "/eduardo.png";
+  const profileImage = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop";
 
   const sectionRef = useRef<HTMLElement>(null);
   const [offsetY, setOffsetY] = useState(0);

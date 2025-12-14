@@ -168,10 +168,11 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             
             {/* Carrossel de palavras */}
             <div className="w-full overflow-hidden relative">
-              <div className="flex space-x-12 animate-scroll-right whitespace-nowrap items-center md:justify-start">
-                {[...words, ...words, ...words].map((word, idx) => (
-                   <span key={idx} className="text-[#08131A] opacity-80 font-bold text-sm uppercase tracking-wider">
-                      {word}
+              <div className="flex gap-4 animate-scroll-right whitespace-nowrap items-center md:justify-start">
+                {[...words, ...words, ...words].map((word, idx, arr) => (
+                   <span key={idx} className="text-[#08131A] opacity-80 font-bold text-sm uppercase tracking-wider flex items-center">
+                     {word}
+                     {idx < arr.length - 1 && <span className="ml-2">•</span>}
                    </span>
                 ))}
               </div>

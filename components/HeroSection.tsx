@@ -28,8 +28,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
   // Valores padrão (fallback)
   const defaultData = {
-    subtitle: 'Arquitetura Autoral & Colaborativa',
-    title: 'Transformando ideias\nem espaços que acolhem',
+    subtitle: 'Design, técnica e cuidado em cada detalhe',
+    title: 'Arquitetura com identidade, propósito e sensibilidade',
     bgImage: '/banner_meifi.png',
     videoThumbnail: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
     statsText: 'Quem confia na MEIFI',
@@ -57,27 +57,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       setHeroData(defaultData);
     }
   }, [data]);
-
-  // Animação de palavras aparecendo sequencialmente
-  useEffect(() => {
-    if (!heroData) return;
-    
-    const title = heroData.title;
-    const words = title.split(/\s+/);
-    const initialVisibility = words.map(() => false);
-    setVisibleWords(initialVisibility);
-
-    // Anima cada palavra com delay escalonado
-    words.forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleWords(prev => {
-          const newVisibility = [...prev];
-          newVisibility[index] = true;
-          return newVisibility;
-        });
-      }, index * 150 + 300); // Delay de 300ms inicial + 150ms por palavra
-    });
-  }, [heroData]);
 
   const currentData = heroData || defaultData;
 
@@ -147,77 +126,42 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
       {/* Background Video with Enhanced Effects */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Video Container with Parallax Effect */}
-        <div className="absolute inset-0 scale-110 animate-zoom-slow will-change-transform">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{
-              filter: 'brightness(0.95) contrast(1.1) saturate(1.15)',
-            }}
-          >
-            <source src="/hero_video.mp4" type="video/mp4" />
-            {/* Fallback para imagem caso o vídeo não carregue */}
-            <Image
-              src={currentData.bgImage}
-              alt="Hero background"
-              fill
-              className="object-cover"
-              priority
-              quality={90}
-            />
-          </video>
-        </div>
-        
-        {/* Animated Glow Ring Effect - Destaque ao vídeo */}
-        <div 
-          className="absolute inset-0 animate-pulse-slow pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at center, rgba(39, 91, 122, 0.15) 0%, rgba(39, 91, 122, 0.08) 40%, transparent 70%)',
-            animation: 'pulse-slow 4s ease-in-out infinite',
-          }}
-        ></div>
-        
-        {/* Brilho central animado - Foco no vídeo */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%)',
-            animation: 'pulse-slow 3s ease-in-out infinite',
-            mixBlendMode: 'overlay',
-          }}
-        ></div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover scale-110 animate-zoom-slow will-change-transform"
+        >
+          <source src="/hero_video.mp4" type="video/mp4" />
+          {/* Fallback para imagem caso o vídeo não carregue */}
+          <Image
+            src={currentData.bgImage}
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+          />
+        </video>
         
         {/* Multi-layer Gradients for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/15 via-transparent to-[#08131A]/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/25 via-transparent to-[#08131A]/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/20 via-transparent to-[#08131A]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/30 via-transparent to-[#08131A]/30"></div>
         
-        {/* Borda de luz sutil ao redor - Destaque visual */}
+        {/* Animated Glow Effect */}
         <div 
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 animate-pulse-slow"
           style={{
-            boxShadow: 'inset 0 0 100px rgba(39, 91, 122, 0.1), inset 0 0 200px rgba(255, 255, 255, 0.05)',
+            background: 'radial-gradient(circle at center, transparent 0%, rgba(39, 91, 122, 0.05) 50%, transparent 100%)'
           }}
         ></div>
         
-        {/* Vignette Effect - Mais suave para destacar o centro */}
+        {/* Vignette Effect */}
         <div 
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse 90% 70% at center, transparent 0%, rgba(8, 19, 26, 0.3) 100%)'
-          }}
-        ></div>
-        
-        {/* Efeito de brilho pulsante no centro */}
-        <div 
-          className="absolute inset-0 animate-pulse-slow pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at center, rgba(39, 91, 122, 0.12) 0%, transparent 60%)',
-            animation: 'pulse-slow 5s ease-in-out infinite',
-            mixBlendMode: 'screen',
+            background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.4) 100%)'
           }}
         ></div>
         
@@ -227,14 +171,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
             backgroundSize: '200px 200px'
-          }}
-        ></div>
-        
-        {/* Overlay de profundidade com gradiente radial */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'radial-gradient(ellipse at center, transparent 30%, rgba(8, 19, 26, 0.2) 100%)',
           }}
         ></div>
       </div>
@@ -247,75 +183,27 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
         {/* Center: Main Headings */}
         <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
-          <span className="text-xs md:text-base font-medium tracking-[0.2em] uppercase text-[#FEFBF1]/85 drop-shadow-lg inline-flex items-center gap-4 before:content-[''] before:w-12 before:h-px before:bg-gradient-to-r before:from-transparent before:to-[#FEFBF1]/40 after:content-[''] after:w-12 after:h-px after:bg-gradient-to-l after:from-transparent after:to-[#FEFBF1]/40 transition-all duration-500 hover:text-[#FEFBF1] hover:opacity-100">
+          <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 px-4 py-2 bg-white/20 backdrop-blur-xl rounded-full border border-white/30 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
             {currentData.subtitle}
           </span>
           
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl">
-            {currentData.title.split('\n').map((line, lineIndex) => {
-              const words = line.split(/\s+/);
-              const lineStartIndex = currentData.title.split('\n').slice(0, lineIndex).join(' ').split(/\s+/).length;
-              
-              return (
-                <React.Fragment key={lineIndex}>
-                  <span className="inline-block">
-                    {words.map((word, wordIndex) => {
-                      const globalIndex = lineStartIndex + wordIndex;
-                      const isVisible = visibleWords[globalIndex] ?? false;
-                      
-                      return (
-                        <span
-                          key={wordIndex}
-                          className="inline-block mr-2 md:mr-3"
-                          style={{
-                            opacity: isVisible ? 1 : 0,
-                            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-                            transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-                            transitionDelay: `${globalIndex * 0.05}s`,
-                          }}
-                        >
-                          {word}
-                        </span>
-                      );
-                    })}
-                  </span>
-                  {lineIndex < currentData.title.split('\n').length - 1 && (
-                    <br className="hidden md:block" />
-                  )}
-                </React.Fragment>
-              );
-            })}
+          <h1 className="text-4xl md:text-6xl lg:text-[66px] font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
+            {currentData.title.split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < currentData.title.split('\n').length - 1 && <br className="hidden md:block" />}
+              </React.Fragment>
+            ))}
           </h1>
 
           <ScrollAnimationWrapper className="mt-8">
             <div className="relative group flex flex-col items-center">
               <button 
                 onClick={handleContactClick}
-                className="relative px-10 py-4 bg-white/90 backdrop-blur-xl text-[#08131A] rounded-full font-medium text-base md:text-lg transition-all duration-500 ease-out hover:bg-white/95 hover:backdrop-blur-2xl hover:shadow-2xl hover:shadow-[#275B7A]/20 hover:-translate-y-1 active:translate-y-0 active:scale-95 shadow-xl overflow-hidden group/btn border border-white/50"
+                className="px-8 py-3 bg-white text-[#08131A] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
               >
-                {/* Efeito de brilho animado */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out"></span>
-                
-                {/* Efeito de vidro - overlay interno */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Texto do botão */}
-                <span className="relative z-10 flex items-center gap-2">
-                  Solicite um Orçamento
-                  <svg 
-                    className="w-5 h-5 transition-transform duration-500 group-hover/btn:translate-x-1" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-                
-                {/* Borda animada com efeito de vidro */}
-                <div className="absolute inset-0 rounded-full border-2 border-white/60 group-hover/btn:border-white/80 group-hover/btn:shadow-[0_0_20px_rgba(39,91,122,0.3)] transition-all duration-500"></div>
+                Solicite um Orçamento
               </button>
-              
             </div>
           </ScrollAnimationWrapper>
         </div>
@@ -348,52 +236,221 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           {/* Bottom Right: Video Card */}
           <div className="bg-white/10 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl flex items-center gap-3 md:gap-4 max-w-[90%] md:max-w-sm border border-white/20 shadow-2xl transition-all duration-500 ease-out hover:bg-white/15 hover:border-white/40 hover:-translate-y-1.5 hover:shadow-3xl cursor-pointer group">
              {/* Thumbnail Container - Ilustração Vetorial */}
-             <div className="relative w-24 h-16 md:w-28 md:h-20 flex-shrink-0 transition-all duration-500 group-hover:scale-105 flex items-center justify-center">
+             <div className="relative w-16 h-24 md:w-20 md:h-28 flex-shrink-0 transition-all duration-700 ease-out group-hover:scale-110 flex items-center justify-center">
                 <svg 
-                  viewBox="0 0 400 300" 
-                  className="w-full h-full" 
+                  viewBox="0 0 300 400" 
+                  className="w-full h-full animate-pulse-glow" 
                   fill="none" 
                   stroke="white" 
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
+                  style={{ 
+                    filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.3))',
+                  }}
                 >
                   {/* Estrutura arquitetônica moderna e minimalista */}
                   {/* Edifício principal - perspectiva */}
-                  <polygon points="100,180 100,100 300,100 300,180" stroke="white" opacity="0.9" strokeWidth="2" fill="none"/>
-                  <polygon points="300,100 300,180 320,170 320,90" stroke="white" opacity="0.8" strokeWidth="2" fill="none"/>
-                  <line x1="100" y1="100" x2="320" y2="90" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  <polygon 
+                    points="75,240 75,150 225,150 225,240" 
+                    stroke="white" 
+                    opacity="0.9" 
+                    strokeWidth="2" 
+                    fill="none"
+                    className="animate-draw"
+                    style={{ animationDelay: '0s', animationDuration: '1.5s' }}
+                  />
+                  <polygon 
+                    points="225,150 225,240 240,230 240,135" 
+                    stroke="white" 
+                    opacity="0.8" 
+                    strokeWidth="2" 
+                    fill="none"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.15s', animationDuration: '1.5s' }}
+                  />
+                  <line 
+                    x1="75" 
+                    y1="150" 
+                    x2="240" 
+                    y2="135" 
+                    stroke="white" 
+                    opacity="0.7" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.3s', animationDuration: '1.2s' }}
+                  />
                   
                   {/* Divisões verticais */}
-                  <line x1="150" y1="100" x2="150" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
-                  <line x1="200" y1="100" x2="200" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
-                  <line x1="250" y1="100" x2="250" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  <line 
+                    x1="112.5" 
+                    y1="150" 
+                    x2="112.5" 
+                    y2="240" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.45s', animationDuration: '1s' }}
+                  />
+                  <line 
+                    x1="150" 
+                    y1="150" 
+                    x2="150" 
+                    y2="240" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.5s', animationDuration: '1s' }}
+                  />
+                  <line 
+                    x1="187.5" 
+                    y1="150" 
+                    x2="187.5" 
+                    y2="240" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.55s', animationDuration: '1s' }}
+                  />
                   
                   {/* Janelas modernas */}
-                  <rect x="110" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
-                  <rect x="160" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
-                  <rect x="210" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
-                  <rect x="260" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  <rect 
+                    x="82.5" 
+                    y="180" 
+                    width="22.5" 
+                    height="18.75" 
+                    stroke="white" 
+                    opacity="0.7" 
+                    strokeWidth="1.5"
+                    className="animate-fade-in-up"
+                    style={{ animationDelay: '0.7s', animationDuration: '0.6s' }}
+                  />
+                  <rect 
+                    x="120" 
+                    y="180" 
+                    width="22.5" 
+                    height="18.75" 
+                    stroke="white" 
+                    opacity="0.7" 
+                    strokeWidth="1.5"
+                    className="animate-fade-in-up"
+                    style={{ animationDelay: '0.75s', animationDuration: '0.6s' }}
+                  />
+                  <rect 
+                    x="157.5" 
+                    y="180" 
+                    width="22.5" 
+                    height="18.75" 
+                    stroke="white" 
+                    opacity="0.7" 
+                    strokeWidth="1.5"
+                    className="animate-fade-in-up"
+                    style={{ animationDelay: '0.8s', animationDuration: '0.6s' }}
+                  />
+                  <rect 
+                    x="195" 
+                    y="180" 
+                    width="22.5" 
+                    height="18.75" 
+                    stroke="white" 
+                    opacity="0.7" 
+                    strokeWidth="1.5"
+                    className="animate-fade-in-up"
+                    style={{ animationDelay: '0.85s', animationDuration: '0.6s' }}
+                  />
                   
                   {/* Linhas horizontais internas */}
-                  <line x1="100" y1="140" x2="300" y2="140" stroke="white" opacity="0.5" strokeWidth="1"/>
-                  <line x1="100" y1="160" x2="300" y2="160" stroke="white" opacity="0.5" strokeWidth="1"/>
+                  <line 
+                    x1="75" 
+                    y1="195" 
+                    x2="225" 
+                    y2="195" 
+                    stroke="white" 
+                    opacity="0.5" 
+                    strokeWidth="1"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.9s', animationDuration: '0.8s' }}
+                  />
+                  <line 
+                    x1="75" 
+                    y1="210" 
+                    x2="225" 
+                    y2="210" 
+                    stroke="white" 
+                    opacity="0.5" 
+                    strokeWidth="1"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.95s', animationDuration: '0.8s' }}
+                  />
                   
                   {/* Base/terreno */}
-                  <line x1="80" y1="180" x2="340" y2="170" stroke="white" opacity="0.6" strokeWidth="2"/>
+                  <line 
+                    x1="60" 
+                    y1="240" 
+                    x2="255" 
+                    y2="230" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="2"
+                    className="animate-draw"
+                    style={{ animationDelay: '1s', animationDuration: '1s' }}
+                  />
                   
                   {/* Elementos decorativos laterais */}
-                  <line x1="60" y1="150" x2="100" y2="140" stroke="white" opacity="0.4" strokeWidth="1"/>
-                  <line x1="340" y1="140" x2="380" y2="130" stroke="white" opacity="0.4" strokeWidth="1"/>
+                  <line 
+                    x1="45" 
+                    y1="200" 
+                    x2="75" 
+                    y2="195" 
+                    stroke="white" 
+                    opacity="0.4" 
+                    strokeWidth="1"
+                    className="animate-draw"
+                    style={{ animationDelay: '1.1s', animationDuration: '0.6s' }}
+                  />
+                  <line 
+                    x1="255" 
+                    y1="195" 
+                    x2="285" 
+                    y2="190" 
+                    stroke="white" 
+                    opacity="0.4" 
+                    strokeWidth="1"
+                    className="animate-draw"
+                    style={{ animationDelay: '1.15s', animationDuration: '0.6s' }}
+                  />
                   
                   {/* Detalhes de profundidade */}
-                  <line x1="320" y1="90" x2="320" y2="170" stroke="white" opacity="0.6" strokeWidth="1.5"/>
-                  <line x1="300" y1="180" x2="320" y2="170" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  <line 
+                    x1="240" 
+                    y1="135" 
+                    x2="240" 
+                    y2="230" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.2s', animationDuration: '1.2s' }}
+                  />
+                  <line 
+                    x1="225" 
+                    y1="240" 
+                    x2="240" 
+                    y2="230" 
+                    stroke="white" 
+                    opacity="0.6" 
+                    strokeWidth="1.5"
+                    className="animate-draw"
+                    style={{ animationDelay: '0.25s', animationDuration: '1s' }}
+                  />
                 </svg>
              </div>
              
              <div className="flex flex-col flex-grow min-w-0 gap-1">
-                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Tire o seu projeto do papel</span>
+                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Projetar é transformar</span>
                 <div className="flex items-center gap-2">
                     <span className="text-xs md:text-sm text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Agendar reunião</span>
                     <div className="w-1 h-1 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>

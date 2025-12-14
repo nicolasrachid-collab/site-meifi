@@ -8,3 +8,4 @@ NEXT_PUBLIC_WORDPRESS_API_URL=https://seusite.com/wp-json
 # WORDPRESS_APPLICATION_PASSWORD=usuario:senha_aplicacao
 
 
+

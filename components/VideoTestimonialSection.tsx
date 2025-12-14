@@ -1,20 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Play, X, Scan, Move } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 
 const VideoTestimonialSection: React.FC = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // Imagem principal (grupo MEIFI)
   const mainImage = "/meifi_grupo.png";
-  
-  // Imagens dos cards
-  const cardImages = [
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop", // Team
-    "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=500&auto=format&fit=crop", // Experts
-    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=500&auto=format&fit=crop"  // Communication
-  ];
 
   return (
     <>
@@ -55,68 +48,52 @@ const VideoTestimonialSection: React.FC = () => {
 
               <div className="flex flex-col">
                 <div className="flex-1 max-w-2xl">
-                  <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                    A MEIFI trouxe um olhar contemporâneo e humano para o nosso projeto. Superando o convencional, eles aplicaram a tranquilidade e a atenção aos detalhes típicas de Minas, criando algo que realmente nos representa.
-                  </p>
+                  <div className="text-base md:text-lg text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                      A MEIFI nasce do encontro entre sensibilidade, técnica e tempo. Desde o início, nosso olhar sempre esteve voltado para as pessoas e para a forma como elas vivem os espaços no dia a dia.
+                    </p>
+                    <p>
+                      Acreditamos que arquitetura não é apenas forma ou estética. É escuta, cuidado e intenção. Cada projeto começa com uma boa conversa e se desenvolve com atenção aos detalhes, respeitando rotinas, desejos e histórias.
+                    </p>
+                    <p>
+                      Inspirados pela tranquilidade e pelo cuidado mineiro, buscamos criar uma arquitetura contemporânea, humana e atemporal, capaz de traduzir identidade em espaço e transformar ideias em experiências reais.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-end">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               
               {/* Card 1 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
-                      <img src={cardImages[0]} alt="Team" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
-                      <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
-                    </div>
-                  </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
-                    Uma equipe colaborativa que traz clareza a cada detalhe
-                  </p>
-                </div>
+              <div className="group bg-white p-8 rounded-2xl border border-gray-200/50 hover:border-gray-300 transition-all duration-500 hover:shadow-lg flex flex-col">
+                <h3 className="text-xl font-serif font-medium text-[#08131A] mb-4">
+                  Equipe colaborativa
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
+                </p>
               </div>
 
               {/* Card 2 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
-                      <img src={cardImages[1]} alt="Experts" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
-                      <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
-                    </div>
-                  </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
-                    Olhar contemporâneo que traduz visão em espaço
-                  </p>
-                </div>
+              <div className="group bg-white p-8 rounded-2xl border border-gray-200/50 hover:border-gray-300 transition-all duration-500 hover:shadow-lg flex flex-col">
+                <h3 className="text-xl font-serif font-medium text-[#08131A] mb-4">
+                  Olhar contemporâneo
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
+                </p>
               </div>
 
               {/* Card 3 */}
-              <div className="group relative bg-gradient-to-br from-white to-gray-50/50 p-8 rounded-3xl border border-gray-200/50 hover:border-[#275B7A]/30 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col h-full overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#275B7A]/5 rounded-full blur-3xl group-hover:bg-[#275B7A]/10 transition-colors duration-500"></div>
-                <div className="relative z-10 flex flex-col flex-1">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg ring-2 ring-gray-100 group-hover:ring-[#275B7A]/20 transition-all duration-500 flex-shrink-0">
-                      <img src={cardImages[2]} alt="Communication" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[#275B7A] flex items-center justify-center transition-all duration-500 group-hover:rotate-12 flex-shrink-0">
-                      <Move className="w-4 h-4 text-gray-400 group-hover:text-[#FEFBF1] transition-colors duration-300" />
-                    </div>
-                  </div>
-                  <p className="text-base font-medium text-gray-900 leading-relaxed group-hover:text-[#08131A] transition-colors flex-1">
-                    Comunicação autêntica e processos leves
-                  </p>
-                </div>
+              <div className="group bg-white p-8 rounded-2xl border border-gray-200/50 hover:border-gray-300 transition-all duration-500 hover:shadow-lg flex flex-col">
+                <h3 className="text-xl font-serif font-medium text-[#08131A] mb-4">
+                  Comunicação autêntica
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Processos claros, diálogo aberto e decisões construídas com leveza.
+                </p>
               </div>
 
             </div>
