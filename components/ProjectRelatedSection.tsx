@@ -23,17 +23,17 @@ const ProjectRelatedSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#F9F9F9] text-[#102735] py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#F9F9F9] text-[#08131A] py-24 px-6 md:px-12 lg:px-16">
       
       {/* Header da Seção */}
       <div className="flex justify-between items-center mb-10 border-t border-transparent">
-        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-[#102735]">
+        <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-[#08131A]">
           Related Projects
         </h2>
         
         {/* Ícone decorativo de 5 pontos/cruz */}
         <div className="pt-1">
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#102735]">
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#08131A]">
               <circle cx="12" cy="12" r="2.5" />
               <circle cx="12" cy="4" r="2.5" />
               <circle cx="12" cy="20" r="2.5" />
@@ -54,12 +54,12 @@ const ProjectRelatedSection: React.FC = () => {
                 alt={project.title} 
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
+              <div className="absolute inset-0 bg-[#08131A]/0 group-hover:bg-[#08131A]/5 transition-colors duration-500"></div>
             </div>
             
             {/* Informações do Card */}
             <div className="flex justify-between items-center px-1">
-              <h3 className="text-lg font-medium text-[#102735] group-hover:text-gray-600 transition-colors">
+              <h3 className="text-lg font-medium text-[#08131A] group-hover:text-gray-600 transition-colors">
                 {project.title}
               </h3>
               <span className="text-sm font-medium text-gray-500">

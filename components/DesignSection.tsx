@@ -3,12 +3,12 @@ import { Star, Move, ArrowRight } from 'lucide-react';
 
 const DesignSection: React.FC = () => {
   return (
-    <section className="w-full bg-[#FAFAFA] text-[#102735] py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] text-[#08131A] py-32 px-6 md:px-12 lg:px-16 overflow-hidden">
       
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-8">
         <div className="max-w-3xl relative">
-          <div className="absolute -left-6 top-1 w-1 h-12 bg-[#102735]/10 hidden lg:block"></div>
+          <div className="absolute -left-6 top-1 w-1 h-12 bg-[#08131A]/10 hidden lg:block"></div>
           <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-400 mb-6 block ml-1">Nossa Filosofia</span>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium tracking-tight leading-[1.05] text-gray-900">
             Do meio fio à cidade — <br/>
@@ -20,7 +20,7 @@ const DesignSection: React.FC = () => {
           <p className="text-gray-600 text-base font-light leading-relaxed">
             Com um olhar sensível e colaborativo, transformamos projetos em experiências significativas, equilibrando estética e propósito.
           </p>
-          <button className="group flex items-center gap-2 text-[#102735] font-medium border-b border-[#102735] pb-1 hover:text-gray-600 hover:border-gray-400 transition-all text-sm tracking-wide">
+          <button className="group flex items-center gap-2 text-[#08131A] font-medium border-b border-[#08131A] pb-1 hover:text-gray-600 hover:border-gray-400 transition-all text-sm tracking-wide">
             INICIAR PROJETO
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300"/>
           </button>
@@ -50,7 +50,7 @@ const DesignSection: React.FC = () => {
               className="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 ring-2 ring-white shadow-sm"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-bold text-[#102735] uppercase tracking-wide">Mariana S.</span>
+              <span className="text-sm font-bold text-[#08131A] uppercase tracking-wide">Mariana S.</span>
               <span className="text-xs text-gray-500">Projeto Residencial</span>
             </div>
           </div>
@@ -59,7 +59,7 @@ const DesignSection: React.FC = () => {
         {/* Item 2: Sustainability (Stacked) */}
         <div className="md:col-span-6 lg:col-span-3 flex flex-col gap-6 group">
           <div className="h-64 rounded-[2rem] overflow-hidden relative shadow-sm border border-gray-100/50">
-            <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/10 z-10 transition-colors duration-700"></div>
+            <div className="absolute inset-0 bg-[#08131A]/0 group-hover:bg-[#08131A]/10 z-10 transition-colors duration-700"></div>
             <img 
               src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" 
               alt="Design Interiores" 
@@ -81,7 +81,7 @@ const DesignSection: React.FC = () => {
             description="Cada projeto começa com uma boa conversa e atenção aos mínimos detalhes." 
           />
           <div className="h-64 rounded-[2rem] overflow-hidden relative shadow-sm border border-gray-100/50">
-            <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/10 z-10 transition-colors duration-700"></div>
+            <div className="absolute inset-0 bg-[#08131A]/0 group-hover:bg-[#08131A]/10 z-10 transition-colors duration-700"></div>
             <img 
               src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop" 
               alt="Mesa Madeira" 
@@ -93,7 +93,7 @@ const DesignSection: React.FC = () => {
         {/* Item 4: Authenticity (Stacked) */}
         <div className="md:col-span-12 lg:col-span-2 flex flex-col gap-6 group">
            <div className="h-64 lg:h-full rounded-[2rem] overflow-hidden relative min-h-[250px] shadow-sm border border-gray-100/50">
-             <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/10 z-10 transition-colors duration-700"></div>
+             <div className="absolute inset-0 bg-[#08131A]/0 group-hover:bg-[#08131A]/10 z-10 transition-colors duration-700"></div>
              <img 
               src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" 
               alt="Ambiente Verde" 
@@ -103,7 +103,7 @@ const DesignSection: React.FC = () => {
                  <h3 className="text-white font-serif text-2xl tracking-tight drop-shadow-md group-hover:translate-x-1 transition-transform duration-500">Autenticidade</h3>
                  <div className="h-0.5 w-12 bg-white/50 mt-4 group-hover:w-20 transition-all duration-700"></div>
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#102735]/60 to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/60 to-transparent opacity-60"></div>
           </div>
         </div>
 
@@ -123,14 +123,14 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
   return (
     <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-gray-200 border border-gray-100/50 cursor-default group/card min-h-[200px]">
       <div className="flex justify-between items-start mb-4">
-        <span className="text-xs font-bold tracking-widest text-gray-300 group-hover/card:text-[#102735] transition-colors duration-500">{number}</span>
-        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#102735] transition-colors duration-500">
+        <span className="text-xs font-bold tracking-widest text-gray-300 group-hover/card:text-[#08131A] transition-colors duration-500">{number}</span>
+        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#08131A] transition-colors duration-500">
              <Move className="w-3 h-3 text-gray-400 group-hover/card:text-white transition-colors duration-500" strokeWidth={2} />
         </div>
       </div>
       
       <div>
-        <h3 className="text-xl font-serif font-medium text-[#102735] mb-3 group-hover/card:translate-x-1 transition-transform duration-500">{title}</h3>
+        <h3 className="text-xl font-serif font-medium text-[#08131A] mb-3 group-hover/card:translate-x-1 transition-transform duration-500">{title}</h3>
         <p className="text-sm text-gray-500 leading-relaxed group-hover/card:text-gray-800 transition-colors duration-500">
           {description}
         </p>

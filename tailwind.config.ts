@@ -14,9 +14,9 @@ const config: Config = {
       },
       colors: {
         glass: 'rgba(255, 255, 255, 0.1)',
-        glassDark: 'rgba(16, 39, 53, 0.4)',
-        primary: '#102735',
-        black: '#102735', // Substituindo black por #102735
+        glassDark: 'rgba(8, 19, 26, 0.4)',
+        primary: '#08131A',
+        black: '#08131A', // Substituindo black por #08131A
       },
       animation: {
         'scroll-right': 'scrollRight 20s linear infinite',

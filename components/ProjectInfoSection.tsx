@@ -5,13 +5,13 @@ const ProjectInfoSection: React.FC = () => {
   const projectImage = "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=1000&auto=format&fit=crop";
 
   return (
-    <section className="w-full bg-white text-[#102735] py-20 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-white text-[#08131A] py-20 px-6 md:px-12 lg:px-16">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start">
         
         {/* Coluna 1: Label Lateral */}
         <div className="w-full lg:w-1/4 flex items-center gap-2">
            {/* Ícone customizado de 5 pontos/cruz similar à imagem */}
-           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#102735]">
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#08131A]">
               <circle cx="12" cy="12" r="2" />
               <circle cx="12" cy="5" r="2" />
               <circle cx="12" cy="19" r="2" />
@@ -26,19 +26,19 @@ const ProjectInfoSection: React.FC = () => {
            {/* Grid de Informações */}
            <div className="grid grid-cols-2 gap-y-10 gap-x-8 mb-12">
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#102735]">Date</h4>
+                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Date</h4>
                   <p className="text-gray-600 text-sm">Jun 13, 2025</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#102735]">Category</h4>
+                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Category</h4>
                   <p className="text-gray-600 text-sm">Home</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#102735]">Space Plan</h4>
+                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Space Plan</h4>
                   <p className="text-gray-600 text-sm">3 Bedrooms, Open Kitchen</p>
               </div>
               <div>
-                  <h4 className="font-bold text-sm mb-2 text-[#102735]">Timeline</h4>
+                  <h4 className="font-bold text-sm mb-2 text-[#08131A]">Timeline</h4>
                   <p className="text-gray-600 text-sm">2 Weeks</p>
               </div>
            </div>

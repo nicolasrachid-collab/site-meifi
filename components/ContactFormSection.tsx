@@ -5,7 +5,7 @@ import { ArrowRight, Send } from 'lucide-react';
 
 const ContactFormSection: React.FC = () => {
   return (
-    <section className="w-full bg-white text-[#102735] py-24 px-6 md:px-12 lg:px-16 border-t border-gray-100">
+    <section className="w-full bg-white text-[#08131A] py-24 px-6 md:px-12 lg:px-16 border-t border-gray-100">
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
         
         {/* Left Column: Context */}
@@ -38,54 +38,54 @@ const ContactFormSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Name */}
               <div className="flex flex-col group">
-                <label htmlFor="name" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#102735] transition-colors">
+                <label htmlFor="name" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#08131A] transition-colors">
                   Nome Completo
                 </label>
                 <input 
                   type="text" 
                   id="name" 
                   placeholder="Ex: Ana Silva"
-                  className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#102735] transition-colors placeholder-gray-300"
+                  className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#08131A] transition-colors placeholder-gray-300"
                 />
               </div>
 
               {/* Phone */}
               <div className="flex flex-col group">
-                <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#102735] transition-colors">
+                <label htmlFor="phone" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#08131A] transition-colors">
                   Telefone
                 </label>
                 <input 
                   type="tel" 
                   id="phone" 
                   placeholder="Ex: (31) 99999-9999"
-                  className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#102735] transition-colors placeholder-gray-300"
+                  className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#08131A] transition-colors placeholder-gray-300"
                 />
               </div>
             </div>
 
             {/* Email */}
             <div className="flex flex-col group">
-              <label htmlFor="email" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#102735] transition-colors">
+              <label htmlFor="email" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#08131A] transition-colors">
                 E-mail Profissional
               </label>
               <input 
                 type="email" 
                 id="email" 
                 placeholder="Ex: ana@empresa.com"
-                className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#102735] transition-colors placeholder-gray-300"
+                className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#08131A] transition-colors placeholder-gray-300"
               />
             </div>
 
             {/* Project Details */}
             <div className="flex flex-col group">
-              <label htmlFor="details" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#102735] transition-colors">
+              <label htmlFor="details" className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-2 group-focus-within:text-[#08131A] transition-colors">
                 Detalhes do Projeto
               </label>
               <textarea 
                 id="details" 
                 rows={4}
                 placeholder="Conte-nos um pouco sobre o espaço, metragem aproximada e suas expectativas..."
-                className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#102735] transition-colors placeholder-gray-300 resize-none"
+                className="w-full border-b border-gray-300 py-3 bg-transparent text-lg focus:outline-none focus:border-[#08131A] transition-colors placeholder-gray-300 resize-none"
               ></textarea>
             </div>
 
@@ -93,7 +93,7 @@ const ContactFormSection: React.FC = () => {
             <div className="pt-6 flex justify-end">
               <button 
                 type="submit"
-                className="group flex items-center gap-3 bg-[#102735] text-white px-8 py-4 rounded-full font-medium text-sm transition-all hover:bg-[#0a1f2a] hover:scale-[1.02] active:scale-95 shadow-lg"
+                className="group flex items-center gap-3 bg-[#08131A] text-white px-8 py-4 rounded-full font-medium text-sm transition-all hover:bg-[#0a1f2a] hover:scale-[1.02] active:scale-95 shadow-lg"
               >
                 Agendar Reunião para Orçamento
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

@@ -133,7 +133,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#102735]/30 via-transparent to-[#102735]/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/30 via-transparent to-[#08131A]/40"></div>
       </div>
 
       {/* Content Container */}
@@ -161,13 +161,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             <div className="relative group flex flex-col items-center">
               <button 
                 onClick={handleContactClick}
-                className="px-8 py-3 bg-white text-[#102735] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
+                className="px-8 py-3 bg-white text-[#08131A] rounded-full font-medium text-lg transition-all duration-300 hover:animate-pulse-scale active:scale-95 shadow-lg relative z-10"
               >
                 Solicite um Orçamento
               </button>
               
               {/* Tooltip Discreto */}
-              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-white/80 pointer-events-none bg-[#102735]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-white/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
                 Clique para agendar sua consulta
               </div>
             </div>
@@ -205,7 +205,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   fill
                   className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 />
-                <div className="absolute inset-0 bg-[#102735]/20 group-hover:bg-[#102735]/0 transition-colors duration-500"></div>
+                <div className="absolute inset-0 bg-[#08131A]/20 group-hover:bg-[#08131A]/0 transition-colors duration-500"></div>
                 {/* Efeito de brilho/pulsação sutil no thumbnail */}
                 <div className="absolute inset-0 bg-white/10 animate-pulse pointer-events-none"></div>
              </div>
@@ -214,7 +214,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 <span className="text-sm md:text-base font-medium mb-1 truncate group-hover:text-white transition-colors">Veja nosso manifesto</span>
                 <div className="flex items-center gap-2">
                     {/* Botão Play com Pulse Scale */}
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#102735] shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-white/20 animate-pulse-scale">
+                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#08131A] shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-white/20 animate-pulse-scale">
                       <Play size={14} fill="currentColor" className="ml-0.5" />
                     </div>
                     <span className="text-xs text-white/70 group-hover:text-white transition-colors duration-500">Assista agora</span>

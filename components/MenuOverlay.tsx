@@ -12,7 +12,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
   const menuImage = "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1965&auto=format&fit=crop";
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col md:flex-row bg-white text-[#102735] animate-fade-in">
+    <div className="fixed inset-0 z-50 flex flex-col md:flex-row bg-white text-[#08131A] animate-fade-in">
       
       {/* Left Panel - Image */}
       <div className="relative w-full md:w-1/2 h-1/3 md:h-full bg-gray-100 overflow-hidden group">
@@ -20,7 +20,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
             style={{ backgroundImage: `url(${menuImage})` }}
         >
-             <div className="absolute inset-0 bg-[#102735]/20"></div>
+             <div className="absolute inset-0 bg-[#08131A]/20"></div>
         </div>
 
         {/* Content Overlay on Image */}
@@ -53,10 +53,10 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
 
         {/* Main Content */}
         <div className="flex-grow flex flex-col justify-center max-w-lg">
-          <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-4 text-[#102735] uppercase">
+          <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-4 text-[#08131A] uppercase">
             Entre em Contato
           </h1>
-          <a href="mailto:contato@meifi.com.br" className="text-xl md:text-2xl border-b border-[#102735] pb-1 inline-block self-start hover:opacity-70 transition-opacity mb-16">
+          <a href="mailto:contato@meifi.com.br" className="text-xl md:text-2xl border-b border-[#08131A] pb-1 inline-block self-start hover:opacity-70 transition-opacity mb-16">
             contato@meifi.com.br
           </a>
 
@@ -79,7 +79,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
           <span className="text-sm font-medium text-gray-500">
             © 2025. Todos os direitos reservados.
           </span>
-          <Grip className="w-5 h-5 text-[#102735] cursor-pointer hover:rotate-90 transition-transform" />
+          <Grip className="w-5 h-5 text-[#08131A] cursor-pointer hover:rotate-90 transition-transform" />
         </div>
 
       </div>

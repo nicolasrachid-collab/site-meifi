@@ -21,7 +21,7 @@ const CoastalRetreatHero: React.FC<CoastalRetreatHeroProps> = ({ onBack }) => {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Overlay escuro sutil para garantir leitura do texto branco */}
-        <div className="absolute inset-0 bg-[#102735]/20"></div>
+        <div className="absolute inset-0 bg-[#08131A]/20"></div>
       </div>
 
       {/* Navbar Minimalista */}
