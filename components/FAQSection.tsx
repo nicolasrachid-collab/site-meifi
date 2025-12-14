@@ -41,24 +41,24 @@ const FAQSection: React.FC = () => {
   const teamImage = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop";
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-black py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#FAFAFA] text-[#102735] py-24 px-6 md:px-12 lg:px-16">
       
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-black">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#102735]">
           Respostas que trazem clareza
         </h2>
         
         <div className="flex items-start gap-4 max-w-sm lg:text-right lg:items-end lg:flex-col">
            <div className="hidden lg:block">
-              <Scan className="w-6 h-6 text-black opacity-80 ml-auto" />
+              <Scan className="w-6 h-6 text-[#102735] opacity-80 ml-auto" />
            </div>
            <p className="text-gray-600 text-sm md:text-base leading-snug">
              Respondemos as dúvidas mais comuns para te ajudar a dar o próximo passo.
            </p>
            {/* Mobile icon */}
            <div className="lg:hidden">
-              <Scan className="w-6 h-6 text-black opacity-80" />
+              <Scan className="w-6 h-6 text-[#102735] opacity-80" />
            </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ const FAQSection: React.FC = () => {
           />
           
           {/* Dark Overlay for better text visibility if needed, mostly for style */}
-          <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+          <div className="absolute inset-0 bg-[#102735]/10 group-hover:bg-[#102735]/0 transition-colors"></div>
 
           {/* Floating Pill CTA at Bottom */}
           <div className="absolute bottom-6 left-6 right-6">
@@ -119,7 +119,7 @@ const FAQSection: React.FC = () => {
                   Ainda tem dúvidas?
                 </span>
               </div>
-              <button className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
+              <button className="bg-white text-[#102735] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">
                 Fale Conosco
               </button>
             </div>

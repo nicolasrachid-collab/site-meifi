@@ -18,7 +18,7 @@ const VideoTestimonialSection: React.FC = () => {
 
   return (
     <>
-      <section className="w-full bg-[#FAFAFA] text-black py-24 px-6 md:px-12 lg:px-16">
+      <section className="w-full bg-[#FAFAFA] text-[#102735] py-24 px-6 md:px-12 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
           
           {/* Left Side - Large Image with Video Trigger */}
@@ -30,13 +30,13 @@ const VideoTestimonialSection: React.FC = () => {
                 alt="Architecture at dusk" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors"></div>
+              <div className="absolute inset-0 bg-[#102735]/10 group-hover:bg-[#102735]/20 transition-colors"></div>
               
               {/* Play Button Overlay */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center">
                 <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md border border-white/30 pl-2 pr-6 py-2 rounded-full hover:bg-white/30 transition-all hover:scale-105">
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <Play size={16} fill="black" className="ml-1 text-black" />
+                    <Play size={16} fill="#102735" className="ml-1 text-[#102735]" />
                   </div>
                   <span className="text-white font-medium text-sm">Ver Manifesto</span>
                 </div>
@@ -49,7 +49,7 @@ const VideoTestimonialSection: React.FC = () => {
             
             {/* Top Content */}
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-12 text-black">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.1] mb-12 text-[#102735]">
                 Arquitetura feita com calma, cuidado e propósito.
               </h2>
 
@@ -63,7 +63,7 @@ const VideoTestimonialSection: React.FC = () => {
                 </div>
 
                 <div className="flex-shrink-0">
-                  <button className="px-8 py-3 bg-black text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+                  <button className="px-8 py-3 bg-[#102735] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
                     Fale Conosco
                   </button>
                 </div>
@@ -119,7 +119,7 @@ const VideoTestimonialSection: React.FC = () => {
 
       {/* Full Screen Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-[60] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10 animate-fade-in">
+        <div className="fixed inset-0 z-[60] bg-[#102735]/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10 animate-fade-in">
           <button 
             onClick={() => setIsVideoOpen(false)} 
             className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
@@ -127,7 +127,7 @@ const VideoTestimonialSection: React.FC = () => {
             <X size={40} strokeWidth={1} />
           </button>
           
-          <div className="w-full max-w-6xl aspect-video rounded-lg overflow-hidden shadow-2xl bg-black">
+          <div className="w-full max-w-6xl aspect-video rounded-lg overflow-hidden shadow-2xl bg-[#102735]">
             <iframe 
               width="100%" 
               height="100%" 

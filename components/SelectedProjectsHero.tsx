@@ -9,21 +9,21 @@ interface SelectedProjectsHeroProps {
 
 const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) => {
   return (
-    <section className="w-full bg-white text-black min-h-[80vh] flex flex-col justify-between px-6 md:px-12 lg:px-16 py-8">
+    <section className="w-full bg-white text-[#102735] min-h-[80vh] flex flex-col justify-between px-6 md:px-12 lg:px-16 py-8">
       
       {/* Top: Navbar */}
       <nav className="w-full flex items-center justify-between">
         {/* Logo Aestoria */}
         <div 
           onClick={onBack}
-          className="text-3xl font-serif tracking-tight cursor-pointer hover:opacity-70 transition-opacity text-black"
+          className="text-3xl font-serif tracking-tight cursor-pointer hover:opacity-70 transition-opacity text-[#102735]"
         >
           Aestoria
         </div>
 
         {/* Menu Icon */}
         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors group">
-          <Menu className="w-8 h-8 text-black group-hover:scale-105 transition-transform" strokeWidth={1.5} />
+          <Menu className="w-8 h-8 text-[#102735] group-hover:scale-105 transition-transform" strokeWidth={1.5} />
         </button>
       </nav>
 
@@ -32,7 +32,7 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
         
         {/* Decorative 5-dot Icon */}
         <div className="mb-8">
-           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-black">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#102735]">
               <circle cx="12" cy="12" r="2" />
               <circle cx="12" cy="5" r="2" />
               <circle cx="12" cy="19" r="2" />
@@ -41,7 +41,7 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
            </svg>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-black mb-8">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-[#102735] mb-8">
           Selected Projects
         </h1>
 
@@ -55,7 +55,7 @@ const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) =
       <div className="w-full flex items-center justify-between mt-auto gap-4">
         
         {/* Counter */}
-        <span className="text-sm font-medium text-black whitespace-nowrap">
+        <span className="text-sm font-medium text-[#102735] whitespace-nowrap">
           (6)
         </span>
 

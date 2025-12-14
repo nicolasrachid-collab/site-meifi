@@ -149,7 +149,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-black mb-6 md:mb-0">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#102735] mb-6 md:mb-0">
             Nossos Projetos
           </h2>
 
@@ -163,7 +163,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             {onNavigateToProjects && (
               <button 
                 onClick={onNavigateToProjects}
-                className="group flex items-center gap-2 text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start md:self-end mb-6"
+                className="group flex items-center gap-2 text-sm font-medium border-b border-[#102735] pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start md:self-end mb-6"
               >
                 Ver todos
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300"/>
@@ -174,7 +174,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             <div className="w-full overflow-hidden relative">
               <div className="flex space-x-12 animate-scroll-right whitespace-nowrap items-center md:justify-end">
                 {[...logos, ...logos, ...logos].map((logo, idx) => (
-                   <div key={idx} className="flex items-center space-x-2 text-black opacity-80 font-bold text-sm">
+                   <div key={idx} className="flex items-center space-x-2 text-[#102735] opacity-80 font-bold text-sm">
                       <logo.icon size={18} strokeWidth={2.5} />
                       <span>{logo.name}</span>
                    </div>
@@ -220,12 +220,12 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     }}
                     loading={project.id <= 2 ? 'eager' : 'lazy'}
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover/card:bg-black/10 transition-colors duration-500 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-[#102735]/0 group-hover/card:bg-[#102735]/10 transition-colors duration-500 z-10 pointer-events-none"></div>
                 </div>
                 
                 {/* Metadata */}
                 <div 
-                  className="flex justify-between items-center text-black border-t border-gray-200 pt-3"
+                  className="flex justify-between items-center text-[#102735] border-t border-gray-200 pt-3"
                   style={{
                      // Movimento oposto ou diferenciado para profundidade
                      transform: isDesktop 

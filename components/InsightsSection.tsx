@@ -38,11 +38,11 @@ const InsightsSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-black py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#FAFAFA] text-[#102735] py-24 px-6 md:px-12 lg:px-16">
       
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-black max-w-2xl">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-[#102735] max-w-2xl">
           Insights que moldam espaços
         </h2>
         
@@ -50,7 +50,7 @@ const InsightsSection: React.FC = () => {
           <p className="text-gray-600 text-sm md:text-base leading-snug max-w-xs mb-6">
             Explore ideias, tendências e histórias dos bastidores do nosso escritório.
           </p>
-          <button className="px-8 py-3 bg-black text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+          <button className="px-8 py-3 bg-[#102735] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
             Ver tudo
           </button>
         </div>
@@ -67,11 +67,11 @@ const InsightsSection: React.FC = () => {
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           {/* Gradient Overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#102735]/60 via-transparent to-transparent"></div>
           
           {/* Content Overlay */}
           <div className="absolute top-6 left-6">
-            <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-semibold text-black tracking-wide uppercase">
+            <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-semibold text-[#102735] tracking-wide uppercase">
               {featuredPost.date}
             </span>
           </div>
@@ -82,7 +82,7 @@ const InsightsSection: React.FC = () => {
             </h3>
             
             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
-               <ChevronRight className="w-6 h-6 text-black" />
+               <ChevronRight className="w-6 h-6 text-[#102735]" />
             </div>
           </div>
         </div>
@@ -108,13 +108,13 @@ const InsightsSection: React.FC = () => {
                       <span className="text-xs font-medium text-gray-500 uppercase tracking-wide block mb-1">
                         {item.date}
                       </span>
-                      <h3 className="text-xl md:text-2xl font-medium text-black">
+                      <h3 className="text-xl md:text-2xl font-medium text-[#102735]">
                         {item.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ml-4 ${isOpen ? 'bg-black text-white' : 'bg-black text-white'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ml-4 ${isOpen ? 'bg-[#102735] text-white' : 'bg-[#102735] text-white'}`}>
                     <ChevronRight className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`} />
                   </div>
                 </div>
@@ -127,7 +127,7 @@ const InsightsSection: React.FC = () => {
                     <p className="text-gray-600 leading-relaxed text-base">
                       {item.content}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-bold text-black group hover:underline">
+                    <div className="mt-4 flex items-center gap-2 text-sm font-bold text-[#102735] group hover:underline">
                         Ler artigo completo <ArrowRight size={14} />
                     </div>
                   </div>

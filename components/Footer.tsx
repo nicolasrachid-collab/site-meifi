@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-black text-white pt-24 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden flex flex-col">
+    <footer className="w-full bg-[#102735] text-white pt-24 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden flex flex-col">
       
       {/* Top Section: Newsletter & Intro */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-16">
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
           className="flex items-center gap-2 group text-white hover:text-gray-300 transition-colors"
         >
           <span>Voltar ao topo</span>
-          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#102735] transition-all">
             <ArrowUp size={14} />
           </div>
         </button>

@@ -20,13 +20,13 @@ const ProjectProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-white text-black py-20 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-white text-[#102735] py-20 px-6 md:px-12 lg:px-16">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start">
         
         {/* Coluna 1: Label Lateral */}
         <div className="w-full lg:w-1/4 flex items-center gap-2 pt-1">
            {/* Ícone customizado de 5 pontos/cruz consistente com a seção anterior */}
-           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-black">
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="text-[#102735]">
               <circle cx="12" cy="12" r="2" />
               <circle cx="12" cy="5" r="2" />
               <circle cx="12" cy="19" r="2" />
@@ -40,7 +40,7 @@ const ProjectProcessSection: React.FC = () => {
         <div className="w-full lg:w-[35%] flex flex-col gap-10">
            {steps.map((step, index) => (
              <div key={index} className="flex flex-col gap-3">
-               <h3 className="text-base font-bold text-black">{step.title}</h3>
+               <h3 className="text-base font-bold text-[#102735]">{step.title}</h3>
                <p className="text-base leading-relaxed text-gray-800 font-normal">
                  {step.description}
                </p>
@@ -56,7 +56,7 @@ const ProjectProcessSection: React.FC = () => {
               alt="Sala de estar minimalista com tons neutros" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
              />
-             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+             <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
            </div>
         </div>
 

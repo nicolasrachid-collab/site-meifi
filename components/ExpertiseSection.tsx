@@ -51,7 +51,7 @@ const ExpertiseSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-black text-white py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#102735] text-white py-24 px-6 md:px-12 lg:px-16">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 relative">
@@ -134,7 +134,7 @@ const ExpertiseSection: React.FC = () => {
                         </div>
 
                         <div>
-                             <button className="px-6 py-3 bg-white text-black rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+                             <button className="px-6 py-3 bg-white text-[#102735] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
                                 Solicitar Proposta
                             </button>
                         </div>

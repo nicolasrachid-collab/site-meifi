@@ -51,7 +51,7 @@ const PartnerTestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-black py-24 px-6 md:px-12 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] text-[#102735] py-24 px-6 md:px-12 lg:px-16 overflow-hidden">
       
       {/* Headline */}
       <div className="mb-16 max-w-3xl">
@@ -66,7 +66,7 @@ const PartnerTestimonialsSection: React.FC = () => {
         {testimonials.map((item) => (
           <div 
             key={item.id} 
-            className={`relative rounded-2xl overflow-hidden min-h-[400px] md:h-[480px] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300 ${item.type === 'video' ? 'bg-black text-white p-0' : 'bg-white text-black p-8'}`}
+            className={`relative rounded-2xl overflow-hidden min-h-[400px] md:h-[480px] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300 ${item.type === 'video' ? 'bg-[#102735] text-white p-0' : 'bg-white text-[#102735] p-8'}`}
           >
             {item.type === 'video' ? (
               // Video Card
@@ -80,7 +80,7 @@ const PartnerTestimonialsSection: React.FC = () => {
                 >
                   <source src={item.videoUrl} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#102735]/80 via-transparent to-transparent"></div>
                 
                 {/* Spacer to push content down */}
                 <div className="flex-grow"></div>
@@ -119,7 +119,7 @@ const PartnerTestimonialsSection: React.FC = () => {
                     className="w-10 h-10 rounded-full object-cover grayscale opacity-80"
                   />
                   <div className="flex flex-col">
-                    <span className="text-sm font-bold text-black leading-tight">{item.author}</span>
+                    <span className="text-sm font-bold text-[#102735] leading-tight">{item.author}</span>
                     <span className="text-xs text-gray-500">{item.role}</span>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ const PartnerTestimonialsSection: React.FC = () => {
             <div className="flex space-x-16 animate-scroll-right whitespace-nowrap items-center">
             {/* Triplicando para loop infinito suave */}
             {[...logos, ...logos, ...logos].map((logo, idx) => (
-                <div key={idx} className="flex items-center space-x-2 text-gray-500 hover:text-black transition-colors">
+                <div key={idx} className="flex items-center space-x-2 text-gray-500 hover:text-[#102735] transition-colors">
                     <logo.icon size={20} strokeWidth={2} />
                     <span className="font-semibold text-lg">{logo.name}</span>
                 </div>

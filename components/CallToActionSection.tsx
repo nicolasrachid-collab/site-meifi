@@ -47,7 +47,7 @@ const CallToActionSection: React.FC = () => {
           transform: `translateY(${offsetY}px)`
         }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-[#102735]/40"></div>
       </div>
 
       <div className="relative z-10 flex-grow flex flex-col justify-between p-6 md:p-12 lg:p-16">
@@ -82,19 +82,19 @@ const CallToActionSection: React.FC = () => {
                         className="w-12 h-12 rounded-lg object-cover"
                         />
                         <div className="flex flex-col">
-                        <span className="text-black font-bold text-base leading-tight">Helena M.</span>
+                        <span className="text-[#102735] font-bold text-base leading-tight">Helena M.</span>
                         <span className="text-gray-500 text-xs font-medium">Consultora MEIFI</span>
                         </div>
                     </div>
-                    <Scan className="w-5 h-5 text-black" strokeWidth={2} />
+                    <Scan className="w-5 h-5 text-[#102735]" strokeWidth={2} />
                     </div>
 
-                    <p className="text-black font-medium text-lg leading-snug mb-8">
+                    <p className="text-[#102735] font-medium text-lg leading-snug mb-8">
                     Com clareza, criatividade e precisão.
                     </p>
 
                     <div className="flex justify-end">
-                    <button className="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition-transform active:scale-95 shadow-lg w-full md:w-auto">
+                    <button className="bg-[#102735] text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition-transform active:scale-95 shadow-lg w-full md:w-auto">
                         Solicite um Orçamento
                     </button>
                     </div>

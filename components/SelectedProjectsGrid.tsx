@@ -47,7 +47,7 @@ const SelectedProjectsGrid: React.FC<SelectedProjectsGridProps> = ({ onProjectCl
   ];
 
   return (
-    <section className="w-full bg-white text-black px-6 md:px-12 lg:px-16 pb-32">
+    <section className="w-full bg-white text-[#102735] px-6 md:px-12 lg:px-16 pb-32">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
         {projects.map((project) => (
           <div 
@@ -62,12 +62,12 @@ const SelectedProjectsGrid: React.FC<SelectedProjectsGridProps> = ({ onProjectCl
                 alt={project.title} 
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+              <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
             </div>
             
             {/* Metadata */}
             <div className="flex justify-between items-baseline border-t border-transparent pt-1">
-              <h3 className="text-lg font-medium text-black group-hover:text-gray-600 transition-colors">
+              <h3 className="text-lg font-medium text-[#102735] group-hover:text-gray-600 transition-colors">
                 {project.title}
               </h3>
               <span className="text-sm text-gray-500 font-medium">

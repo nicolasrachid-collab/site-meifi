@@ -19,7 +19,7 @@ const ProjectGallerySection: React.FC = () => {
             alt="Quarto com vista para o lago"
             className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+          <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
         </div>
 
         {/* Imagem Superior Direita: Sala de Estar Minimalista */}
@@ -29,7 +29,7 @@ const ProjectGallerySection: React.FC = () => {
             alt="Sala de estar minimalista"
             className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+          <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
         </div>
 
         {/* Imagem Inferior: Home Office (Full Width) */}
@@ -39,7 +39,7 @@ const ProjectGallerySection: React.FC = () => {
             alt="Home office com arte abstrata"
             className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
           />
-           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500"></div>
+           <div className="absolute inset-0 bg-[#102735]/0 group-hover:bg-[#102735]/5 transition-colors duration-500"></div>
         </div>
 
       </div>
