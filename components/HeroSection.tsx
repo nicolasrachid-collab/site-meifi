@@ -31,8 +31,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
     title: 'Transformando ideias\nem espaços que acolhem',
     bgImage: '/banner_meifi.png',
     videoThumbnail: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
-    statsText: 'Parcerias de confiança',
-    statsNumber: '+50 projetos entregues',
+    statsText: 'Quem confia na MEIFI',
+    statsNumber: '+50 Projetos entregues',
   };
 
   useEffect(() => {
@@ -206,28 +206,57 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           </div>
 
           {/* Bottom Right: Video Card */}
-          <div className="bg-glassDark/60 backdrop-blur-md p-2 pr-6 rounded-2xl flex items-center space-x-4 max-w-[90%] md:max-w-sm border border-white/10 shadow-2xl transition-all duration-500 ease-out hover:bg-glassDark/90 hover:border-white/30 hover:-translate-y-1 cursor-pointer group">
-             {/* Thumbnail Container */}
-             <div className="relative w-20 h-14 md:w-24 md:h-16 rounded-lg overflow-hidden flex-shrink-0 shadow-inner group-hover:shadow-white/10 transition-shadow duration-500">
-                <Image
-                  src={currentData.videoThumbnail}
-                  alt="Video thumbnail"
-                  fill
-                  className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                />
-                <div className="absolute inset-0 bg-[#08131A]/20 group-hover:bg-[#08131A]/0 transition-colors duration-500"></div>
-                {/* Efeito de brilho/pulsação sutil no thumbnail */}
-                <div className="absolute inset-0 bg-white/10 animate-pulse pointer-events-none"></div>
+          <div className="bg-white/10 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl flex items-center gap-3 md:gap-4 max-w-[90%] md:max-w-sm border border-white/20 shadow-2xl transition-all duration-500 ease-out hover:bg-white/15 hover:border-white/40 hover:-translate-y-1.5 hover:shadow-3xl cursor-pointer group">
+             {/* Thumbnail Container - Ilustração Vetorial */}
+             <div className="relative w-24 h-16 md:w-28 md:h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-105 bg-transparent flex items-center justify-center">
+                <svg 
+                  viewBox="0 0 400 300" 
+                  className="w-full h-full" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  {/* Estrutura arquitetônica moderna e minimalista */}
+                  {/* Edifício principal - perspectiva */}
+                  <polygon points="100,180 100,100 300,100 300,180" stroke="white" opacity="0.9" strokeWidth="2" fill="none"/>
+                  <polygon points="300,100 300,180 320,170 320,90" stroke="white" opacity="0.8" strokeWidth="2" fill="none"/>
+                  <line x1="100" y1="100" x2="320" y2="90" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  
+                  {/* Divisões verticais */}
+                  <line x1="150" y1="100" x2="150" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  <line x1="200" y1="100" x2="200" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  <line x1="250" y1="100" x2="250" y2="180" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  
+                  {/* Janelas modernas */}
+                  <rect x="110" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  <rect x="160" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  <rect x="210" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  <rect x="260" y="120" width="30" height="25" stroke="white" opacity="0.7" strokeWidth="1.5"/>
+                  
+                  {/* Linhas horizontais internas */}
+                  <line x1="100" y1="140" x2="300" y2="140" stroke="white" opacity="0.5" strokeWidth="1"/>
+                  <line x1="100" y1="160" x2="300" y2="160" stroke="white" opacity="0.5" strokeWidth="1"/>
+                  
+                  {/* Base/terreno */}
+                  <line x1="80" y1="180" x2="340" y2="170" stroke="white" opacity="0.6" strokeWidth="2"/>
+                  
+                  {/* Elementos decorativos laterais */}
+                  <line x1="60" y1="150" x2="100" y2="140" stroke="white" opacity="0.4" strokeWidth="1"/>
+                  <line x1="340" y1="140" x2="380" y2="130" stroke="white" opacity="0.4" strokeWidth="1"/>
+                  
+                  {/* Detalhes de profundidade */}
+                  <line x1="320" y1="90" x2="320" y2="170" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                  <line x1="300" y1="180" x2="320" y2="170" stroke="white" opacity="0.6" strokeWidth="1.5"/>
+                </svg>
              </div>
              
-             <div className="flex flex-col flex-grow min-w-0">
-                <span className="text-sm md:text-base font-medium mb-1 truncate group-hover:text-white transition-colors">Veja nosso manifesto</span>
+             <div className="flex flex-col flex-grow min-w-0 gap-1">
+                <span className="text-sm md:text-base font-semibold text-white drop-shadow-md group-hover:text-white transition-colors leading-tight">Veja nosso manifesto</span>
                 <div className="flex items-center gap-2">
-                    {/* Botão Play com Pulse Scale */}
-                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#08131A] shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:shadow-white/20 animate-pulse-scale">
-                      <Play size={14} fill="currentColor" className="ml-0.5" />
-                    </div>
-                    <span className="text-xs text-white/70 group-hover:text-white transition-colors duration-500">Assista agora</span>
+                    <span className="text-xs md:text-sm text-white/80 group-hover:text-white/90 transition-colors duration-500 font-medium">Assista agora</span>
+                    <div className="w-1 h-1 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>
                 </div>
              </div>
           </div>

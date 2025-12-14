@@ -36,9 +36,9 @@ const VideoTestimonialSection: React.FC = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center">
                 <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md border border-white/30 pl-2 pr-6 py-2 rounded-full hover:bg-white/30 transition-all hover:scale-105">
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <Play size={16} fill="#08131A" className="ml-1 text-[#08131A]" />
+                    <Play size={16} fill="#08131A" className="text-[#08131A]" />
                   </div>
-                  <span className="text-white font-medium text-sm">Ver Manifesto</span>
+                  <span className="text-white font-medium text-sm">Nossa história</span>
                 </div>
               </div>
             </div>
@@ -50,12 +50,11 @@ const VideoTestimonialSection: React.FC = () => {
             {/* Top Content */}
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.1] mb-12 text-gray-900">
-                Arquitetura feita com calma, cuidado e propósito.
+                Arquitetura feita com calma,<br />
+                cuidado e propósito.
               </h2>
 
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-16 border-t border-transparent md:border-transparent pt-0">
-                <span className="text-sm font-medium text-gray-500 min-w-[100px] hidden md:block">(Essência)</span>
-                
                 <div className="flex-grow">
                   <p className="text-gray-700 leading-relaxed mb-8 max-w-md">
                     A MEIFI trouxe um olhar contemporâneo e humano para o nosso projeto. Superando o convencional, eles aplicaram a tranquilidade e a atenção aos detalhes típicas de Minas, criando algo que realmente nos representa.
@@ -63,7 +62,7 @@ const VideoTestimonialSection: React.FC = () => {
                 </div>
 
                 <div className="flex-shrink-0">
-                  <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+                  <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-all hover:bg-[#275B7A] hover:scale-105 active:scale-95">
                     Fale Conosco
                   </button>
                 </div>
@@ -74,40 +73,40 @@ const VideoTestimonialSection: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-auto">
               
               {/* Card 1 */}
-              <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow h-48 flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 rounded-lg overflow-hidden">
-                    <img src={cardImages[0]} alt="Team" className="w-full h-full object-cover" />
+              <div className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[180px]">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-14 h-14 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src={cardImages[0]} alt="Team" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <Move className="w-4 h-4 text-gray-400" />
+                  <Move className="w-5 h-5 text-gray-300 group-hover:text-[#08131A] transition-colors duration-300" />
                 </div>
-                <p className="text-sm font-medium text-gray-900 leading-snug pr-2">
+                <p className="text-base font-medium text-gray-900 leading-relaxed">
                   Uma equipe colaborativa que traz clareza a cada detalhe
                 </p>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow h-48 flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 rounded-lg overflow-hidden">
-                    <img src={cardImages[1]} alt="Experts" className="w-full h-full object-cover" />
+              <div className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[180px]">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-14 h-14 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src={cardImages[1]} alt="Experts" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <Move className="w-4 h-4 text-gray-400" />
+                  <Move className="w-5 h-5 text-gray-300 group-hover:text-[#08131A] transition-colors duration-300" />
                 </div>
-                <p className="text-sm font-medium text-gray-900 leading-snug pr-2">
+                <p className="text-base font-medium text-gray-900 leading-relaxed">
                   Olhar contemporâneo que traduz visão em espaço
                 </p>
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow h-48 flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 rounded-lg overflow-hidden">
-                    <img src={cardImages[2]} alt="Communication" className="w-full h-full object-cover" />
+              <div className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[180px]">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-14 h-14 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img src={cardImages[2]} alt="Communication" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
-                  <Move className="w-4 h-4 text-gray-400" />
+                  <Move className="w-5 h-5 text-gray-300 group-hover:text-[#08131A] transition-colors duration-300" />
                 </div>
-                <p className="text-sm font-medium text-gray-900 leading-snug pr-2">
+                <p className="text-base font-medium text-gray-900 leading-relaxed">
                   Comunicação autêntica e processos leves
                 </p>
               </div>

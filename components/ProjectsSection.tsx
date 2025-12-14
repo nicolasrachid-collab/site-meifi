@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { WordPressProject } from '@/types/wordpress';
 
 interface ProjectItem {
@@ -227,10 +227,15 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {/* Overlay com gradiente sutil */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 group-hover/card:via-[#08131A]/5 group-hover/card:to-[#08131A]/10 transition-all duration-500 z-10 pointer-events-none"></div>
                   
-                  {/* Ícone de interação */}
+                  {/* Ícone de interação com efeito de vidro */}
                   <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white/95 backdrop-blur-md rounded-full p-2 md:p-2.5 shadow-xl border border-white/50">
-                      <ExternalLink size={14} className="md:w-4 md:h-4 text-[#08131A]" strokeWidth={2.5} />
+                    <div className="bg-white/20 backdrop-blur-xl rounded-full p-2.5 md:p-3 shadow-2xl border border-white/30 ring-1 ring-white/20">
+                      <img 
+                        src="/icon.svg" 
+                        alt="" 
+                        className="w-4 h-4 md:w-5 md:h-5 brightness-0 invert"
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
                 </div>
@@ -238,13 +243,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 {/* Metadata */}
                 <div 
                   className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-white/50 group-hover/card:bg-white transition-colors duration-300"
-                  style={{
-                     // Movimento oposto ou diferenciado para profundidade
-                     transform: isDesktop 
-                      ? `translateX(${scrollProgress * -90}px)` 
-                      : 'none',
-                     transition: isDesktop ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)' : 'none'
-                  }}
                 >
                   <div className="flex-1 min-w-0 sm:pr-4">
                     <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-gray-700 transition-colors duration-300 leading-tight break-words">

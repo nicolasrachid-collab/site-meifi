@@ -54,7 +54,13 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
           
           {/* Header: Logo & Close Button */}
           <div className="flex items-center justify-between mb-16">
-          <span className="text-2xl md:text-3xl font-serif tracking-wide uppercase">MEIFI</span>
+          <div>
+            <img 
+              src="/Logotipo.svg" 
+              alt="MEIFI" 
+              className="h-8 md:h-10 w-auto"
+            />
+          </div>
           <button 
             onClick={handleClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors group relative"
@@ -63,7 +69,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
             }}
           >
             <X 
-              className="w-8 h-8 md:w-10 md:h-10 font-light text-gray-800 transition-transform duration-300 group-hover:rotate-90 group-hover:scale-110" 
+              className="w-8 h-8 md:w-10 md:h-10 font-light text-gray-800 group-hover:text-[#275B7A] transition-all duration-300 group-hover:rotate-90 group-hover:scale-110" 
               style={{
                 transformOrigin: 'center center',
                 willChange: 'transform',
@@ -78,20 +84,18 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
           <h1 className="text-4xl md:text-5xl font-normal tracking-tight mb-4 text-[#08131A] uppercase">
             Entre em Contato
           </h1>
-          <a href="mailto:contato@meifi.com.br" className="text-xl md:text-2xl border-b border-[#08131A] pb-1 inline-block self-start hover:opacity-70 transition-opacity mb-16">
+          <a href="mailto:contato@meifi.com.br" className="text-xl md:text-2xl border-b border-[#08131A] pb-1 inline-block self-start hover:text-[#275B7A] hover:border-[#275B7A] transition-colors mb-16">
             contato@meifi.com.br
           </a>
 
           <div className="space-y-6">
             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-900">
-              Navegação:
+              Conheça nossos projetos
             </h3>
             <ul className="flex flex-wrap gap-8 text-lg md:text-xl text-gray-800">
-              {['Sobre Nós', 'Projetos', 'Notícias', 'Contato'].map((item) => (
-                <li key={item} className="cursor-pointer hover:text-gray-500 transition-colors">
-                  {item}
-                </li>
-              ))}
+              <li className="cursor-pointer hover:text-[#275B7A] transition-colors">
+                Ver projetos
+              </li>
             </ul>
           </div>
         </div>

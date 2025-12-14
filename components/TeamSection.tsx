@@ -41,31 +41,39 @@ const TeamSection: React.FC = () => {
           {teamMembers.map((member, index) => (
             <div 
               key={index} 
-              className="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer"
+              className="group relative aspect-[4/5] rounded-xl overflow-hidden cursor-pointer transform transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Imagem */}
+              <div className="absolute inset-0 overflow-hidden">
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 will-change-transform"
+                />
+                
+                {/* Efeito de brilho sutil no hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover:from-white/10 group-hover:via-white/5 group-hover:to-transparent transition-all duration-700 pointer-events-none z-10"></div>
+              </div>
               
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/80 via-[#08131A]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              {/* Gradient Overlay - Melhorado */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/90 via-[#08131A]/40 via-[#08131A]/20 to-transparent opacity-80 group-hover:opacity-95 transition-all duration-500 z-10"></div>
               
-              {/* Top Right Icon */}
-              <div className="absolute top-4 right-4 text-white/70">
+              {/* Overlay adicional para mais profundidade */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08131A]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+              
+              {/* Top Right Icon - Com animação */}
+              <div className="absolute top-4 right-4 text-white/70 z-20 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
                 <img 
                   src="/icon.svg" 
                   alt="" 
-                  className="w-6 h-6"
+                  className="w-6 h-6 md:w-7 md:h-7 transition-transform duration-500 group-hover:rotate-12"
                   aria-hidden="true"
                 />
               </div>
 
-              {/* Name at Bottom Left */}
-              <div className="absolute bottom-6 left-6 pr-4">
-                <h3 className="text-white text-lg font-medium tracking-wide">
+              {/* Name at Bottom Left - Com animação */}
+              <div className="absolute bottom-6 left-6 pr-4 z-20 transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-500">
+                <h3 className="text-white text-lg md:text-xl font-medium tracking-wide drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-500">
                   {member.name}
                 </h3>
               </div>

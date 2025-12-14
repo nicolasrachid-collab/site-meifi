@@ -16,7 +16,9 @@ interface ExpertiseItem {
 }
 
 // Componente de desenho de traço arquitetônico
-const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban' }> = ({ type }) => {
+const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban'; isCompact?: boolean }> = ({ type, isCompact = false }) => {
+
+  // Desenhos SVG - mesmo desenho para compacto e expandido
   const drawings = {
     residential: (
       <svg viewBox="0 0 400 300" className="w-full h-full" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -81,7 +83,7 @@ const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban' }> = 
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center rounded-lg p-8 text-white">
+    <div className={`w-full h-full flex items-center justify-center rounded-lg text-white ${isCompact ? '' : 'p-8'}`}>
       {drawings[type]}
     </div>
   );
@@ -216,8 +218,8 @@ const ExpertiseSection: React.FC = () => {
                   // Collapsed Content
                   <>
                     {/* Thumbnail Drawing */}
-                    <div className="w-24 h-16 rounded overflow-hidden flex-shrink-0 hidden md:block bg-white/5">
-                      <LineDrawing type={item.drawingType} />
+                    <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden md:block bg-white/5">
+                      <LineDrawing type={item.drawingType} isCompact={true} />
                     </div>
 
                     {/* Title & Subtitle */}
