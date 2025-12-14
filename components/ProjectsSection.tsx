@@ -146,7 +146,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
-            Projetos que carregam <span className="italic text-[#6B7280]">histórias</span>
+            Projetos que carregam <span className="italic text-[#6B7280]">histórias.</span>
           </h2>
 
           <div className="flex flex-col items-start w-full md:w-1/2 lg:w-1/3">
@@ -242,22 +242,36 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 
                 {/* Metadata */}
                 <div 
-                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-white/50 group-hover/card:bg-white transition-colors duration-300"
+                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-gradient-to-br from-white/60 via-white/50 to-white/40 group-hover/card:from-white group-hover/card:via-white group-hover/card:to-white/95 backdrop-blur-sm transition-all duration-500 relative overflow-hidden"
                 >
-                  <div className="flex-1 min-w-0 sm:pr-4">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-gray-700 transition-colors duration-300 leading-tight break-words">
-                      {project.title}
+                  {/* Efeito de brilho sutil no hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none"></div>
+                  
+                  {/* Linha decorativa sutil */}
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200/30 to-transparent group-hover/card:via-gray-300/50 transition-all duration-500"></div>
+                  
+                  <div className="flex-1 min-w-0 sm:pr-4 relative z-10">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-[#08131A] transition-all duration-500 leading-tight break-words tracking-tight">
+                      <span className="relative inline-block">
+                        {project.title}
+                        {/* Sublinhado animado no hover */}
+                        <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#08131A]/20 group-hover/card:w-full transition-all duration-500 ease-out"></span>
+                      </span>
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-2 flex-shrink-0 sm:ml-auto">
-                    <span className="text-xs sm:text-sm md:text-base text-gray-500 font-medium whitespace-nowrap">
+                  <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 sm:ml-auto relative z-10">
+                    <span className="text-xs sm:text-sm md:text-base text-gray-500/80 group-hover/card:text-gray-600 font-normal tracking-wide whitespace-nowrap transition-colors duration-500">
                       {project.date}
                     </span>
-                    <ArrowRight 
-                      size={14} 
-                      className="md:w-4 md:h-4 text-gray-400 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-300 flex-shrink-0" 
-                      strokeWidth={2.5}
-                    />
+                    <div className="relative">
+                      <ArrowRight 
+                        size={14} 
+                        className="md:w-4 md:h-4 text-gray-400/60 group-hover/card:text-[#08131A] opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-500 ease-out flex-shrink-0" 
+                        strokeWidth={2}
+                      />
+                      {/* Círculo decorativo no hover */}
+                      <div className="absolute inset-0 rounded-full bg-[#08131A]/5 scale-0 group-hover/card:scale-150 opacity-0 group-hover/card:opacity-100 transition-all duration-500 -z-10"></div>
+                    </div>
                   </div>
                 </div>
               </div>

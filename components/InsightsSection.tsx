@@ -43,7 +43,7 @@ const InsightsSection: React.FC = () => {
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] max-w-2xl">
-          Dicas MEIFI para o <span className="italic text-[#6B7280]">seu projeto.</span>
+          Dicas MEIFI para o seu <span className="italic text-[#6B7280]">projeto.</span>
         </h2>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right">

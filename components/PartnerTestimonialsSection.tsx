@@ -148,10 +148,6 @@ const PartnerTestimonialsSection: React.FC = () => {
 
       {/* Footer / Logos */}
       <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row items-center">
-        <span className="text-sm font-medium text-gray-900 mb-6 md:mb-0 md:mr-12 whitespace-nowrap">
-          Parceiros:
-        </span>
-
         {/* Logo Carousel */}
         <div className="w-full overflow-hidden relative mask-linear-fade">
             <div className="flex space-x-16 animate-scroll-right whitespace-nowrap items-center">

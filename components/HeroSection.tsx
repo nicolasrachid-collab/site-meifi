@@ -123,14 +123,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       {/* Menu Overlay */}
       {isMenuOpen && <MenuOverlay onClose={() => setIsMenuOpen(false)} />}
 
-      {/* Background Video with Overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Video with Enhanced Effects */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-110 animate-zoom-slow will-change-transform"
         >
           <source src="/hero_video.mp4" type="video/mp4" />
           {/* Fallback para imagem caso o vídeo não carregue */}
@@ -143,7 +143,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             quality={90}
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/30 via-transparent to-[#08131A]/40"></div>
+        
+        {/* Multi-layer Gradients for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/20 via-transparent to-[#08131A]/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/30 via-transparent to-[#08131A]/30"></div>
+        
+        {/* Animated Glow Effect */}
+        <div 
+          className="absolute inset-0 animate-pulse-slow"
+          style={{
+            background: 'radial-gradient(circle at center, transparent 0%, rgba(39, 91, 122, 0.05) 50%, transparent 100%)'
+          }}
+        ></div>
+        
+        {/* Vignette Effect */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.4) 100%)'
+          }}
+        ></div>
+        
+        {/* Subtle Noise Texture */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px'
+          }}
+        ></div>
       </div>
 
       {/* Content Container */}
@@ -190,11 +218,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           {/* Bottom Left: Trusted Users */}
           <div className="flex items-center space-x-4 mb-4 md:mb-0">
              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
+                {[
+                  'https://i.pravatar.cc/100?img=47',
+                  'https://i.pravatar.cc/100?img=45',
+                  'https://i.pravatar.cc/100?img=44'
+                ].map((img, i) => (
                   <img 
                     key={i}
-                    src={`https://i.pravatar.cc/100?img=${i + 10}`} 
-                    alt={`User ${i}`}
+                    src={img} 
+                    alt={`Client ${i + 1}`}
                     className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover shadow-sm"
                   />
                 ))}
@@ -208,7 +240,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           {/* Bottom Right: Video Card */}
           <div className="bg-white/10 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl flex items-center gap-3 md:gap-4 max-w-[90%] md:max-w-sm border border-white/20 shadow-2xl transition-all duration-500 ease-out hover:bg-white/15 hover:border-white/40 hover:-translate-y-1.5 hover:shadow-3xl cursor-pointer group">
              {/* Thumbnail Container - Ilustração Vetorial */}
-             <div className="relative w-24 h-16 md:w-28 md:h-20 rounded-xl overflow-hidden flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-105 bg-transparent flex items-center justify-center">
+             <div className="relative w-24 h-16 md:w-28 md:h-20 flex-shrink-0 transition-all duration-500 group-hover:scale-105 flex items-center justify-center">
                 <svg 
                   viewBox="0 0 400 300" 
                   className="w-full h-full" 
@@ -253,9 +285,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
              </div>
              
              <div className="flex flex-col flex-grow min-w-0 gap-1">
-                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Veja nosso manifesto</span>
+                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Tire o seu projeto do papel</span>
                 <div className="flex items-center gap-2">
-                    <span className="text-xs md:text-sm text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Assista agora</span>
+                    <span className="text-xs md:text-sm text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Agendar reunião</span>
                     <div className="w-1 h-1 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>
                 </div>
              </div>

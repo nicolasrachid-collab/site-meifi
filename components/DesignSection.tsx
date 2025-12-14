@@ -31,7 +31,7 @@ const DesignSection: React.FC = () => {
           <div>
             <div className="flex space-x-1 mb-8 opacity-80 group-hover:opacity-100 transition-opacity">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} size={14} className="text-[#897E72] fill-[#897E72]" />
+                <Star key={star} size={14} className="text-[#D99A55] fill-[#D99A55]" />
               ))}
             </div>
             <p className="text-xl md:text-2xl font-serif leading-relaxed text-gray-900 mb-8 italic">
@@ -120,7 +120,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
     <div className="bg-white p-8 rounded-[2rem] h-full flex flex-col justify-between shadow-sm transition-all duration-700 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[#DFDBCE] border border-gray-100/50 cursor-default group/card min-h-[200px]">
       <div className="flex justify-between items-center mb-4">
         <span className="text-xs font-bold tracking-widest text-[#897E72] transition-colors duration-500">{number}</span>
-        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#897E72] transition-colors duration-500 flex items-center justify-center">
+        <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#275B7A] transition-colors duration-500 flex items-center justify-center">
              <Move className="w-3 h-3 text-gray-400 group-hover/card:text-[#FEFBF1] transition-colors duration-500" strokeWidth={2} />
         </div>
       </div>

@@ -218,7 +218,7 @@ const ExpertiseSection: React.FC = () => {
                   // Collapsed Content
                   <>
                     {/* Thumbnail Drawing */}
-                    <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden md:block">
+                    <div className="w-32 h-20 md:w-40 md:h-28 rounded-lg overflow-hidden flex-shrink-0 hidden md:block">
                       <LineDrawing type={item.drawingType} isCompact={true} />
                     </div>
 
