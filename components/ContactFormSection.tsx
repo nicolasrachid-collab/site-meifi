@@ -93,7 +93,7 @@ const ContactFormSection: React.FC = () => {
             <div className="pt-6 flex justify-end">
               <button 
                 type="submit"
-                className="group flex items-center gap-3 bg-[#08131A] text-white px-8 py-4 rounded-full font-medium text-sm transition-all hover:bg-[#0a1f2a] hover:scale-[1.02] active:scale-95 shadow-lg"
+                className="group flex items-center gap-3 bg-[#08131A] text-[#FEFBF1] px-8 py-4 rounded-full font-medium text-sm transition-all hover:bg-[#0a1f2a] hover:scale-[1.02] active:scale-95 shadow-lg"
               >
                 Agendar Reunião para Orçamento
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

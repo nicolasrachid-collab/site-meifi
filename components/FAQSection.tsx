@@ -46,7 +46,7 @@ const FAQSection: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A]">
-          Respostas que trazem clareza
+          Dúvida? MEIFI responde com <span className="italic text-[#6B7280]">clareza</span>
         </h2>
         
         <div className="flex items-start gap-4 max-w-sm lg:text-right lg:items-end lg:flex-col">
@@ -114,8 +114,8 @@ const FAQSection: React.FC = () => {
           <div className="absolute bottom-6 left-6 right-6">
             <div className="bg-[#1A1A1A]/90 backdrop-blur-md rounded-full p-2 pl-6 flex justify-between items-center shadow-2xl border border-white/10">
               <div className="flex items-center gap-3">
-                <Scan className="w-4 h-4 text-white/60" />
-                <span className="text-white font-medium text-sm md:text-base">
+                <Scan className="w-4 h-4 text-[#FEFBF1]/60" />
+                <span className="text-[#FEFBF1] font-medium text-sm md:text-base">
                   Ainda tem dúvidas?
                 </span>
               </div>

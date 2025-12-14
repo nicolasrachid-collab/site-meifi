@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
         aria-label="Abrir Menu"
       >
         <Menu 
-          className="w-8 h-8 text-white drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
+          className="w-8 h-8 text-[#FEFBF1] drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
           style={{
             transformOrigin: 'center center',
           }}

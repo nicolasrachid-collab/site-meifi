@@ -83,7 +83,7 @@ const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban'; isCo
   };
 
   return (
-    <div className={`w-full h-full flex items-center justify-center rounded-lg text-white ${isCompact ? '' : 'p-8'}`}>
+    <div className={`w-full h-full flex items-center justify-center rounded-lg text-[#FEFBF1] ${isCompact ? '' : 'p-8'}`}>
       {drawings[type]}
     </div>
   );
@@ -129,12 +129,12 @@ const ExpertiseSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#08131A] text-white py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#08131A] text-[#FEFBF1] py-24 px-6 md:px-12 lg:px-16">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 relative">
         <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight mb-6 text-[#FEFBF1]">
             Nossa Expertise
           </h2>
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
@@ -144,7 +144,7 @@ const ExpertiseSection: React.FC = () => {
         
         {/* Decorative Icon top right */}
         <div className="absolute top-0 right-0 hidden md:block">
-           <Scan className="w-6 h-6 text-white opacity-80" strokeWidth={1.5} />
+           <Scan className="w-6 h-6 text-[#FEFBF1] opacity-80" strokeWidth={1.5} />
         </div>
       </div>
 
@@ -218,13 +218,13 @@ const ExpertiseSection: React.FC = () => {
                   // Collapsed Content
                   <>
                     {/* Thumbnail Drawing */}
-                    <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden md:block bg-white/5">
+                    <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 hidden md:block">
                       <LineDrawing type={item.drawingType} isCompact={true} />
                     </div>
 
                     {/* Title & Subtitle */}
                     <div className="flex-grow flex flex-col justify-center">
-                        <h3 className="text-xl md:text-2xl font-medium text-white mb-1">{item.title}</h3>
+                        <h3 className="text-xl md:text-2xl font-medium text-[#FEFBF1] mb-1">{item.title}</h3>
                         <p className="text-gray-600 text-sm">{item.subtitle}</p>
                     </div>
 

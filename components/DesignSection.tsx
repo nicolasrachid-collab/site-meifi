@@ -96,7 +96,7 @@ const DesignSection: React.FC = () => {
               className="w-full h-full object-cover transform transition-transform duration-1000 ease-out group-hover:scale-105"
             />
             <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
-                 <h3 className="text-white font-serif text-2xl tracking-tight drop-shadow-md group-hover:translate-x-1 transition-transform duration-500">Autenticidade</h3>
+                 <h3 className="text-[#FEFBF1] font-serif text-2xl tracking-tight drop-shadow-md group-hover:translate-x-1 transition-transform duration-500">Autenticidade</h3>
                  <div className="h-0.5 w-12 bg-white/50 mt-4 group-hover:w-20 transition-all duration-700"></div>
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/60 to-transparent opacity-60"></div>
@@ -121,7 +121,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ number, title, description }) => {
       <div className="flex justify-between items-center mb-4">
         <span className="text-xs font-bold tracking-widest text-[#897E72] transition-colors duration-500">{number}</span>
         <div className="p-2 bg-gray-50 rounded-full group-hover/card:bg-[#897E72] transition-colors duration-500 flex items-center justify-center">
-             <Move className="w-3 h-3 text-gray-400 group-hover/card:text-white transition-colors duration-500" strokeWidth={2} />
+             <Move className="w-3 h-3 text-gray-400 group-hover/card:text-[#FEFBF1] transition-colors duration-500" strokeWidth={2} />
         </div>
       </div>
       

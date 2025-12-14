@@ -36,7 +36,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
           </div>
 
           {/* Content Overlay on Image */}
-          <div className="absolute bottom-8 left-8 text-white z-10">
+          <div className="absolute bottom-8 left-8 text-[#FEFBF1] z-10">
              <div className="mb-4">
                <Scan className="w-6 h-6 opacity-80" />
              </div>

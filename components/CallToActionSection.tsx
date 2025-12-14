@@ -54,7 +54,7 @@ const CallToActionSection: React.FC = () => {
         
         {/* 1. Top Content: Headline */}
         <div className="max-w-4xl pt-10">
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium tracking-tight text-white leading-[1.1] drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-medium tracking-tight text-[#FEFBF1] leading-[1.1] drop-shadow-lg">
             Vamos conversar sobre o seu espaço —<br className="hidden md:block"/>
             estamos prontos quando você estiver
           </h2>
@@ -62,7 +62,7 @@ const CallToActionSection: React.FC = () => {
 
         {/* 2. Middle Content: Centered Text */}
         <div className="flex justify-center items-center py-12 md:py-20">
-          <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl text-center drop-shadow-md">
+          <p className="text-[#FEFBF1]/90 text-lg md:text-xl font-medium leading-relaxed max-w-2xl text-center drop-shadow-md">
             Nosso trabalho fala através das vozes daqueles com quem colaboramos. Parcerias atenciosas, resultados significativos — e espaços que realmente inspiram.
           </p>
         </div>
@@ -78,24 +78,24 @@ const CallToActionSection: React.FC = () => {
                     <div className="flex items-center gap-3">
                         <img 
                         src={profileImage} 
-                        alt="Helena M." 
+                        alt="Eduardo Mancini" 
                         className="w-12 h-12 rounded-lg object-cover"
                         />
                         <div className="flex flex-col">
-                        <span className="text-[#08131A] font-bold text-base leading-tight">Helena M.</span>
-                        <span className="text-gray-500 text-xs font-medium">Consultora MEIFI</span>
+                        <span className="text-[#08131A] font-bold text-base leading-tight">Eduardo Mancini</span>
+                        <span className="text-gray-500 text-xs font-medium">Sócio-fundador MEIFI</span>
                         </div>
                     </div>
                     <Scan className="w-5 h-5 text-[#08131A]" strokeWidth={2} />
                     </div>
 
                     <p className="text-[#08131A] font-medium text-lg leading-snug mb-8">
-                    Com clareza, criatividade e precisão.
+                    Tiramos do papel o seu sonho
                     </p>
 
                     <div className="flex justify-end">
-                    <button className="bg-[#08131A] text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition-transform active:scale-95 shadow-lg w-full md:w-auto">
-                        Solicite um Orçamento
+                    <button className="bg-[#08131A] text-[#FEFBF1] px-6 py-3 rounded-full text-sm font-medium hover:bg-[#275B7A] hover:scale-105 transition-all active:scale-95 shadow-lg w-full md:w-auto">
+                        Agende uma conversa
                     </button>
                     </div>
 
@@ -105,7 +105,7 @@ const CallToActionSection: React.FC = () => {
 
         {/* Decorative Corner Icon (Hidden on mobile) */}
         <div className="absolute bottom-12 left-16 hidden lg:block">
-             <Move className="w-6 h-6 text-white/50" strokeWidth={1.5} />
+             <Move className="w-6 h-6 text-[#FEFBF1]/50" strokeWidth={1.5} />
         </div>
 
       </div>

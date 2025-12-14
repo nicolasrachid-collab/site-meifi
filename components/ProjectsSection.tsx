@@ -146,7 +146,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
-            Nossos Projetos
+            Projetos que carregam <span className="italic text-[#6B7280]">histórias</span>
           </h2>
 
           <div className="flex flex-col items-start w-full md:w-1/2 lg:w-1/3">

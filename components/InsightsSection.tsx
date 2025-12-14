@@ -43,14 +43,14 @@ const InsightsSection: React.FC = () => {
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] max-w-2xl">
-          Insights que moldam espaços
+          Dicas MEIFI para o <span className="italic text-[#6B7280]">seu projeto.</span>
         </h2>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right">
           <p className="text-gray-600 text-sm md:text-base leading-snug max-w-xs mb-6">
             Explore ideias, tendências e histórias dos bastidores do nosso escritório.
           </p>
-          <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
+          <button className="px-8 py-3 bg-[#08131A] text-[#FEFBF1] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
             Ver tudo
           </button>
         </div>
@@ -77,7 +77,7 @@ const InsightsSection: React.FC = () => {
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
-            <h3 className="text-2xl md:text-3xl text-white font-medium max-w-sm drop-shadow-md">
+            <h3 className="text-2xl md:text-3xl text-[#FEFBF1] font-medium max-w-sm drop-shadow-md">
               {featuredPost.title}
             </h3>
             
@@ -114,7 +114,7 @@ const InsightsSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ml-4 ${isOpen ? 'bg-[#08131A] text-white' : 'bg-[#08131A] text-white'}`}>
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 ml-4 ${isOpen ? 'bg-[#08131A] text-[#FEFBF1]' : 'bg-[#08131A] text-[#FEFBF1]'}`}>
                     <ChevronRight className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-90' : ''}`} />
                   </div>
                 </div>

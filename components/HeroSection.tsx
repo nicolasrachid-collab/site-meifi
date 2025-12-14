@@ -119,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
   return (
     // Usa h-[100dvh] para lidar corretamente com barras de navegadores mobile
-    <div className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden text-white">
+    <div className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden text-[#FEFBF1]">
       {/* Menu Overlay */}
       {isMenuOpen && <MenuOverlay onClose={() => setIsMenuOpen(false)} />}
 
@@ -177,7 +177,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
               </button>
               
               {/* Tooltip Discreto */}
-              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-white/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+              <div className="absolute top-full mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform translate-y-2 group-hover:translate-y-0 text-xs font-light tracking-wide text-[#FEFBF1]/80 pointer-events-none bg-[#08131A]/20 backdrop-blur-sm px-3 py-1 rounded-full border border-[#FEFBF1]/10">
                 Clique para agendar sua consulta
               </div>
             </div>
@@ -253,9 +253,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
              </div>
              
              <div className="flex flex-col flex-grow min-w-0 gap-1">
-                <span className="text-sm md:text-base font-semibold text-white drop-shadow-md group-hover:text-white transition-colors leading-tight">Veja nosso manifesto</span>
+                <span className="text-sm md:text-base font-semibold text-[#FEFBF1] drop-shadow-md group-hover:text-[#FEFBF1] transition-colors leading-tight">Veja nosso manifesto</span>
                 <div className="flex items-center gap-2">
-                    <span className="text-xs md:text-sm text-white/80 group-hover:text-white/90 transition-colors duration-500 font-medium">Assista agora</span>
+                    <span className="text-xs md:text-sm text-[#FEFBF1]/80 group-hover:text-[#FEFBF1]/90 transition-colors duration-500 font-medium">Assista agora</span>
                     <div className="w-1 h-1 rounded-full bg-white/60 group-hover:bg-white transition-colors"></div>
                 </div>
              </div>

@@ -26,7 +26,7 @@ const TeamSection: React.FC = () => {
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-gray-900 max-w-xl leading-[1.1]">
-            Conheça quem faz a MEIFI acontecer
+            Conheça quem faz a <span className="italic text-[#6B7280]">MEIFI acontecer</span>
           </h2>
           
           <div className="lg:max-w-md text-left lg:text-left">
@@ -62,18 +62,18 @@ const TeamSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08131A]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
               
               {/* Top Right Icon - Com animação */}
-              <div className="absolute top-4 right-4 text-white/70 z-20 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+              <div className="absolute top-4 right-4 text-[#FEFBF1]/70 z-20 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
                 <img 
                   src="/icon.svg" 
                   alt="" 
-                  className="w-6 h-6 md:w-7 md:h-7 transition-transform duration-500 group-hover:rotate-12"
+                  className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:rotate-12"
                   aria-hidden="true"
                 />
               </div>
 
               {/* Name at Bottom Left - Com animação */}
               <div className="absolute bottom-6 left-6 pr-4 z-20 transform translate-y-0 group-hover:-translate-y-1 transition-transform duration-500">
-                <h3 className="text-white text-lg md:text-xl font-medium tracking-wide drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-500">
+                <h3 className="text-[#FEFBF1] text-lg md:text-xl font-medium tracking-wide drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-500">
                   {member.name}
                 </h3>
               </div>
@@ -92,7 +92,7 @@ const TeamSection: React.FC = () => {
             </p>
           </div>
           
-          <button className="bg-[#08131A] text-white px-8 py-3 rounded-full font-medium text-sm flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 shadow-lg">
+          <button className="bg-[#08131A] text-[#FEFBF1] px-8 py-3 rounded-full font-medium text-sm flex items-center gap-2 transition-transform hover:scale-105 active:scale-95 shadow-lg">
             Vamos conversar
           </button>
         </div>

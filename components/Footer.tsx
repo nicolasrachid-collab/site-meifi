@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-[#08131A] text-white pt-24 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden flex flex-col">
+    <footer className="w-full bg-[#08131A] text-[#FEFBF1] pt-24 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden flex flex-col">
       
       {/* Top Section: Newsletter & Intro */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-16">
@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
             <input 
               type="email" 
               placeholder="Endereço de e-mail" 
-              className="w-full bg-transparent border-none outline-none text-white placeholder-gray-600 text-lg pr-12 pb-1"
+              className="w-full bg-transparent border-none outline-none text-[#FEFBF1] placeholder-gray-600 text-lg pr-12 pb-1"
             />
-            <button className="absolute right-0 bottom-3 text-white/50 hover:text-white transition-colors">
+            <button className="absolute right-0 bottom-3 text-[#FEFBF1]/50 hover:text-[#FEFBF1] transition-colors">
               <ArrowUpRight size={20} />
             </button>
           </div>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2">Explorar</h4>
             {['Projetos', 'Expertise', 'Studio', 'Notícias', 'Contato'].map((item) => (
-              <a key={item} href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a key={item} href="#" className="text-gray-300 hover:text-[#FEFBF1] transition-colors">
                 {item}
               </a>
             ))}
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-2">Social</h4>
             {['Instagram', 'LinkedIn', 'Pinterest', 'Behance'].map((item) => (
-              <a key={item} href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a key={item} href="#" className="text-gray-300 hover:text-[#FEFBF1] transition-colors">
                 {item}
               </a>
             ))}
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
               Belo Horizonte, MG<br />
               Brasil
             </address>
-            <a href="mailto:contato@meifi.com.br" className="text-white border-b border-white/30 self-start pb-0.5 hover:border-white transition-colors mt-2">
+            <a href="mailto:contato@meifi.com.br" className="text-[#FEFBF1] border-b border-[#FEFBF1]/30 self-start pb-0.5 hover:border-[#FEFBF1] transition-colors mt-2">
               contato@meifi.com.br
             </a>
           </div>
@@ -74,11 +74,13 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Middle Section: Big Brand Name */}
-      <div className="w-full border-t border-white/10 pt-16 mb-12">
-        <h1 className="text-[15vw] md:text-[16vw] font-serif leading-none text-center tracking-tight opacity-90 select-none pointer-events-none text-white uppercase">
-          MEIFI
-        </h1>
+      {/* Middle Section: Logo */}
+      <div className="w-full border-t border-white/10 pt-16 mb-12 flex justify-center items-center">
+        <img 
+          src="/Logotipo.svg" 
+          alt="MEIFI" 
+          className="h-16 md:h-20 lg:h-24 w-auto opacity-90"
+        />
       </div>
 
       {/* Bottom Section: Copyright & Legal */}
@@ -87,14 +89,14 @@ const Footer: React.FC = () => {
           <span>&copy; 2025 MEIFI Arquitetura. Todos os direitos reservados.</span>
           <div className="hidden md:block w-1 h-1 bg-gray-700 rounded-full"></div>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors">Termos de Serviço</a>
+            <a href="#" className="hover:text-[#FEFBF1] transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-[#FEFBF1] transition-colors">Termos de Serviço</a>
           </div>
         </div>
 
         <button 
           onClick={scrollToTop} 
-          className="flex items-center gap-2 group text-white hover:text-gray-300 transition-colors"
+          className="flex items-center gap-2 group text-[#FEFBF1] hover:text-gray-300 transition-colors"
         >
           <span>Voltar ao topo</span>
           <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#08131A] transition-all">

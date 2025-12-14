@@ -12,10 +12,10 @@ interface Stat {
 
 const StatsSection: React.FC = () => {
   const stats: Stat[] = [
-    { value: 7, label: "Anos de trajetória sólida", isNumber: true },
+    { value: 7, label: "Nossos anos de trajetória", isNumber: true },
     { value: 40, label: "Projetos entregues com excelência", suffix: "+", isNumber: true },
     { value: 100, label: "Dedicação e cuidado mineiro", suffix: "%", isNumber: true },
-    { value: 150, label: "Vidas impactadas", isNumber: true },
+    { value: 150, label: "Total de vidas impactadas", isNumber: true },
   ];
 
   const [countedValues, setCountedValues] = useState<number[]>(stats.map(() => 0));

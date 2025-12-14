@@ -38,7 +38,7 @@ const VideoTestimonialSection: React.FC = () => {
                   <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
                     <Play size={16} fill="#08131A" className="text-[#08131A]" />
                   </div>
-                  <span className="text-white font-medium text-sm">Nossa história</span>
+                  <span className="text-[#FEFBF1] font-medium text-sm">Nossa história</span>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@ const VideoTestimonialSection: React.FC = () => {
             <div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.1] mb-12 text-gray-900">
                 Arquitetura feita com calma,<br />
-                cuidado e propósito.
+                <span className="italic text-[#6B7280]">cuidado e propósito</span>.
               </h2>
 
               <div className="flex flex-col md:flex-row gap-8 md:gap-12 mb-16 border-t border-transparent md:border-transparent pt-0">
@@ -62,7 +62,7 @@ const VideoTestimonialSection: React.FC = () => {
                 </div>
 
                 <div className="flex-shrink-0">
-                  <button className="px-8 py-3 bg-[#08131A] text-white rounded-full font-medium text-sm transition-all hover:bg-[#275B7A] hover:scale-105 active:scale-95">
+                  <button className="px-8 py-3 bg-[#08131A] text-[#FEFBF1] rounded-full font-medium text-sm transition-all hover:bg-[#275B7A] hover:scale-105 active:scale-95">
                     Fale Conosco
                   </button>
                 </div>
@@ -121,7 +121,7 @@ const VideoTestimonialSection: React.FC = () => {
         <div className="fixed inset-0 z-[60] bg-[#08131A]/90 backdrop-blur-xl flex items-center justify-center p-4 md:p-10 animate-fade-in">
           <button 
             onClick={() => setIsVideoOpen(false)} 
-            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
+            className="absolute top-6 right-6 text-[#FEFBF1]/70 hover:text-[#FEFBF1] transition-colors"
           >
             <X size={40} strokeWidth={1} />
           </button>
