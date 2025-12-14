@@ -79,8 +79,8 @@ const PartnerTestimonialsSection: React.FC = () => {
                 className="relative w-full h-full cursor-pointer group/video overflow-hidden"
                 onClick={() => {
                   if (item.videoUrl) {
-                    setPlayingVideo(item.videoUrl);
-                    setIsVideoOpen(true);
+                  setPlayingVideo(item.videoUrl);
+                  setIsVideoOpen(true);
                   }
                 }}
               >

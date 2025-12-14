@@ -291,10 +291,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             <div className="relative group flex flex-col items-center">
               <button 
                 onClick={handleContactClick}
-                className="relative px-10 py-4 bg-white text-[#08131A] rounded-full font-medium text-base md:text-lg transition-all duration-500 ease-out hover:bg-[#FEFBF1] hover:shadow-2xl hover:shadow-[#275B7A]/20 hover:-translate-y-1 active:translate-y-0 active:scale-95 shadow-xl overflow-hidden group/btn"
+                className="relative px-10 py-4 bg-white/90 backdrop-blur-xl text-[#08131A] rounded-full font-medium text-base md:text-lg transition-all duration-500 ease-out hover:bg-white/95 hover:backdrop-blur-2xl hover:shadow-2xl hover:shadow-[#275B7A]/20 hover:-translate-y-1 active:translate-y-0 active:scale-95 shadow-xl overflow-hidden group/btn border border-white/50"
               >
                 {/* Efeito de brilho animado */}
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+                
+                {/* Efeito de vidro - overlay interno */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-white/20 to-transparent rounded-full opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
                 
                 {/* Texto do botão */}
                 <span className="relative z-10 flex items-center gap-2">
@@ -309,8 +312,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   </svg>
                 </span>
                 
-                {/* Borda animada */}
-                <div className="absolute inset-0 rounded-full border-2 border-white/0 group-hover/btn:border-[#275B7A]/30 transition-all duration-500"></div>
+                {/* Borda animada com efeito de vidro */}
+                <div className="absolute inset-0 rounded-full border-2 border-white/60 group-hover/btn:border-white/80 group-hover/btn:shadow-[0_0_20px_rgba(39,91,122,0.3)] transition-all duration-500"></div>
               </button>
               
             </div>

@@ -60,7 +60,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
               alt="MEIFI" 
               className="h-8 md:h-10 w-auto"
               style={{
-                filter: 'brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2000%) hue-rotate(195deg) brightness(0.85) contrast(1.2)',
+                filter: 'brightness(0) saturate(100%) invert(3%) sepia(8%) saturate(2000%) hue-rotate(180deg) brightness(0.9) contrast(1.1)',
               }}
             />
           </div>
