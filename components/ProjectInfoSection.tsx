@@ -5,7 +5,7 @@ const ProjectInfoSection: React.FC = () => {
   const projectImage = "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?q=80&w=1000&auto=format&fit=crop";
 
   return (
-    <section className="w-full bg-white text-[#08131A] py-20 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-white text-[#08131A] py-20 px-6 md:px-12 lg:px-[232px]">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start">
         
         {/* Coluna 1: Label Lateral */}

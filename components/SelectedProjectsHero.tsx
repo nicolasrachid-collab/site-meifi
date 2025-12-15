@@ -9,7 +9,7 @@ interface SelectedProjectsHeroProps {
 
 const SelectedProjectsHero: React.FC<SelectedProjectsHeroProps> = ({ onBack }) => {
   return (
-    <section className="w-full bg-white text-[#08131A] min-h-[80vh] flex flex-col justify-between px-6 md:px-12 lg:px-16 py-8">
+    <section className="w-full bg-white text-[#08131A] min-h-[80vh] flex flex-col justify-between px-6 md:px-12 lg:px-[232px] py-8">
       
       {/* Top: Navbar */}
       <nav className="w-full flex items-center justify-between">

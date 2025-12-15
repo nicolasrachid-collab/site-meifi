@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Plus, X, Scan } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
 
 interface ExpertiseItem {
   id: number;
@@ -123,7 +123,7 @@ const ExpertiseSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#08131A] text-[#FEFBF1] py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#08131A] text-[#FEFBF1] py-24 px-6 md:px-12 lg:px-[232px]">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 relative">
@@ -134,11 +134,6 @@ const ExpertiseSection: React.FC = () => {
           <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
             Atuamos em diferentes escalas e tipologias, oferecendo soluções arquitetônicas completas, desenvolvidas com rigor técnico, sensibilidade estética e atenção às necessidades de cada projeto.
           </p>
-        </div>
-        
-        {/* Decorative Icon top right */}
-        <div className="absolute top-0 right-0 hidden md:block">
-           <Scan className="w-6 h-6 text-[#FEFBF1] opacity-80" strokeWidth={1.5} />
         </div>
       </div>
 
@@ -212,7 +207,7 @@ const ExpertiseSection: React.FC = () => {
                     </div>
 
                     {/* Plus Button */}
-                    <div className="flex items-center justify-end flex-shrink-0">
+                    <div className="flex items-center justify-end flex-shrink-0 mr-4 md:mr-6 lg:mr-8">
                          <div className="w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/5 border-2 border-white/30 hover:bg-white/10 hover:border-white/50 flex items-center justify-center text-[#FEFBF1] hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
                             <Plus className="w-5 h-5 md:w-6 md:h-6 stroke-[2.5]" />
                          </div>

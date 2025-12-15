@@ -56,7 +56,7 @@ const PartnerTestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-16 overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-[232px] overflow-hidden">
       
       {/* Headline */}
       <div className="mb-16 max-w-3xl">

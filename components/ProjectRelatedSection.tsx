@@ -23,7 +23,7 @@ const ProjectRelatedSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#F9F9F9] text-[#08131A] py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#F9F9F9] text-[#08131A] py-24 px-6 md:px-12 lg:px-[232px]">
       
       {/* Header da Seção */}
       <div className="flex justify-between items-center mb-10 border-t border-transparent">

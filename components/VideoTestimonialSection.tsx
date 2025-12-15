@@ -11,9 +11,8 @@ const VideoTestimonialSection: React.FC = () => {
 
   return (
     <>
-      <section className="w-full bg-[#FAFAFA] text-[#08131A] py-20 md:py-28 lg:py-32 px-6 md:px-12 lg:px-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-20 items-start">
+      <section className="w-full bg-[#FAFAFA] text-[#08131A] py-20 md:py-28 lg:py-32 px-6 md:px-12 lg:px-[232px]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-20 items-start lg:items-stretch">
             
             {/* Left Side - Content (Título e Texto primeiro) */}
             <div className="w-full lg:w-[58%] xl:w-[62%] flex flex-col gap-10 lg:gap-12 order-1 lg:order-1">
@@ -40,46 +39,11 @@ const VideoTestimonialSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Bottom Cards Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                
-                {/* Card 1 */}
-                <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                  <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                    Equipe colaborativa
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
-                  </p>
-                </div>
-
-                {/* Card 2 */}
-                <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                  <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                    Olhar contemporâneo
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
-                  </p>
-                </div>
-
-                {/* Card 3 */}
-                <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-                  <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                    Comunicação autêntica
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    Processos claros, diálogo aberto e decisões construídas com leveza.
-                  </p>
-                </div>
-
-              </div>
             </div>
 
             {/* Right Side - Large Image with Video Trigger (Terceiro) */}
-            <div className="w-full lg:w-[42%] xl:w-[38%] relative group cursor-pointer flex-shrink-0 order-2 lg:order-2" onClick={() => setIsVideoOpen(true)}>
-              <div className="aspect-[4/5] w-full rounded-3xl overflow-hidden relative shadow-xl group-hover:shadow-2xl transition-all duration-500">
+            <div className="w-full lg:w-[42%] xl:w-[38%] relative group cursor-pointer flex-shrink-0 order-2 lg:order-2 flex" onClick={() => setIsVideoOpen(true)}>
+              <div className="w-full h-full rounded-3xl overflow-hidden relative shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 <img 
                   src={mainImage} 
                   alt="Equipe MEIFI" 
@@ -99,7 +63,41 @@ const VideoTestimonialSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Cards Grid - Largura Total */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 lg:mt-16">
+            
+            {/* Card 1 */}
+            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
+              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
+                Equipe colaborativa
+              </h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
+              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
+                Olhar contemporâneo
+              </h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
+              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
+                Comunicação autêntica
+              </h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                Processos claros, diálogo aberto e decisões construídas com leveza.
+              </p>
+            </div>
+
+          </div>
       </section>
 
       {/* Full Screen Video Modal */}

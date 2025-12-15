@@ -134,7 +134,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   return (
     <div 
       ref={containerRef} 
-      className={`relative bg-[#FAFAFA] ${isDesktop ? 'h-[300vh]' : 'h-auto py-20'}`}
+      className={`relative bg-[#FAFAFA] ${isDesktop ? 'h-[300vh] pb-32 lg:pb-40' : 'h-auto py-20 pb-32 lg:pb-40'}`}
     >
       
       {/* Sticky Container ou Normal Flow no Mobile */}
@@ -144,25 +144,30 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       >
         
         {/* Header Section */}
-        <div className="flex-shrink-0 pt-16 px-6 md:px-12 lg:px-16 flex flex-col md:flex-row justify-between items-start md:items-end mb-8 z-10 bg-[#FAFAFA]">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6 md:mb-0">
-            Projetos que carregam <span className="italic text-[#6B7280]">histórias.</span>
-          </h2>
-
-          <div className="flex flex-col items-start w-full md:w-1/2 lg:w-1/3">
-            <p className="text-sm md:text-base text-gray-600 text-left mb-6 w-full">
+        <div className="flex-shrink-0 pt-16 pb-12 px-6 md:px-12 lg:px-[232px] flex flex-col md:flex-row justify-between items-start md:items-end gap-8 z-10 bg-[#FAFAFA]">
+          <div className="flex flex-col items-start w-full md:w-1/2 lg:w-2/3">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6">
+              Projetos que carregam <span className="italic text-[#6B7280]">histórias.</span>
+            </h2>
+            
+            <p className="text-sm md:text-base text-gray-600 text-left mb-0 w-full max-w-2xl">
               Cada projeto reafirma que a evolução na arquitetura passa pela<br className="hidden md:block"/>
               construção de caminhos com dedicação e atenção aos detalhes.
             </p>
-            
+          </div>
+
+          <div className="flex flex-col items-start md:items-end w-full md:w-1/2 lg:w-1/3 gap-6">
             {/* Minimalist See All Button */}
             {onNavigateToProjects && (
               <button 
                 onClick={onNavigateToProjects}
-                className="group flex items-center gap-2 text-sm font-medium border-b border-[#08131A] pb-0.5 hover:text-gray-600 hover:border-gray-400 transition-all self-start mb-6"
+                className="group flex items-center gap-3 text-sm font-semibold text-[#08131A] hover:text-[#08131A]/90 transition-all self-start md:self-end px-5 py-2.5 rounded-xl hover:bg-gradient-to-r hover:from-gray-100/60 hover:to-gray-50/40 backdrop-blur-sm border border-transparent hover:border-gray-200/40 shadow-sm hover:shadow-md"
               >
-                Ver todos
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300"/>
+                <span className="relative">
+                  Ver todos
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-[1.5px] bg-[#08131A]/40 group-hover:w-full transition-all duration-500"></span>
+                </span>
+                <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-500 ease-out" strokeWidth={2.5}/>
               </button>
             )}
             
@@ -183,10 +188,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </div>
 
         {/* Content Area */}
-        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-6 lg:pl-16 overflow-hidden' : 'px-6 md:px-12'}`}>
+        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-6 lg:pl-[232px] overflow-hidden pb-8 lg:pb-12' : 'px-6 md:px-12 pb-8 lg:pb-12'}`}>
           <div 
             ref={scrollContainerRef}
-            className={`flex ${isDesktop ? 'gap-4 lg:gap-6 will-change-transform' : 'flex-col gap-8 md:gap-12 w-full'}`}
+            className={`flex ${isDesktop ? 'gap-6 lg:gap-8 will-change-transform' : 'flex-col gap-8 md:gap-12 w-full'}`}
             style={{ 
               transform: isDesktop ? `translateX(${translateX}%)` : 'none',
               transition: isDesktop ? 'transform 0.075s linear' : 'none'
@@ -205,15 +210,17 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   }
                 }}
                 aria-label={`Ver projeto ${project.title}`}
-                className={`relative flex-shrink-0 flex flex-col ${isDesktop ? 'w-[45vw]' : 'w-full'} cursor-pointer group/card transition-all duration-500 ease-out hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 focus:ring-offset-2 rounded-xl overflow-hidden bg-white/50 backdrop-blur-sm border border-transparent hover:border-gray-200/50 hover:bg-white/80`}
+                className={`relative flex-shrink-0 flex flex-col ${isDesktop ? 'w-[45vw]' : 'w-full'} cursor-pointer group/card transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 focus:ring-offset-2 rounded-[16px] overflow-hidden bg-white/70 backdrop-blur-xl border border-gray-200/40 hover:border-gray-300/60 hover:bg-white/95 shadow-md hover:shadow-2xl transition-all duration-700 hover:scale-[1.02]`}
               >
                 {/* Image Card */}
-                <div className="aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-sm group-hover/card:shadow-2xl transition-all duration-500 relative">
-                  <div className="absolute inset-0 overflow-hidden">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-t-[16px] bg-gradient-to-br from-gray-50/80 to-gray-100/80 shadow-lg group-hover/card:shadow-2xl transition-all duration-700 relative border-b border-gray-200/30 group-hover/card:border-gray-300/50 group-hover/card:border-gray-400/40">
+                  {/* Efeito de brilho no container */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-transparent group-hover/card:from-white/10 transition-all duration-1000 pointer-events-none z-0 rounded-t-[16px]"></div>
+                  <div className="absolute inset-0 overflow-hidden rounded-t-[16px]">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700 ease-out will-change-transform"
+                      className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-[1.1] transition-transform duration-1200 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover/card:brightness-110"
                       style={{
                         // Parallax e Scale aplicados conforme solicitado
                         transform: isDesktop
@@ -221,71 +228,108 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                           : 'scale(1)',
                         // Transição mais suave e com peso (cubic-bezier) para sensação premium
                         transition: isDesktop
-                          ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)'
-                          : 'transform 0.5s ease',
+                          ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), filter 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
+                          : 'transform 0.5s ease, filter 1s ease',
+                        filter: 'saturate(0.95) contrast(1.05)',
                       }}
                       loading={project.id <= 2 ? 'eager' : 'lazy'}
                     />
                     
-                    {/* Efeito de brilho sutil no hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover/card:from-white/10 group-hover/card:via-transparent group-hover/card:to-transparent transition-all duration-700 pointer-events-none z-10"></div>
+                    {/* Efeito de brilho elegante no hover - múltiplas camadas */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover/card:from-white/20 group-hover/card:via-white/8 group-hover/card:to-transparent transition-all duration-1200 pointer-events-none z-10"></div>
                     
-                    {/* Overlay com gradiente sutil */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 group-hover/card:via-[#08131A]/5 group-hover/card:to-[#08131A]/10 transition-all duration-500 z-10 pointer-events-none"></div>
+                    {/* Overlay com gradiente refinado - camada superior */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 via-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/12 group-hover/card:via-[#08131A]/6 group-hover/card:to-[#08131A]/15 transition-all duration-800 z-10 pointer-events-none"></div>
                     
-                    {/* Vignette effect sutil */}
-                    <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-[#08131A]/0 group-hover/card:to-[#08131A]/5 transition-all duration-500 pointer-events-none z-10" style={{
-                      background: 'radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(8, 19, 26, 0.05) 100%)'
+                    {/* Vignette effect elegante - múltiplas camadas */}
+                    <div className="absolute inset-0 transition-all duration-800 pointer-events-none z-10" style={{
+                      background: 'radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, transparent 40%, rgba(8, 19, 26, 0.05) 100%)'
+                    }}>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#08131A]/0 to-[#08131A]/0 group-hover/card:to-[#08131A]/10 transition-all duration-800"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/0 to-[#08131A]/0 group-hover/card:from-[#08131A]/5 transition-all duration-800"></div>
+                    </div>
+                    
+                    {/* Efeito de luz sutil - múltiplas direções */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/0 group-hover/card:to-white/8 transition-all duration-1200 pointer-events-none z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tl from-white/0 via-transparent to-transparent group-hover/card:from-white/6 transition-all duration-1200 pointer-events-none z-10"></div>
+                    
+                    {/* Efeito de profundidade com sombra interna */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08131A]/0 group-hover/card:to-[#08131A]/20 transition-all duration-1000 pointer-events-none z-10" style={{
+                      boxShadow: 'inset 0 -100px 100px -50px rgba(8, 19, 26, 0)',
+                    }}>
+                      <div className="absolute inset-0 group-hover/card:shadow-[inset_0_-120px_120px_-60px_rgba(8,19,26,0.3)] transition-all duration-1000"></div>
+                    </div>
+                    
+                    {/* Efeito de brilho animado no hover */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/0 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none z-10" style={{
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+                      transform: 'translateX(-100%)',
                     }}></div>
                   </div>
                   
-                  {/* Ícone de interação com efeito de vidro */}
-                  <div className="absolute top-3 right-3 md:top-4 md:right-4 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-opacity duration-500">
-                    <div className="bg-white/20 backdrop-blur-xl rounded-lg p-2.5 md:p-3 shadow-2xl border border-white/30 ring-1 ring-white/20">
+                  {/* Ícone de interação com efeito de vidro premium */}
+                  <div className="absolute top-5 right-5 md:top-6 md:right-6 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-all duration-700 group-hover/card:scale-110 group-hover/card:rotate-3">
+                    <div className="bg-white/95 backdrop-blur-2xl rounded-xl p-3 md:p-3.5 shadow-2xl border border-white/60 ring-2 ring-white/40 group-hover/card:ring-white/60 transition-all duration-700">
                       <img 
                         src="/icon.svg" 
                         alt="" 
-                        className="w-6 h-6 md:w-7 md:h-7 brightness-0 invert"
+                        className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert opacity-90 group-hover/card:opacity-100 transition-opacity duration-500"
                         aria-hidden="true"
                       />
+                    </div>
+                  </div>
+                  
+                  {/* Badge de categoria sutil */}
+                  <div className="absolute top-5 left-5 md:top-6 md:left-6 z-20 opacity-0 group-hover/card:opacity-100 transition-all duration-700 group-hover/card:translate-y-0 translate-y-2">
+                    <div className="bg-[#08131A]/80 backdrop-blur-xl rounded-lg px-3 py-1.5 text-[#FEFBF1] text-xs font-medium tracking-wide">
+                      Projeto
                     </div>
                   </div>
                 </div>
                 
                 {/* Metadata */}
                 <div 
-                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 text-[#08131A] bg-gradient-to-br from-white/70 via-white/60 to-white/50 group-hover/card:from-white/95 group-hover/card:via-white/90 group-hover/card:to-white/85 backdrop-blur-md transition-all duration-500 relative overflow-hidden border border-white/20 group-hover/card:border-white/40"
+                  className="w-full flex flex-col sm:flex-row sm:justify-between sm:items-start gap-5 sm:gap-6 px-6 sm:px-7 md:px-8 py-6 sm:py-7 md:py-8 text-[#08131A] bg-gradient-to-br from-white/60 via-white/50 to-white/40 group-hover/card:from-white/80 group-hover/card:via-white/70 group-hover/card:to-white/60 backdrop-blur-2xl transition-all duration-700 relative overflow-hidden border-t border-white/20 group-hover/card:border-white/40 shadow-lg group-hover/card:shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.4) 100%)',
+                    backdropFilter: 'blur(20px) saturate(180%)',
+                    WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                  }}
                 >
-                  {/* Efeito de vidro com overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/20 to-transparent opacity-50 group-hover/card:opacity-70 transition-opacity duration-500 pointer-events-none"></div>
+                  {/* Overlay de vidro com múltiplas camadas */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent pointer-events-none z-0"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent pointer-events-none z-0"></div>
                   
-                  {/* Efeito de brilho sutil no hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none"></div>
+                  {/* Linha decorativa superior elegante com brilho */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white/60 to-transparent group-hover/card:via-white/80 transition-all duration-700 z-10 shadow-[0_1px_2px_rgba(255,255,255,0.3)]"></div>
                   
-                  {/* Linha decorativa sutil */}
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover/card:via-white/60 transition-all duration-500"></div>
+                  {/* Efeito de brilho animado no hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover/card:opacity-100 group-hover/card:animate-shimmer pointer-events-none z-0"></div>
                   
-                  <div className="flex-1 min-w-0 sm:pr-4 relative z-10">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-serif font-medium text-[#08131A] group-hover/card:text-[#08131A] transition-all duration-500 leading-tight break-words tracking-tight">
+                  {/* Reflexo de luz sutil */}
+                  <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none z-0"></div>
+                  
+                  <div className="flex-1 min-w-0 sm:pr-6 relative z-10">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-medium text-[#08131A] group-hover/card:text-[#08131A] transition-all duration-700 leading-[1.15] break-words tracking-tight mb-2 group-hover/card:translate-x-0.5">
                       <span className="relative inline-block">
                         {project.title}
-                        {/* Sublinhado animado no hover */}
-                        <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#08131A]/20 group-hover/card:w-full transition-all duration-500 ease-out"></span>
+                        {/* Linha decorativa animada */}
+                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#08131A]/20 to-[#08131A]/40 group-hover/card:w-full transition-all duration-700 ease-out"></span>
                       </span>
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0 sm:ml-auto relative z-10">
-                    <span className="text-xs sm:text-sm md:text-base text-gray-500/80 group-hover/card:text-gray-600 font-normal tracking-wide whitespace-nowrap transition-colors duration-500">
+                  <div className="flex items-center gap-4 sm:gap-5 flex-shrink-0 sm:ml-auto relative z-10">
+                    <span className="text-sm sm:text-base text-gray-500 group-hover/card:text-gray-800 font-semibold tracking-wide whitespace-nowrap transition-all duration-700 group-hover/card:translate-x-1">
                       {project.date}
                     </span>
-                    <div className="relative w-6 h-6 md:w-7 md:h-7 flex items-center justify-center">
+                    <div className="relative w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-100/60 to-gray-200/40 group-hover/card:from-[#08131A]/15 group-hover/card:to-[#08131A]/10 transition-all duration-700 group-hover/card:scale-110 group-hover/card:shadow-lg">
                       <ArrowRight 
-                        size={14} 
-                        className="md:w-4 md:h-4 text-gray-400/60 group-hover/card:text-[#08131A] opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 group-hover/card:translate-x-1 transition-all duration-500 ease-out flex-shrink-0 relative z-10" 
-                        strokeWidth={2}
+                        size={18} 
+                        className="md:w-5 md:h-5 text-gray-500 group-hover/card:text-[#08131A] group-hover/card:translate-x-1 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 relative z-10" 
+                        strokeWidth={2.5}
                       />
-                      {/* Círculo decorativo no hover */}
-                      <div className="absolute inset-0 rounded-full bg-[#08131A]/10 scale-0 group-hover/card:scale-100 opacity-0 group-hover/card:opacity-100 transition-all duration-500 ease-out"></div>
+                      {/* Círculo pulsante no hover */}
+                      <div className="absolute inset-0 rounded-full bg-[#08131A]/20 scale-0 group-hover/card:scale-150 opacity-0 group-hover/card:opacity-100 transition-all duration-700"></div>
                     </div>
                   </div>
                 </div>
@@ -293,7 +337,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             ))}
             
             {/* Spacer apenas no Desktop */}
-            {isDesktop && <div className="w-[10vw] flex-shrink-0"></div>}
+            {isDesktop && <div className="w-[15vw] flex-shrink-0"></div>}
           </div>
         </div>
 

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-[#08131A] text-[#FEFBF1] pt-24 pb-8 px-6 md:px-12 lg:px-16 overflow-hidden flex flex-col">
+    <footer className="w-full bg-[#08131A] text-[#FEFBF1] pt-24 pb-8 px-6 md:px-12 lg:px-[232px] overflow-hidden flex flex-col">
       
       {/* Top Section: Newsletter & Intro */}
       <div className="flex flex-col lg:flex-row justify-between items-start mb-20 gap-16">

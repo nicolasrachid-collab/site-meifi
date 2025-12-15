@@ -9,7 +9,7 @@ const ProjectGallerySection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-white px-6 md:px-12 lg:px-16 pb-24">
+    <section className="w-full bg-white px-6 md:px-12 lg:px-[232px] pb-24">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Imagem Superior Esquerda: Vista da Natureza/Lago */}

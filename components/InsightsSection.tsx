@@ -38,7 +38,7 @@ const InsightsSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-16">
+    <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-[232px]">
       
       {/* Header Row */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">

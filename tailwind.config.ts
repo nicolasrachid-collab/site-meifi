@@ -19,7 +19,7 @@ const config: Config = {
         black: '#08131A', // Substituindo black por #08131A
       },
       animation: {
-        'scroll-right': 'scrollRight 20s linear infinite',
+        'scroll-right': 'scrollRight 40s linear infinite',
         'pulse-scale': 'pulseScale 3s infinite ease-in-out',
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-out': 'fadeOut 0.3s ease-in forwards',
@@ -32,8 +32,8 @@ const config: Config = {
       },
       keyframes: {
         scrollRight: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333%)' },
         },
         pulseScale: {
           '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 0 rgba(255, 255, 255, 0)' },

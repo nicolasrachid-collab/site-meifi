@@ -5,7 +5,7 @@ import { ArrowRight, Send } from 'lucide-react';
 
 const ContactFormSection: React.FC = () => {
   return (
-    <section className="w-full bg-white text-[#08131A] py-24 px-6 md:px-12 lg:px-16 border-t border-gray-100">
+    <section className="w-full bg-white text-[#08131A] py-24 px-6 md:px-12 lg:px-[232px] border-t border-gray-100">
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
         
         {/* Left Column: Context */}

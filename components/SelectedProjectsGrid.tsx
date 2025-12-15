@@ -47,7 +47,7 @@ const SelectedProjectsGrid: React.FC<SelectedProjectsGridProps> = ({ onProjectCl
   ];
 
   return (
-    <section className="w-full bg-white text-[#08131A] px-6 md:px-12 lg:px-16 pb-32">
+    <section className="w-full bg-white text-[#08131A] px-6 md:px-12 lg:px-[232px] pb-32">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
         {projects.map((project) => (
           <div 
