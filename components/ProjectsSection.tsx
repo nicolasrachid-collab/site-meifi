@@ -356,7 +356,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     <div className="relative w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/60 group-hover/card:bg-[#08131A] group-hover/card:border-[#08131A] transition-all duration-500 group-hover/card:scale-110 group-hover/card:shadow-xl">
                       <ArrowRight 
                         size={18} 
-                        className="md:w-5 md:h-5 text-gray-600 group-hover/card:text-[#FEFBF1] group-hover/card:translate-x-1 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 relative z-10" 
+                        className="md:w-5 md:h-5 text-gray-600 group-hover/card:text-[#FEFBF1] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 relative z-10" 
                         strokeWidth={2.5}
                       />
                       {/* Círculo pulsante elegante no hover */}

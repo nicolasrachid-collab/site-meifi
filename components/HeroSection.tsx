@@ -131,67 +131,70 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       <ShaderBackground />
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col justify-between h-full px-6 py-6 md:px-12 md:py-8">
-        
-        {/* Top: Navbar */}
-        <Navbar onOpenMenu={() => setIsMenuOpen(true)} />
-
-        {/* Center: Main Headings */}
-        <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
-          <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
-            {currentData.subtitle}
-          </span>
+      <div className="relative z-10 flex flex-col justify-between h-full px-6 py-6 md:px-12 lg:px-[232px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full w-full">
           
-          <h1 className="text-4xl md:text-6xl lg:text-[66px] font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
-            {currentData.title.split('\n').map((line, i) => (
-              <React.Fragment key={i}>
-                {line}
-                {i < currentData.title.split('\n').length - 1 && <br className="hidden md:block" />}
-              </React.Fragment>
-            ))}
-          </h1>
+          {/* Top: Navbar - Full width */}
+          <div className="lg:col-span-12">
+            <Navbar onOpenMenu={() => setIsMenuOpen(true)} />
+          </div>
 
-          <ScrollAnimationWrapper className="mt-8">
-            <div className="relative group flex flex-col items-center">
-              <FlowButton 
-                text="Solicite um Orçamento"
-                onClick={handleContactClick}
-                className="relative z-10"
-              />
-            </div>
-          </ScrollAnimationWrapper>
-        </div>
+          {/* Center: Main Headings - Centered in grid */}
+          <div className="lg:col-span-12 flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
+            <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
+              {currentData.subtitle}
+            </span>
+            
+            <h1 className="text-4xl md:text-6xl lg:text-[66px] font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
+              {currentData.title.split('\n').map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i < currentData.title.split('\n').length - 1 && <br className="hidden md:block" />}
+                </React.Fragment>
+              ))}
+            </h1>
 
-        {/* Bottom: Avatares e Video Widget */}
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between w-full pb-safe">
-          
-          {/* Left: Avatares */}
-          <AvatarGroup
-            avatars={[
-              {
-                id: 1,
-                name: 'Cliente 1',
-                image: 'https://i.pravatar.cc/100?img=47',
-                alt: 'Cliente 1'
-              },
-              {
-                id: 2,
-                name: 'Cliente 2',
-                image: 'https://i.pravatar.cc/100?img=45',
-                alt: 'Cliente 2'
-              },
-              {
-                id: 3,
-                name: 'Cliente 3',
-                image: 'https://i.pravatar.cc/100?img=44',
-                alt: 'Cliente 3'
-              }
-            ]}
-            additionalCount={3}
-            size="md"
-            className="mb-4 md:mb-0"
-          />
+            <ScrollAnimationWrapper className="mt-8">
+              <div className="relative group flex flex-col items-center">
+                <FlowButton 
+                  text="Solicite um Orçamento"
+                  onClick={handleContactClick}
+                  className="relative z-10"
+                />
+              </div>
+            </ScrollAnimationWrapper>
+          </div>
 
+          {/* Bottom: Avatares - Centered in grid */}
+          <div className="lg:col-span-12 flex items-center justify-center w-full pb-safe">
+            
+            {/* Centered: Avatares */}
+            <AvatarGroup
+              avatars={[
+                {
+                  id: 1,
+                  name: 'Cliente 1',
+                  image: 'https://i.pravatar.cc/100?img=47',
+                  alt: 'Cliente 1'
+                },
+                {
+                  id: 2,
+                  name: 'Cliente 2',
+                  image: 'https://i.pravatar.cc/100?img=45',
+                  alt: 'Cliente 2'
+                },
+                {
+                  id: 3,
+                  name: 'Cliente 3',
+                  image: 'https://i.pravatar.cc/100?img=44',
+                  alt: 'Cliente 3'
+                }
+              ]}
+              additionalCount={3}
+              size="md"
+            />
+
+          </div>
         </div>
       </div>
     </div>
