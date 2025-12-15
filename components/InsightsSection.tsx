@@ -47,12 +47,9 @@ const InsightsSection: React.FC = () => {
         </h2>
         
         <div className="flex flex-col items-start lg:items-end text-left lg:text-right">
-          <p className="text-gray-600 text-sm md:text-base leading-snug max-w-xs mb-6">
+          <p className="text-gray-600 text-sm md:text-base leading-snug max-w-xs">
             Explore ideias, tendências e histórias dos bastidores do nosso escritório.
           </p>
-          <button className="px-8 py-3 bg-[#08131A] text-[#FEFBF1] rounded-full font-medium text-sm transition-transform hover:scale-105 active:scale-95">
-            Ver tudo
-          </button>
         </div>
       </div>
 

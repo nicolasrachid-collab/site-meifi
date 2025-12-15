@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, Scan, MessageSquare } from 'lucide-react';
+import { ChevronDown, MessageSquare } from 'lucide-react';
 
 const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(1); // Segundo item aberto por padrão
@@ -41,27 +41,17 @@ const FAQSection: React.FC = () => {
     <section className="w-full bg-[#FAFAFA] text-[#08131A] py-24 px-6 md:px-12 lg:px-[232px]">
       
       {/* Header */}
-      <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-8">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A]">
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#08131A] mb-6">
           Dúvida? MEIFI responde com <span className="italic text-[#6B7280]">clareza</span>
         </h2>
-        
-        <div className="flex items-start gap-4 max-w-sm lg:text-right lg:items-end lg:flex-col">
-           <div className="hidden lg:block">
-              <Scan className="w-6 h-6 text-[#08131A] opacity-80 ml-auto" />
-           </div>
-           <p className="text-gray-600 text-sm md:text-base leading-snug">
-             Respondemos as dúvidas mais comuns para te ajudar a dar o próximo passo.
-           </p>
-           {/* Mobile icon */}
-           <div className="lg:hidden">
-              <Scan className="w-6 h-6 text-[#08131A] opacity-80" />
-           </div>
-        </div>
+        <p className="text-gray-600 text-sm md:text-base leading-snug max-w-2xl">
+          Respondemos as dúvidas mais comuns para te ajudar a dar o próximo passo.
+        </p>
       </div>
 
       {/* FAQ Accordion */}
-      <div className="flex flex-col gap-4 max-w-3xl">
+      <div className="flex flex-col gap-4">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (

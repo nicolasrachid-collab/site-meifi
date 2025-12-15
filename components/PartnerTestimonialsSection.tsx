@@ -71,7 +71,7 @@ const PartnerTestimonialsSection: React.FC = () => {
         {testimonials.map((item) => (
           <div 
             key={item.id} 
-            className={`relative rounded-2xl overflow-hidden min-h-[500px] md:h-[600px] lg:h-[650px] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300 ${item.type === 'video' ? 'bg-[#08131A] text-[#FEFBF1] p-0' : 'bg-white text-[#08131A] p-8'}`}
+            className={`relative rounded-2xl overflow-hidden min-h-[350px] md:h-[400px] lg:h-[420px] flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300 ${item.type === 'video' ? 'bg-[#08131A] text-[#FEFBF1] p-0' : 'bg-white text-[#08131A] p-6 md:p-7'}`}
           >
             {item.type === 'video' ? (
               // Video Card

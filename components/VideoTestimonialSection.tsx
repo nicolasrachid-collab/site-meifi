@@ -19,9 +19,10 @@ const VideoTestimonialSection: React.FC = () => {
               
               {/* Título - Primeiro */}
               <div className="flex flex-col gap-8 lg:gap-10">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-medium tracking-tight leading-[1.05] text-[#08131A] max-w-3xl">
-                  Arquitetura feita com calma,<br />
-                  cuidado e <span className="italic text-[#6B7280]">propósito.</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-serif font-medium tracking-tight leading-[1.1] text-[#08131A] max-w-4xl">
+                  Arquitetura feita com<br className="hidden md:block" />
+                  <span className="md:inline"> calma, cuidado e </span>
+                  <span className="italic text-[#6B7280]">propósito.</span>
                 </h2>
 
                 {/* Texto - Segundo */}
@@ -68,33 +69,75 @@ const VideoTestimonialSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 lg:mt-16">
             
             {/* Card 1 */}
-            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                Equipe colaborativa
-              </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
-              </p>
+            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
+              {/* Efeito de brilho no hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              
+              {/* Linha decorativa superior */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+              
+              {/* Conteúdo */}
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
+                  Equipe colaborativa
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                  Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
+                </p>
+              </div>
+              
+              {/* Ícone decorativo no hover */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
+              </div>
             </div>
 
             {/* Card 2 */}
-            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                Olhar contemporâneo
-              </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
-              </p>
+            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
+              {/* Efeito de brilho no hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              
+              {/* Linha decorativa superior */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+              
+              {/* Conteúdo */}
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
+                  Olhar contemporâneo
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                  Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
+                </p>
+              </div>
+              
+              {/* Ícone decorativo no hover */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
+              </div>
             </div>
 
             {/* Card 3 */}
-            <div className="group bg-white p-6 md:p-8 rounded-2xl border border-gray-200/60 hover:border-[#08131A]/20 transition-all duration-500 hover:shadow-xl hover:-translate-y-1 flex flex-col">
-              <h3 className="text-lg md:text-xl font-serif font-medium text-[#08131A] mb-3 md:mb-4">
-                Comunicação autêntica
-              </h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                Processos claros, diálogo aberto e decisões construídas com leveza.
-              </p>
+            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
+              {/* Efeito de brilho no hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              
+              {/* Linha decorativa superior */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+              
+              {/* Conteúdo */}
+              <div className="relative z-10">
+                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
+                  Comunicação autêntica
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                  Processos claros, diálogo aberto e decisões construídas com leveza.
+                </p>
+              </div>
+              
+              {/* Ícone decorativo no hover */}
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
+              </div>
             </div>
 
           </div>

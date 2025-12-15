@@ -18,22 +18,20 @@ const TeamSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] pb-24 px-4 md:px-8 lg:px-12">
+    <section className="w-full bg-[#FAFAFA] pb-24 px-6 md:px-12 lg:px-[232px]">
       
       {/* Container Branco Arredondado (Card Principal) */}
       <div className="bg-white rounded-[2.5rem] p-8 md:p-16 shadow-sm">
         
         {/* Header Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 gap-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-gray-900 max-w-xl leading-[1.1]">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-gray-900 max-w-xl leading-[1.1] mb-6">
             Conheça quem faz a <span className="italic text-[#6B7280]">MEIFI acontecer</span>
           </h2>
           
-          <div className="lg:max-w-md text-left lg:text-left">
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-              Design excepcional é um esforço coletivo. Somos um time de amigos que acredita no poder das boas ideias e no trabalho feito com calma, cuidado e propósito.
-            </p>
-          </div>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl">
+            Design excepcional é um esforço coletivo. Somos um time de amigos que acredita no poder das boas ideias e no trabalho feito com calma, cuidado e propósito.
+          </p>
         </div>
 
         {/* Team Grid - 3 Columns */}
@@ -67,6 +65,11 @@ const TeamSection: React.FC = () => {
                   src="/icon.svg" 
                   alt="" 
                   className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-500 group-hover:rotate-12"
+                  style={{
+                    filter: 'brightness(0) invert(1)',
+                    WebkitFilter: 'brightness(0) invert(1)',
+                    mixBlendMode: 'difference'
+                  }}
                   aria-hidden="true"
                 />
               </div>
