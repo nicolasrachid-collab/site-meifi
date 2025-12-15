@@ -31,9 +31,9 @@ const PartnerTestimonialsSection: React.FC = () => {
       type: 'video',
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-308-large.mp4",
       videoThumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
-      author: "Juliano Maia",
+      author: "Eduardo Barbosa Mancini",
       role: "Sócio",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+      image: "/eduardo.png"
     },
     {
       id: 4,
@@ -96,8 +96,8 @@ const PartnerTestimonialsSection: React.FC = () => {
                 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center z-20">
-                  <div className="bg-white/20 backdrop-blur-md rounded-full p-4 group-hover/video:bg-[#275B7A] group-hover/video:scale-110 transition-all duration-300">
-                    <Play size={32} fill="#FEFBF1" className="text-[#FEFBF1] group-hover/video:text-[#FEFBF1]" strokeWidth={0} />
+                  <div className="bg-white/20 backdrop-blur-md rounded-full p-4 group-hover/video:bg-white group-hover/video:scale-110 transition-all duration-300">
+                    <Play size={32} fill="#FEFBF1" className="text-[#FEFBF1] group-hover/video:fill-[#08131A] group-hover/video:text-[#08131A] transition-colors duration-300" strokeWidth={0} />
                   </div>
                 </div>
                 

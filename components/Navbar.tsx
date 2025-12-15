@@ -14,14 +14,14 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
         <img 
           src="/Logotipo.svg" 
           alt="MEIFI" 
-          className="h-6 md:h-8 w-auto brightness-0 invert"
+          className="h-6 md:h-8 w-auto brightness-0"
         />
       </div>
 
       {/* Menu Trigger */}
       <button 
         onClick={onOpenMenu}
-        className="p-2 hover:bg-white/20 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-white/50 group relative hover:scale-110 active:scale-95"
+        className="p-2 hover:bg-[#08131A]/10 rounded-full transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 group relative hover:scale-110 active:scale-95"
         style={{
           transformOrigin: 'center center',
           willChange: 'transform',
@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenMenu }) => {
         aria-label="Abrir Menu"
       >
         <svg 
-          className="w-8 h-8 text-[#FEFBF1] drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
+          className="w-8 h-8 text-[#08131A] drop-shadow-md transition-all duration-300 group-hover:scale-110 group-active:scale-95" 
           style={{
             transformOrigin: 'center center',
           }}

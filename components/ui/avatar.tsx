@@ -64,28 +64,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
   };
 
   return (
-    <div className={`flex flex-col items-center gap-1 md:gap-1.5 ${className}`}>
-      {/* Texto acima dos avatares */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.7 }}
-        className="flex flex-col items-center gap-1"
-      >
-        <motion.p
-          className="text-[10px] md:text-xs text-[#FEFBF1]/90 font-normal tracking-wide"
-          whileHover={{ opacity: 1 }}
-        >
-          Siga a MEIFI no Instagram
-        </motion.p>
-        <motion.div
-          className="h-px w-12 bg-gradient-to-r from-transparent via-[#FEFBF1]/40 to-transparent"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ delay: 0.7, duration: 0.5 }}
-        />
-      </motion.div>
-      
+    <div className={`flex flex-col items-center gap-4 ${className}`}>
       <motion.div 
         className="flex items-center gap-2"
         variants={containerVariants}
@@ -117,13 +96,34 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
           <motion.div
             variants={avatarVariants}
             whileHover="hover"
-            className={`${sizeClasses[size]} rounded-full border-2 border-white/40 flex items-center justify-center text-[10px] md:text-xs font-semibold -ml-2 md:-ml-3 transition-all duration-300 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md text-[#FEFBF1] shadow-lg hover:shadow-xl hover:border-white/60 hover:from-white/20 hover:to-white/10 relative group`}
+            className={`${sizeClasses[size]} rounded-full border-2 border-white/40 flex items-center justify-center text-xs md:text-sm font-bold -ml-2 md:-ml-3 transition-all duration-300 bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md text-[#FEFBF1] shadow-lg hover:shadow-xl hover:border-white/60 hover:from-white/20 hover:to-white/10 relative group`}
             style={{ zIndex: 1 }}
           >
             <span className="relative z-10">+{additionalCount}</span>
             <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/0 group-hover:from-white/10 group-hover:to-transparent transition-all duration-300 rounded-full"></div>
           </motion.div>
         )}
+      </motion.div>
+      
+      {/* Texto abaixo dos avatares */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.7 }}
+        className="flex flex-col items-center gap-1"
+      >
+        <motion.p
+          className="text-xs md:text-sm text-[#FEFBF1]/90 font-medium tracking-wide"
+          whileHover={{ opacity: 1 }}
+        >
+          Siga a MEIFI no Instagram
+        </motion.p>
+        <motion.div
+          className="h-px w-12 bg-gradient-to-r from-transparent via-[#FEFBF1]/40 to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+        />
       </motion.div>
     </div>
   );

@@ -54,21 +54,21 @@ const LineDrawing: React.FC<{ type: 'residential' | 'commercial' | 'urban'; isCo
       <img 
         src="/banner-residencial.svg" 
         alt="Projetos Residenciais" 
-        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float' : 'opacity-0'}`}
+        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float animate-pulse-glow' : 'opacity-0'}`}
       />
     ),
     commercial: (
       <img 
         src="/banner-comercial.svg" 
         alt="Espaços Comerciais" 
-        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float' : 'opacity-0'}`}
+        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float animate-pulse-glow' : 'opacity-0'}`}
       />
     ),
     urban: (
       <img 
         src="/banner-urbanismo.svg" 
         alt="Urbanismo e Loteamentos" 
-        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float' : 'opacity-0'}`}
+        className={`w-full h-full object-contain transition-opacity duration-1000 ${isVisible ? 'animate-svg-fade-in animate-svg-float animate-pulse-glow' : 'opacity-0'}`}
       />
     )
   };

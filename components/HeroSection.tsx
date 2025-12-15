@@ -131,22 +131,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       <ShaderBackground />
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col justify-between h-full px-6 py-6 md:px-12 md:py-8 lg:px-[232px]">
+      <div className="relative z-10 flex flex-col justify-between h-full px-6 py-6 md:px-12 md:py-8">
         
         {/* Top: Navbar */}
         <Navbar onOpenMenu={() => setIsMenuOpen(true)} />
 
         {/* Center: Main Headings */}
         <div className="flex flex-col items-center justify-center text-center space-y-6 mt-4 md:mt-0 animate-fade-in-up">
-          <motion.span 
-            className="text-xs md:text-sm font-normal tracking-[0.2em] uppercase drop-shadow-lg text-[#FEFBF1]/90 letter-spacing-wider inline-flex items-center gap-4 px-6 py-2.5 before:content-[''] before:w-6 before:h-px before:bg-gradient-to-r before:from-transparent before:to-[#FEFBF1]/50 after:content-[''] after:w-6 after:h-px after:bg-gradient-to-l after:from-transparent after:to-[#FEFBF1]/50 transition-all duration-500"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-            whileHover={{ scale: 1.05, y: -2 }}
-          >
+          <span className="text-xs md:text-base font-medium tracking-[0.15em] uppercase opacity-90 drop-shadow-md text-[#FEFBF1]/46 letter-spacing-wider inline-flex items-center gap-3 before:content-[''] before:w-8 before:h-px before:bg-[#FEFBF1]/30 after:content-[''] after:w-8 after:h-px after:bg-[#FEFBF1]/30">
             {currentData.subtitle}
-          </motion.span>
+          </span>
           
           <h1 className="text-4xl md:text-6xl lg:text-[66px] font-medium tracking-tight leading-tight drop-shadow-lg max-w-5xl whitespace-pre-line">
             {currentData.title.split('\n').map((line, i) => (
@@ -168,9 +162,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           </ScrollAnimationWrapper>
         </div>
 
-        {/* Bottom: Avatares */}
-        <div className="flex flex-col items-center justify-center w-full pb-safe">
+        {/* Bottom: Avatares e Video Widget */}
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between w-full pb-safe">
           
+          {/* Left: Avatares */}
           <AvatarGroup
             avatars={[
               {
@@ -193,10 +188,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
               }
             ]}
             additionalCount={3}
-            size="sm"
-            className=""
+            size="md"
+            className="mb-4 md:mb-0"
           />
-
 
         </div>
       </div>

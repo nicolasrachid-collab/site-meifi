@@ -19,7 +19,7 @@ const VideoTestimonialSection: React.FC = () => {
               
               {/* Título - Primeiro */}
               <div className="flex flex-col gap-8 lg:gap-10">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-serif font-medium tracking-tight leading-[1.1] text-[#08131A] max-w-4xl">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-medium tracking-tight leading-[1.1] text-[#08131A] max-w-4xl">
                   Arquitetura feita com<br className="hidden md:block" />
                   <span className="md:inline"> calma, cuidado e </span>
                   <span className="italic text-[#6B7280]">propósito.</span>
@@ -27,7 +27,7 @@ const VideoTestimonialSection: React.FC = () => {
 
                 {/* Texto - Segundo */}
                 <div className="flex flex-col max-w-2xl">
-                  <div className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed space-y-5">
+                  <div className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed space-y-5">
                     <p>
                       A MEIFI nasce do encontro entre sensibilidade, técnica e tempo. Desde o início, nosso olhar sempre esteve voltado para as pessoas e para a forma como elas vivem os espaços no dia a dia.
                     </p>
@@ -55,8 +55,8 @@ const VideoTestimonialSection: React.FC = () => {
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="inline-flex items-center gap-3 bg-white/95 backdrop-blur-sm border-2 border-white/50 pl-3 pr-7 py-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-105 group-hover:scale-110 shadow-2xl">
-                    <div className="w-12 h-12 bg-[#08131A] rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Play size={18} fill="#FEFBF1" className="text-[#FEFBF1] ml-0.5" />
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border-2 border-[#08131A]/20">
+                      <Play size={18} fill="#08131A" className="text-[#08131A] ml-0.5" />
                     </div>
                     <span className="text-[#08131A] font-semibold text-sm md:text-base">Nossa história</span>
                   </div>
@@ -69,75 +69,63 @@ const VideoTestimonialSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12 lg:mt-16">
             
             {/* Card 1 */}
-            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
-              {/* Efeito de brilho no hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
-              {/* Linha decorativa superior */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+            <div className="group relative bg-gray-50/30 p-8 md:p-10 rounded-[24px] border border-gray-300/40 hover:border-[#08131A]/60 transition-all duration-700 hover:-translate-y-3 hover:scale-[1.02] flex flex-col overflow-hidden"
+            >
               
               {/* Conteúdo */}
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
-                  Equipe colaborativa
+                <h3 className="text-2xl md:text-3xl font-serif font-medium text-[#08131A] mb-5 md:mb-6 group-hover:text-[#08131A] transition-all duration-700 leading-tight">
+                  <span className="relative inline-block">
+                    Equipe colaborativa
+                    {/* Linha decorativa animada */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#08131A]/30 to-[#08131A]/50 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                <p className="text-base md:text-lg text-gray-600 group-hover:text-gray-800 leading-relaxed transition-colors duration-700 font-light">
                   Trabalho conjunto, troca constante e atenção a cada detalhe do processo.
                 </p>
               </div>
               
-              {/* Ícone decorativo no hover */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
-                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
-              </div>
             </div>
 
             {/* Card 2 */}
-            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
-              {/* Efeito de brilho no hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
-              {/* Linha decorativa superior */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+            <div className="group relative bg-gray-50/30 p-8 md:p-10 rounded-[24px] border border-gray-300/40 hover:border-[#08131A]/60 transition-all duration-700 hover:-translate-y-3 hover:scale-[1.02] flex flex-col overflow-hidden"
+            >
               
               {/* Conteúdo */}
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
-                  Olhar contemporâneo
+                <h3 className="text-2xl md:text-3xl font-serif font-medium text-[#08131A] mb-5 md:mb-6 group-hover:text-[#08131A] transition-all duration-700 leading-tight">
+                  <span className="relative inline-block">
+                    Olhar contemporâneo
+                    {/* Linha decorativa animada */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#08131A]/30 to-[#08131A]/50 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                <p className="text-base md:text-lg text-gray-600 group-hover:text-gray-800 leading-relaxed transition-colors duration-700 font-light">
                   Arquitetura atual, sensível e alinhada ao tempo em que vivemos.
                 </p>
               </div>
               
-              {/* Ícone decorativo no hover */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
-                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
-              </div>
             </div>
 
             {/* Card 3 */}
-            <div className="group relative bg-gradient-to-br from-white/90 via-white/85 to-white/80 backdrop-blur-xl p-7 md:p-9 rounded-[20px] border border-gray-200/50 hover:border-[#08131A]/30 transition-all duration-700 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] flex flex-col overflow-hidden">
-              {/* Efeito de brilho no hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-              
-              {/* Linha decorativa superior */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#08131A]/10 to-transparent group-hover:via-[#08131A]/30 transition-all duration-700"></div>
+            <div className="group relative bg-gray-50/30 p-8 md:p-10 rounded-[24px] border border-gray-300/40 hover:border-[#08131A]/60 transition-all duration-700 hover:-translate-y-3 hover:scale-[1.02] flex flex-col overflow-hidden"
+            >
               
               {/* Conteúdo */}
               <div className="relative z-10">
-                <h3 className="text-xl md:text-2xl font-serif font-medium text-[#08131A] mb-4 md:mb-5 group-hover:text-[#08131A] transition-colors duration-700">
-                  Comunicação autêntica
+                <h3 className="text-2xl md:text-3xl font-serif font-medium text-[#08131A] mb-5 md:mb-6 group-hover:text-[#08131A] transition-all duration-700 leading-tight">
+                  <span className="relative inline-block">
+                    Comunicação autêntica
+                    {/* Linha decorativa animada */}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-[#08131A]/30 to-[#08131A]/50 group-hover:w-full transition-all duration-700 ease-out"></span>
+                  </span>
                 </h3>
-                <p className="text-sm md:text-base text-gray-600 group-hover:text-gray-700 leading-relaxed transition-colors duration-700">
+                <p className="text-base md:text-lg text-gray-600 group-hover:text-gray-800 leading-relaxed transition-colors duration-700 font-light">
                   Processos claros, diálogo aberto e decisões construídas com leveza.
                 </p>
               </div>
               
-              {/* Ícone decorativo no hover */}
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
-                <div className="w-16 h-16 rounded-full bg-[#08131A]/10 blur-xl"></div>
-              </div>
             </div>
 
           </div>

@@ -322,14 +322,16 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     <span className="text-sm sm:text-base text-gray-500 group-hover/card:text-gray-800 font-semibold tracking-wide whitespace-nowrap transition-all duration-700 group-hover/card:translate-x-1">
                       {project.date}
                     </span>
-                    <div className="relative w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-100/60 to-gray-200/40 group-hover/card:from-[#08131A]/15 group-hover/card:to-[#08131A]/10 transition-all duration-700 group-hover/card:scale-110 group-hover/card:shadow-lg">
+                    <div className="relative w-10 h-10 md:w-11 md:h-11 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/60 group-hover/card:bg-[#08131A] group-hover/card:border-[#08131A] transition-all duration-500 group-hover/card:scale-110 group-hover/card:shadow-xl">
                       <ArrowRight 
                         size={18} 
-                        className="md:w-5 md:h-5 text-gray-500 group-hover/card:text-[#08131A] group-hover/card:translate-x-1 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 relative z-10" 
+                        className="md:w-5 md:h-5 text-gray-600 group-hover/card:text-[#FEFBF1] group-hover/card:translate-x-1 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex-shrink-0 relative z-10" 
                         strokeWidth={2.5}
                       />
-                      {/* Círculo pulsante no hover */}
-                      <div className="absolute inset-0 rounded-full bg-[#08131A]/20 scale-0 group-hover/card:scale-150 opacity-0 group-hover/card:opacity-100 transition-all duration-700"></div>
+                      {/* Círculo pulsante elegante no hover */}
+                      <div className="absolute inset-0 rounded-full bg-[#08131A]/10 scale-0 group-hover/card:scale-[1.8] opacity-0 group-hover/card:opacity-100 transition-all duration-500 ease-out"></div>
+                      {/* Anel externo no hover */}
+                      <div className="absolute inset-0 rounded-full border-2 border-[#08131A]/0 group-hover/card:border-[#08131A]/20 scale-0 group-hover/card:scale-[1.4] opacity-0 group-hover/card:opacity-100 transition-all duration-500 ease-out"></div>
                     </div>
                   </div>
                 </div>

@@ -50,7 +50,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ onClose }) => {
         </div>
 
         {/* Right Panel - Content */}
-        <div className="w-full md:w-1/2 h-2/3 md:h-full flex flex-col px-6 py-6 md:px-12 md:py-8 relative">
+        <div className="w-full md:w-1/2 h-2/3 md:h-full flex flex-col px-6 py-6 md:px-12 md:py-8 lg:px-[232px] relative">
           
           {/* Header: Logo & Close Button */}
           <div className="flex items-center justify-between mb-16">

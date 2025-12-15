@@ -49,30 +49,30 @@ export function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Background Shaders - Cores adaptadas ao tema MEIFI */}
+      {/* Background Shaders - Cores adaptadas ao tema bege */}
       <MeshGradient
-        className="absolute inset-0 w-full h-full"
-        colors={["#08131A", "#275B7A", "#FEFBF1", "#08131A", "#1a3a4a"]}
+        className="absolute inset-0 w-full h-full opacity-30"
+        colors={["#FAFAFA", "#F5F5F5", "#E8E8E8", "#FAFAFA", "#F0F0F0"]}
         speed={0.3}
-        backgroundColor="#08131A"
+        backgroundColor="#FAFAFA"
       />
       <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-40"
-        colors={["#08131A", "#FEFBF1", "#275B7A", "#08131A"]}
+        className="absolute inset-0 w-full h-full opacity-20"
+        colors={["#FAFAFA", "#E8E8E8", "#F5F5F5", "#FAFAFA"]}
         speed={0.2}
         wireframe="true"
         backgroundColor="transparent"
       />
 
-      {/* Overlay escuro para manter legibilidade do texto */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/50 via-[#08131A]/20 via-transparent to-[#08131A]/60"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#08131A]/30 via-transparent to-[#08131A]/30"></div>
+      {/* Overlay sutil para profundidade */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/5 via-transparent to-[#08131A]/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#08131A]/5 to-transparent"></div>
       
-      {/* Vignette Effect */}
+      {/* Vignette Effect sutil */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.4) 100%)'
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.05) 100%)'
         }}
       ></div>
 
@@ -80,3 +80,4 @@ export function ShaderBackground({ children }: ShaderBackgroundProps) {
     </div>
   );
 }
+
