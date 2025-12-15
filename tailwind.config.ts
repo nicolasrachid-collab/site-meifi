@@ -16,10 +16,9 @@ const config: Config = {
         glass: 'rgba(255, 255, 255, 0.1)',
         glassDark: 'rgba(8, 19, 26, 0.4)',
         primary: '#08131A',
-        black: '#08131A', // Substituindo black por #08131A
       },
       animation: {
-        'scroll-right': 'scrollRight 40s linear infinite',
+        'scroll-right': 'scrollRight 10s linear infinite',
         'pulse-scale': 'pulseScale 3s infinite ease-in-out',
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-out': 'fadeOut 0.3s ease-in forwards',

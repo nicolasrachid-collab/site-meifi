@@ -49,35 +49,29 @@ export function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Background Shaders - Cores adaptadas ao tema bege */}
+      {/* Background Shaders - Tons de azul #08131A */}
       <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-30"
-        colors={["#FAFAFA", "#F5F5F5", "#E8E8E8", "#FAFAFA", "#F0F0F0"]}
+        className="absolute inset-0 w-full h-full"
+        colors={["#08131A", "#0a1f2a", "#0d2a3a", "#10354a", "#08131A"]}
         speed={0.3}
-        backgroundColor="#FAFAFA"
+        backgroundColor="#08131A"
       />
       <MeshGradient
-        className="absolute inset-0 w-full h-full opacity-20"
-        colors={["#FAFAFA", "#E8E8E8", "#F5F5F5", "#FAFAFA"]}
+        className="absolute inset-0 w-full h-full opacity-60"
+        colors={["#08131A", "#0a1f2a", "#0d2a3a", "#10354a"]}
         speed={0.2}
         wireframe="true"
         backgroundColor="transparent"
       />
 
       {/* Overlay sutil para profundidade */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#08131A]/5 via-transparent to-[#08131A]/10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#08131A]/5 to-transparent"></div>
-      
-      {/* Vignette Effect sutil */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(8, 19, 26, 0.05) 100%)'
-        }}
-      ></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#08131A]/10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent"></div>
 
       {children}
     </div>
   );
 }
+
+
 

@@ -29,17 +29,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
 
-  // Verifica se é desktop para ativar o efeito
-  useEffect(() => {
-    const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024); // lg breakpoint
-    };
-
-    checkIsDesktop();
-    window.addEventListener('resize', checkIsDesktop);
-    return () => window.removeEventListener('resize', checkIsDesktop);
-  }, []);
-
   // Transforma projetos do WordPress em formato local
   const projects: ProjectItem[] = (wpProjects && Array.isArray(wpProjects) && wpProjects.length > 0)
     ? wpProjects.slice(0, 4).map((project) => {
@@ -99,9 +88,22 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     "Essência",
   ];
 
-  // Lógica de Scroll Jacking
+  // Verifica se é desktop
   useEffect(() => {
-    if (!isDesktop) return; // Não executa lógica de scroll no mobile
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
+
+  // Scroll Jacking - trava a tela e move projetos horizontalmente
+  useEffect(() => {
+    if (!isDesktop) return;
+
+    let rafId: number | null = null;
 
     const handleScroll = () => {
       if (!containerRef.current || !stickyRef.current || !scrollContainerRef.current) return;
@@ -116,33 +118,70 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
       let progress = distance / maxScroll;
       
+      // Limita o progresso entre 0 e 1
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
 
-      setScrollProgress(progress);
+      // Suavização com easing
+      const smoothProgress = progress * progress * (3 - 2 * progress); // smoothstep
+      
+      setScrollProgress(smoothProgress);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          handleScroll();
+          rafId = null;
+        });
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+    };
   }, [isDesktop]);
 
-  // Calcula a translação apenas se for desktop
-  const translateX = isDesktop ? -(scrollProgress * 60) : 0;
+  // Calcula a translação necessária para que o último card apareça no limite direito
+  // No desktop: card tem 42vw (lg: 38vw), gap é ~2rem (aproximadamente 2vw)
+  // Queremos que quando o último card aparecer no limite direito da viewport, o scroll já possa continuar
+  // 
+  // Posição inicial do último card: (n-1) * (card + gap)
+  // Para ele aparecer no limite direito (100vw), precisamos mover:
+  // translação = posição_inicial_último_card - (100vw - padding_left)
+  // Mas como estamos usando %, precisamos calcular em relação ao container
+  const cardWidth = 42; // vw (média entre 42vw e 38vw)
+  const gap = 2; // vw (aproximação do gap-6 lg:gap-8)
+  const cardWidthWithGap = cardWidth + gap;
+  
+  // Posição inicial do último card em vw
+  const lastCardInitialPosition = (projects.length - 1) * cardWidthWithGap;
+  
+  // Padding left aproximado (lg:pl-[232px] em tela de 1600px ≈ 14.5vw)
+  const paddingLeft = 14.5;
+  
+  // Para o último card aparecer no limite direito (100vw):
+  // translação = lastCardInitialPosition - (100 - paddingLeft)
+  // Isso garante que quando o último card tocar o limite direito, progresso = 1
+  const totalTranslate = Math.max(0, lastCardInitialPosition - (100 - paddingLeft));
+  const translateX = isDesktop ? -(scrollProgress * totalTranslate) : 0;
 
   return (
     <div 
       ref={containerRef} 
-      className={`relative bg-[#FAFAFA] ${isDesktop ? 'h-[300vh] pb-32 lg:pb-40' : 'h-auto py-20 pb-32 lg:pb-40'}`}
+      className={`relative bg-[#FAFAFA] ${isDesktop ? 'h-[200vh] pb-32 lg:pb-40' : 'h-auto py-20 pb-32 lg:pb-40'}`}
     >
-      
-      {/* Sticky Container ou Normal Flow no Mobile */}
+      {/* Sticky Container */}
       <div 
         ref={stickyRef} 
         className={`${isDesktop ? 'sticky top-0 h-screen overflow-hidden' : 'relative h-auto'} flex flex-col`}
       >
-        
         {/* Header Section */}
         <div className="flex-shrink-0 pt-16 pb-12 px-6 md:px-12 lg:px-[232px] flex flex-col md:flex-row justify-between items-start md:items-end gap-8 z-10 bg-[#FAFAFA]">
           <div className="flex flex-col items-start w-full md:w-1/2 lg:w-2/3">
@@ -187,14 +226,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </div>
         </div>
 
-        {/* Content Area */}
-        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-6 lg:pl-[232px] overflow-hidden pb-8 lg:pb-12' : 'px-6 md:px-12 pb-8 lg:pb-12'}`}>
+        {/* Content Area - Scroll Jacking Horizontal */}
+        <div className={`flex-grow ${isDesktop ? 'flex items-center pl-6 lg:pl-[232px] overflow-hidden pb-8 lg:pb-12' : 'px-6 md:px-12 pb-8 lg:pb-12 overflow-x-auto overflow-y-hidden scrollbar-hide'}`}>
           <div 
             ref={scrollContainerRef}
-            className={`flex ${isDesktop ? 'gap-6 lg:gap-8 will-change-transform' : 'flex-col gap-8 md:gap-12 w-full'}`}
+            className={`flex ${isDesktop ? 'gap-6 lg:gap-8 will-change-transform' : 'gap-6 lg:gap-8 pb-4'}`}
             style={{ 
               transform: isDesktop ? `translateX(${translateX}%)` : 'none',
-              transition: isDesktop ? 'transform 0.075s linear' : 'none'
+              transition: isDesktop ? 'transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none'
             }}
           >
             {projects.map((project) => (
@@ -210,7 +249,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   }
                 }}
                 aria-label={`Ver projeto ${project.title}`}
-                className={`relative flex-shrink-0 flex flex-col ${isDesktop ? 'w-[45vw]' : 'w-full'} cursor-pointer group/card transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 focus:ring-offset-2 rounded-[16px] overflow-hidden bg-white/70 backdrop-blur-xl border border-gray-200/40 hover:border-gray-300/60 hover:bg-white/95 shadow-md hover:shadow-2xl transition-all duration-700 hover:scale-[1.02]`}
+                className="relative flex-shrink-0 flex flex-col w-[85vw] sm:w-[60vw] md:w-[50vw] lg:w-[42vw] xl:w-[38vw] cursor-pointer group/card transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-[#08131A]/20 focus:ring-offset-2 rounded-[16px] overflow-hidden bg-white/70 backdrop-blur-xl border border-gray-200/40 hover:border-gray-300/60 hover:bg-white/95 shadow-md hover:shadow-2xl transition-all duration-700 hover:scale-[1.015]"
               >
                 {/* Image Card */}
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-t-[16px] bg-gradient-to-br from-gray-50/80 to-gray-100/80 shadow-lg group-hover/card:shadow-2xl transition-all duration-700 relative border-b border-gray-200/30 group-hover/card:border-gray-300/50 group-hover/card:border-gray-400/40">
@@ -222,14 +261,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover group-hover/card:scale-[1.1] transition-transform duration-1200 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform group-hover/card:brightness-110"
                       style={{
-                        // Parallax e Scale aplicados conforme solicitado
-                        transform: isDesktop
-                          ? `scale(1.1) translateX(${scrollProgress * 15}px)`
-                          : 'scale(1)',
-                        // Transição mais suave e com peso (cubic-bezier) para sensação premium
-                        transition: isDesktop
-                          ? 'transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), filter 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
-                          : 'transform 0.5s ease, filter 1s ease',
+                        transform: 'scale(1.05)',
+                        transition: 'transform 0.5s ease, filter 1s ease',
                         filter: 'saturate(0.95) contrast(1.05)',
                       }}
                       loading={project.id <= 2 ? 'eager' : 'lazy'}
@@ -267,16 +300,14 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     }}></div>
                   </div>
                   
-                  {/* Ícone de interação com efeito de vidro premium */}
+                  {/* Ícone de interação */}
                   <div className="absolute top-5 right-5 md:top-6 md:right-6 z-20 opacity-0 group-hover/card:opacity-100 group-focus/card:opacity-100 transition-all duration-700 group-hover/card:scale-110 group-hover/card:rotate-3">
-                    <div className="bg-white/95 backdrop-blur-2xl rounded-xl p-3 md:p-3.5 shadow-2xl border border-white/60 ring-2 ring-white/40 group-hover/card:ring-white/60 transition-all duration-700">
-                      <img 
-                        src="/icon.svg" 
-                        alt="" 
-                        className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert opacity-90 group-hover/card:opacity-100 transition-opacity duration-500"
-                        aria-hidden="true"
-                      />
-                    </div>
+                    <img 
+                      src="/icon.svg" 
+                      alt="" 
+                      className="w-8 h-8 md:w-10 md:h-10 brightness-0 invert opacity-90 group-hover/card:opacity-100 transition-opacity duration-500"
+                      aria-hidden="true"
+                    />
                   </div>
                   
                   {/* Badge de categoria sutil */}
@@ -318,7 +349,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       </span>
                     </h3>
                   </div>
-                  <div className="flex items-center gap-4 sm:gap-5 flex-shrink-0 sm:ml-auto relative z-10">
+                  <div className="flex items-center gap-6 sm:gap-8 flex-shrink-0 sm:ml-auto relative z-10">
                     <span className="text-sm sm:text-base text-gray-500 group-hover/card:text-gray-800 font-semibold tracking-wide whitespace-nowrap transition-all duration-700 group-hover/card:translate-x-1">
                       {project.date}
                     </span>
@@ -337,12 +368,8 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
               </div>
             ))}
-            
-            {/* Spacer apenas no Desktop */}
-            {isDesktop && <div className="w-[15vw] flex-shrink-0"></div>}
           </div>
         </div>
-
       </div>
     </div>
   );

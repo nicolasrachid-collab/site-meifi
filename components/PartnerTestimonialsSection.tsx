@@ -12,7 +12,7 @@ const PartnerTestimonialsSection: React.FC = () => {
       id: 1,
       type: 'text',
       stars: 5,
-      text: "O trabalho da MEIFI trouxe vida ao nosso empreendimento — sutil, atencioso e atemporal. Cada elemento foi cuidadosamente pensado, tanto visual quanto emocionalmente.",
+      text: "O trabalho da MEIFI deu vida ao nosso empreendimento de forma sutil, atenciosa e atemporal. Cada elemento foi cuidadosamente pensado, tanto no aspecto visual quanto na experiência emocional.",
       author: "Juliana Mendes",
       role: "Incorporadora Vale",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
@@ -30,7 +30,7 @@ const PartnerTestimonialsSection: React.FC = () => {
       id: 3,
       type: 'video',
       videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-308-large.mp4",
-      videoThumbnail: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop",
+      videoThumbnail: "/eduardo.png",
       author: "Eduardo Barbosa Mancini",
       role: "Sócio",
       image: "/eduardo.png"

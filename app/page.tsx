@@ -51,10 +51,10 @@ export default function HomePage() {
         <ExpertiseSection />
       </Suspense>
       <Suspense fallback={null}>
-        <VideoTestimonialSection />
+        <PartnerTestimonialsSection />
       </Suspense>
       <Suspense fallback={null}>
-        <PartnerTestimonialsSection />
+        <VideoTestimonialSection />
       </Suspense>
       <Suspense fallback={null}>
         <InsightsSection />
@@ -75,6 +75,8 @@ export default function HomePage() {
     </main>
   );
 }
+
+
 
 
 
