@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface Avatar {
   id: number;
@@ -41,7 +41,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
     }
   };
 
-  const avatarVariants = {
+  const avatarVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,

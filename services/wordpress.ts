@@ -116,7 +116,7 @@ class WordPressService {
         '/wp/v2/projetos',
         { slug }
       );
-      return projects[0] || null;
+      return (projects && projects[0]) || null;
     } catch (error) {
       console.error(`Erro ao buscar projeto "${slug}":`, error);
       return null;
@@ -146,7 +146,8 @@ class WordPressService {
   // Buscar posts/insights
   async getPosts(options: WordPressApiOptions = {}): Promise<WordPressPost[]> {
     try {
-      return await this.fetchFromWordPress<WordPressPost[]>('/wp/v2/posts', options);
+      const posts = await this.fetchFromWordPress<WordPressPost[]>('/wp/v2/posts', options);
+      return posts || [];
     } catch (error) {
       console.error('Erro ao buscar posts:', error);
       return [];
@@ -159,10 +160,11 @@ class WordPressService {
   ): Promise<WordPressTestimonial[]> {
     try {
       // Ajuste conforme seu custom post type
-      return await this.fetchFromWordPress<WordPressTestimonial[]>(
+      const testimonials = await this.fetchFromWordPress<WordPressTestimonial[]>(
         '/wp/v2/depoimentos',
         options
       );
+      return testimonials || [];
     } catch (error) {
       console.error('Erro ao buscar depoimentos:', error);
       return [];
@@ -173,10 +175,11 @@ class WordPressService {
   async getPartners(options: WordPressApiOptions = {}): Promise<WordPressPartner[]> {
     try {
       // Ajuste conforme seu custom post type
-      return await this.fetchFromWordPress<WordPressPartner[]>(
+      const partners = await this.fetchFromWordPress<WordPressPartner[]>(
         '/wp/v2/parceiros',
         options
       );
+      return partners || [];
     } catch (error) {
       console.error('Erro ao buscar parceiros:', error);
       return [];
