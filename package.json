@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "@paper-design/shaders-react": "^0.0.68",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
